@@ -1,4 +1,4 @@
-# Game-Getter (bad name)
+# Game-Getter
 
 #### Overview
 We are automating the way we find new videogames. This project will be able to sign into both Steam on Epic Games stores and identify which games are free or on sale. Then, it will able to gather the potential games from both stores to a single location, where the user will then be able to select which games to purchase or download for free. Lastly, the robot will fill in the user's payment information, complete the purchase, and start the download. 
