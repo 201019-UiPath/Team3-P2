@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Add_Free_Games" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1109.6,2310.4" sap2010:WorkflowViewState.IdRef="Add_Free_Games_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Add_Free_Games" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1109.6,2404.8" sap2010:WorkflowViewState.IdRef="Add_Free_Games_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
       <x:String>System.Activities</x:String>
@@ -47,56 +47,49 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Add Free Games" sap:VirtualizedContainerService.HintSize="1089.6,2210.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Add Free Games" sap:VirtualizedContainerService.HintSize="1089.6,2304.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="FoundGamesDT" />
+      <Variable x:TypeArguments="ui:Browser" Name="CurrentBrowser" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1048,2117.6" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://www.epicgames.com/store/en-US/">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1048,2212" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[CurrentBrowser]" Url="https://www.epicgames.com/store/en-US/">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,2017.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,2112" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="972.8,68.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence sap2010:Annotation.AnnotationText="Extract this and put it in a library." DisplayName="Login" sap:VirtualizedContainerService.HintSize="972.8,112.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Sequence>
-            <Sequence DisplayName="Find all Free Games" sap:VirtualizedContainerService.HintSize="972.8,68.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
-              <Sequence.Variables>
-                <Variable x:TypeArguments="x:Int32" Default="300" Name="maxNumOfResults" />
-              </Sequence.Variables>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Extract this and put it in a library." DisplayName="Invoke Find All Free Games workflow" sap:VirtualizedContainerService.HintSize="972.8,119.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Web\Game Search\Find All Free Games (Web).xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FilteredGamesDT">[FoundGamesDT]</OutArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_maxNumOfResults">200</InArgument>
+                <InArgument x:TypeArguments="ui:Browser" x:Key="in_BrowserToUse">[CurrentBrowser]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[&quot;https://www.epicgames.com/store/en-US/browse?sortBy=currentPrice&amp;sortDir=ASC&amp;pageSize=&quot; + maxNumOfResults.ToString]" />
-              <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[FoundGamesDT]" DisplayName="Extract Structured Data 'UL'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' class='css-1adx3p4-BrowseGrid-styles__card'/&gt;&lt;webctrl tag='a' idx='1'/&gt;&lt;webctrl tag='div' class='css-shu77l' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='Data' attr='text' name2='URL' attr2='href'&gt;&lt;webctrl tag='li' class='css-1adx3p4-BrowseGrid-styles__card'/&gt;&lt;webctrl tag='a' idx='1'/&gt;&lt;webctrl tag='div' class='css-shu77l' idx='1'/&gt;&lt;webctrl tag='div' class='css-7z9jo1-OfferCard__content' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Title' attr='text'&gt;&lt;webctrl tag='li' class='css-1adx3p4-BrowseGrid-styles__card'/&gt;&lt;webctrl tag='a' idx='1'/&gt;&lt;webctrl tag='div' class='css-shu77l' idx='1'/&gt;&lt;webctrl tag='div' class='css-7z9jo1-OfferCard__content' idx='1'/&gt;&lt;webctrl tag='div' class='css-1jl4olg-OfferCard__meta' idx='1'/&gt;&lt;webctrl tag='span' class='css-2ucwu' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Price' attr='text'&gt;&lt;webctrl tag='li' class='css-1adx3p4-BrowseGrid-styles__card'/&gt;&lt;webctrl tag='a' idx='1'/&gt;&lt;webctrl tag='div' class='css-shu77l' idx='1'/&gt;&lt;webctrl tag='div' class='css-7z9jo1-OfferCard__content' idx='1'/&gt;&lt;webctrl tag='div' class='css-1jl4olg-OfferCard__meta' idx='1'/&gt;&lt;webctrl tag='div' class='css-1yc1h40' idx='1'/&gt;&lt;webctrl tag='div' class='css-r6gfjb-PurchasePrice__priceContainer' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="[maxNumOfResults]" SimulateClick="True">
-                <ui:ExtractData.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ad25891f77eafc732bff7b190061a5c5" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;section&amp;gt;section&amp;gt;ul' parentid='dieselReactWrapper' tag='UL' /&gt;" WaitForReady="COMPLETE">
-                    <ui:Target.TimeoutMS>
-                      <InArgument x:TypeArguments="x:Int32" />
-                    </ui:Target.TimeoutMS>
-                  </ui:Target>
-                </ui:ExtractData.Target>
-              </ui:ExtractData>
-            </Sequence>
+            </ui:InvokeWorkflowFile>
             <Sequence DisplayName="Add Games" sap:VirtualizedContainerService.HintSize="972.8,1707.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -145,7 +138,7 @@
                                 <OutArgument x:TypeArguments="x:String">[gameURL]</OutArgument>
                               </ui:AssignOperation.To>
                               <ui:AssignOperation.Value>
-                                <InArgument x:TypeArguments="x:String">["https://www.epicgames.com" + game("URL").ToString()]</InArgument>
+                                <InArgument x:TypeArguments="x:String">[game("URL").ToString]</InArgument>
                               </ui:AssignOperation.Value>
                             </ui:AssignOperation>
                           </scg:List>
@@ -238,7 +231,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[String.Format(&quot;The title of the game is {0}. The link to the paid game is ({1})&quot;, gameTitleString, gameURL)]" />
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[String.Format(&quot;The title of the paid game is {0}. The link to the paid game is ({1})&quot;, gameTitleString, gameURL)]" />
                           </Sequence>
                         </If.Else>
                       </If>
