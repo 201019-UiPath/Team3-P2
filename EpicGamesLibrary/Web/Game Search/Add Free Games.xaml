@@ -78,7 +78,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Sequence>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Extract this and put it in a library." DisplayName="Invoke Find All Free Games workflow" sap:VirtualizedContainerService.HintSize="972.8,119.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Web\Game Search\Find All Free Games (Web).xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Extract this and put it in a library." DisplayName="Invoke Find All Free Games workflow" sap:VirtualizedContainerService.HintSize="972.8,119.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Web/Game Search/Find All Free Games.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FilteredGamesDT">[FoundGamesDT]</OutArgument>
                 <InArgument x:TypeArguments="x:Int32" x:Key="in_maxNumOfResults">200</InArgument>
@@ -114,7 +114,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:MultipleAssign DisplayName="Gather game data" sap:VirtualizedContainerService.HintSize="840,52.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                      <ui:MultipleAssign DisplayName="Gather game info" sap:VirtualizedContainerService.HintSize="840,52.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                         <ui:MultipleAssign.AssignOperations>
                           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
