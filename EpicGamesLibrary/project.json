@@ -28,7 +28,7 @@
     "libraryOptions": {
       "includeOriginalXaml": false,
       "privateWorkflows": [
-        "Web/Game Search/test.xaml"
+        "Web/test.xaml"
       ]
     },
     "fileInfos": []
