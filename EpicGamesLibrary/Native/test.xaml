@@ -259,7 +259,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Find Games in Library" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Web\Game Search\Find Games in Library.xaml">
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Find Games in Library" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Web/Find/Find Games in Library.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="ui:Browser" x:Key="in_BrowserToUse">[secondBrowser]</InArgument>
                             <OutArgument x:TypeArguments="scg:ICollection(x:String)" x:Key="out_ListOfGames">[libraryGameList]</OutArgument>
@@ -270,7 +270,7 @@
                     </ActivityAction>
                   </ui:OpenBrowser.Body>
                 </ui:OpenBrowser>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Find All Free Games" sap:VirtualizedContainerService.HintSize="333.6,343.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Web\Game Search\Find All Free Games.xaml">
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Find All Free Games" sap:VirtualizedContainerService.HintSize="333.6,343.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Web/Find/Find All Free Games.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="x:Int32" x:Key="in_maxNumOfResults">160</InArgument>
                     <InArgument x:TypeArguments="ui:Browser" x:Key="in_BrowserToUse">[CurrentBrowser]</InArgument>
@@ -337,7 +337,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Add Free Games workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Web\Game Search\Add Free Games.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Add Free Games workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Web/Add/Add Free Games.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="ui:Browser" x:Key="in_Browser">[CurrentBrowser]</InArgument>
                   <InArgument x:TypeArguments="scg1:Queue(scg:KeyValuePair(x:String, x:String))" x:Key="in_GamesToAdd">[GamesToProcess]</InArgument>

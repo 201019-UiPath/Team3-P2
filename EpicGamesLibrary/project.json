@@ -28,7 +28,8 @@
     "libraryOptions": {
       "includeOriginalXaml": false,
       "privateWorkflows": [
-        "Web/test.xaml"
+        "Web/test.xaml",
+        "Native/test.xaml"
       ]
     },
     "fileInfos": []
