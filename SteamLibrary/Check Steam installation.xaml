@@ -116,7 +116,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="57e322e1a06c338b948bbd779388830e" Selector="&lt;uia cls='LandmarkTarget' idx='2' /&gt;&lt;uia cls='GroupItem' name='Related settings' /&gt;&lt;uia automationid='SystemSettings_XLinks_CPL_ProgramsFeatures_Link_HyperlinkButton' cls='Hyperlink' name='Programs and Features' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="57e322e1a06c338b948bbd779388830e" Selector="&lt;uia automationid='ItemsControlScrollViewer' cls='ScrollViewer' /&gt;&lt;uia cls='GroupItem' name='Related settings' /&gt;&lt;uia cls='Hyperlink' name='Programs and Features' automationid='SystemSettings_XLinks_CPL_ProgramsFeatures_Link_HyperlinkButton' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -131,7 +131,7 @@
         </ActivityAction>
       </ui:OpenApplication.Body>
     </ui:OpenApplication>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'explorer.exe Programs'" sap:VirtualizedContainerService.HintSize="503.2,925.6" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="fcbd31f8d8e1c9910fffd2efc6d56686" Selector="&lt;wnd app='explorer.exe' cls='CabinetWClass' title='Programs and Features' /&gt;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'explorer.exe Programs'" sap:VirtualizedContainerService.HintSize="503.2,925.6" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="fcbd31f8d8e1c9910fffd2efc6d56686" Selector="&lt;wnd app='explorer.exe' cls='CabinetWClass' title='Programs and Features' /&gt;" TimeoutMS="15000">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -143,7 +143,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ShellTabWindowClass'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+            <ui:Click DelayMS="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1500" DisplayName="Click 'ShellTabWindowClass'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -155,13 +155,10 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="29637638b2c2347cf72dcb9f02e5289d" Selector="&lt;wnd cls='ShellTabWindowClass' title='Programs and Features' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;ctrl name='Explorer Pane' role='pane' /&gt;&lt;ctrl name='Folder Layout Pane' role='pane' /&gt;&lt;ctrl name='Command Module' role='tool bar' /&gt;&lt;ctrl name='Views' role='split button' /&gt;&lt;ctrl name='View Slider' role='drop down button' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="5c45446d0b63feee27cb6318f432f43e" Selector="&lt;wnd cls='ShellTabWindowClass' title='Programs and Features' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;ctrl name='Explorer Pane' role='pane' /&gt;&lt;ctrl name='Folder Layout Pane' role='pane' /&gt;&lt;ctrl name='Command Module' role='tool bar' /&gt;&lt;ctrl name='Views' role='split button' /&gt;&lt;ctrl name='View Slider' role='drop down button' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
@@ -189,7 +186,7 @@
             </ui:Click>
             <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'editable text'" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="Steam">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b4e4392d9309f231174023d518521a73" Selector="&lt;wnd aaname=' Search Programs and Features' cls='DirectUIHWND' /&gt;&lt;ctrl name=' Search Programs and Features' role='pane' /&gt;&lt;ctrl automationid='SearchEditBox' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b4e4392d9309f231174023d518521a73" Selector="&lt;wnd aaname='*Search*' cls='DirectUIHWND' /&gt;&lt;ctrl name='*Search*' role='pane' /&gt;&lt;ctrl automationid='SearchEditBox' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
