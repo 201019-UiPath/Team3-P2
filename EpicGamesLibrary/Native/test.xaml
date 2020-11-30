@@ -139,12 +139,12 @@
                   <InArgument x:TypeArguments="ss:SecureString" x:Key="in_Password">[securePwd]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate to Library workflow" sap:VirtualizedContainerService.HintSize="363.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Native\Game Installation\Navigate to Library.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate to Library workflow" sap:VirtualizedContainerService.HintSize="363.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Native/Install/Navigate to Library.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="ui:Window" x:Key="in_AppWindow">[EGLWindow]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Install Game in Library workflow" sap:VirtualizedContainerService.HintSize="363.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Native\Game Installation\Install Game in Library.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Install Game in Library workflow" sap:VirtualizedContainerService.HintSize="363.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Native/Install/Install Game in Library.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="ui:Window" x:Key="in_AppWindow">[EGLWindow]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_GameTitle">20XX</InArgument>
