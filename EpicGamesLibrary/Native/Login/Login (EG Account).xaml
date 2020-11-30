@@ -13,7 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>495.2,943.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>495.2,1203.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Login__Native__1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -66,25 +66,27 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Login (Native)" sap:VirtualizedContainerService.HintSize="475.2,843.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="WARNING: Needs better implementation. No error checking yet, and relies on hotkeys to navigate without selector verification.&#xD;&#xA;This workflow logs into an Epic account on the launcher by using the associated email and password directly. This should be used if the user's account is not exclusively accessed through an account integration, such as a Google account. This workflow throws a AuthenticationException if the login failed with the given credentials." DisplayName="Login (Native)" sap:VirtualizedContainerService.HintSize="475.2,1103.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Attach Window 'EpicGamesLauncher.exe E...'" sap:VirtualizedContainerService.HintSize="433.6,750.4" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="d2c53ebd8fb6c506b8ae36a1af7b6eab" Window="[in_AppWindow]">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="This workflow attaches to a previously opened EpicGamesLauncher instance. It takes in a Window in argument for this reason." DisplayName="Attach Window 'EpicGamesLauncher.exe E...'" sap:VirtualizedContainerService.HintSize="433.6,886.4" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="d2c53ebd8fb6c506b8ae36a1af7b6eab" Window="[in_AppWindow]">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Login with Epic Account" sap:VirtualizedContainerService.HintSize="375.2,603.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence sap2010:Annotation.AnnotationText="WARNING: This sequence types in inputs by relying on hotkeys instead of selectors because the Epic Launcher uses Unreal to render, making parsing for selectors much less performant. But this means that this sequence will not work if a performance issue affects the load time of the login screen in the Launcher." DisplayName="Login with Epic Account" sap:VirtualizedContainerService.HintSize="375.2,695.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'EpicGamesLauncher.exe E...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click Image 'EpicGamesLauncher.exe E...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
               <ui:ClickImage.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -148,6 +150,11 @@
           </Sequence>
         </ActivityAction>
       </ui:WindowScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:WindowScope>
   </Sequence>
 </Activity>
