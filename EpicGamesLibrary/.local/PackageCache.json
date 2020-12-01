@@ -41,10 +41,10 @@
       },
       "Assemblies": [
         "C:\\Users\\vrobw\\.nuget\\packages\\avalonedit/5.0.3\\lib/Net40/ICSharpCode.AvalonEdit.dll",
-        "C:\\Users\\vrobw\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.dll",
         "C:\\Users\\vrobw\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.Themes.Aero.dll",
         "C:\\Users\\vrobw\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.Themes.Metro.dll",
         "C:\\Users\\vrobw\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.Themes.VS2010.dll",
+        "C:\\Users\\vrobw\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.AvalonDock.dll",
         "C:\\Users\\vrobw\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.DataGrid.dll",
         "C:\\Users\\vrobw\\.nuget\\packages\\extended.wpf.toolkit/2.8.0\\lib/net40/Xceed.Wpf.Toolkit.dll",
         "C:\\Users\\vrobw\\.nuget\\packages\\humanizer.core/2.4.2\\lib/netstandard2.0/Humanizer.dll",
@@ -70,11 +70,11 @@
         "C:\\Users\\vrobw\\.nuget\\packages\\uipath.uiautomation.activities/19.11.3\\lib/net461/UiPath.Wizards.dll",
         "C:\\Users\\vrobw\\.nuget\\packages\\uipath.vision/2.0.1\\lib/net452/UiPath.Vision.AzureComputerVision.dll",
         "C:\\Users\\vrobw\\.nuget\\packages\\uipath.vision/2.0.1\\lib/net452/UiPath.Vision.Core.dll",
-        "C:\\Users\\vrobw\\.nuget\\packages\\uipath.vision/2.0.1\\lib/net452/UiPath.Vision.dll",
         "C:\\Users\\vrobw\\.nuget\\packages\\uipath.vision/2.0.1\\lib/net452/UiPath.Vision.GoogleCloud.dll",
         "C:\\Users\\vrobw\\.nuget\\packages\\uipath.vision/2.0.1\\lib/net452/UiPath.Vision.Microsoft.dll",
         "C:\\Users\\vrobw\\.nuget\\packages\\uipath.vision/2.0.1\\lib/net452/UiPath.Vision.MicrosoftCloud.dll",
-        "C:\\Users\\vrobw\\.nuget\\packages\\uipath.vision/2.0.1\\lib/net452/UiPath.Vision.Tesseract.dll"
+        "C:\\Users\\vrobw\\.nuget\\packages\\uipath.vision/2.0.1\\lib/net452/UiPath.Vision.Tesseract.dll",
+        "C:\\Users\\vrobw\\.nuget\\packages\\uipath.vision/2.0.1\\lib/net452/UiPath.Vision.dll"
       ]
     }
   ],

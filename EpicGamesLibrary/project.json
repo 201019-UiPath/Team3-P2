@@ -28,8 +28,10 @@
     "libraryOptions": {
       "includeOriginalXaml": false,
       "privateWorkflows": [
-        "Web/test.xaml",
-        "Native/test.xaml"
+        "Native/Install/Navigate to Library.xaml",
+        "Get Epic Credential.xaml",
+        "test.xaml",
+        "Native/Install/Install Game in Library.xaml"
       ]
     },
     "fileInfos": []
