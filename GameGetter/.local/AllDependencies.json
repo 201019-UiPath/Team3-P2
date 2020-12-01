@@ -878,7 +878,6 @@
       "path": "csvhelper/2.13.5",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "csvhelper.2.13.5.nupkg.sha512",
         "csvhelper.nuspec",
         "lib/net20/CsvHelper.dll",
@@ -1599,15 +1598,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vrobw\\.nuget\\packages\\": {}
+    "C:\\Users\\Lin\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "GameGetter",
       "projectName": "GameGetter",
-      "projectPath": "C:\\Users\\vrobw\\Desktop\\Revature\\Team3-P2\\GameGetter\\.local",
-      "packagesPath": "C:\\Users\\vrobw\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vrobw\\Desktop\\Revature\\Team3-P2\\GameGetter\\.local"
+      "projectPath": "C:\\Users\\Lin\\Documents\\Revature\\Team3-P2\\GameGetter\\.local",
+      "packagesPath": "C:\\Users\\Lin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lin\\Documents\\Revature\\Team3-P2\\GameGetter\\.local"
     },
     "frameworks": {
       "net461": {
