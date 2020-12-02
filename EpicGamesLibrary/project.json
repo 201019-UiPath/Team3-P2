@@ -31,7 +31,9 @@
         "Native/Install/Navigate to Library.xaml",
         "Get Epic Credential.xaml",
         "test.xaml",
-        "Native/Install/Install Game in Library.xaml"
+        "Native/Install/Install Game in Library.xaml",
+        "Native/Login/testLogin.xaml",
+        "Web/Add/Add Free Games.xaml"
       ]
     },
     "fileInfos": []
