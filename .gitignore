@@ -10,7 +10,7 @@
 *.props
 *.backup
 *AllDependencies.json
-.login
+*.local
 
 # User-specific files
 *.rsuser
