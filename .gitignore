@@ -10,7 +10,6 @@
 *.props
 *.backup
 *AllDependencies.json
-.screenshots/
 
 
 # User-specific files
