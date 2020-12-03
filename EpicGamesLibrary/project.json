@@ -10,7 +10,7 @@
   "webServices": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.10.5.0",
-  "projectVersion": "0.7.0",
+  "projectVersion": "0.7.1",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -28,8 +28,12 @@
     "libraryOptions": {
       "includeOriginalXaml": false,
       "privateWorkflows": [
-        "Web/test.xaml",
-        "Native/test.xaml"
+        "Native/Install/Navigate to Library.xaml",
+        "Get Epic Credential.xaml",
+        "test.xaml",
+        "Native/Install/Install Game in Library.xaml",
+        "Native/Login/testLogin.xaml",
+        "Web/Add/Add Free Games.xaml"
       ]
     },
     "fileInfos": []
