@@ -11,6 +11,7 @@
 *.backup
 *AllDependencies.json
 
+
 # User-specific files
 *.rsuser
 *.suo
