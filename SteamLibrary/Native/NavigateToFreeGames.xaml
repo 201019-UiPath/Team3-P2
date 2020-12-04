@@ -80,7 +80,7 @@
                   </ui:CursorPosition>
                 </ui:Click.CursorPosition>
                 <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a965d66b9b7b4c3ab56842a5e2ca3bfc" Selector="&lt;ctrl name='Welcome to Steam' role='document' /&gt;&lt;ctrl name='Free to Play' role='link' /&gt;">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a965d66b9b7b4c3ab56842a5e2ca3bfc" Selector="&lt;wnd cls='Chrome_WidgetWin_0' idx='1' /&gt;&lt;ctrl name='Welcome to Steam' role='document' /&gt;&lt;ctrl name='Free to Play' role='link' text='Free to Play' /&gt;">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
