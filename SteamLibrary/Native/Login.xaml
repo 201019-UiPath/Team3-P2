@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_SteamFilePath" Type="InArgument(x:String)" />
     <x:Property Name="in_Username" Type="InArgument(x:String)" />
@@ -7,10 +7,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1356,2717</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1356,3399</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="46">
+    <scg:List x:TypeArguments="x:String" Capacity="25">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -60,7 +60,7 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Handles logging in the user into the Steam Client.&#xD;&#xA;&#xD;&#xA;Preconditions: Credentials and Steam file path&#xD;&#xA;Post action: Opens the Steam client " DisplayName="Open Steam Login" sap:VirtualizedContainerService.HintSize="1336,2657" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Handles logging in the user into the Steam Client.&#xA;&#xA;Preconditions: Credentials and Steam file path&#xA;Post action: Opens the Steam client " DisplayName="Open Steam Login" sap:VirtualizedContainerService.HintSize="1336,3339" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="uc:CvString" Name="Password" />
       <Variable x:TypeArguments="uc:CvString" Name="Username" />
@@ -98,7 +98,7 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If sap2010:Annotation.AnnotationText="Checks if the user is logged in already&#xD;&#xA;" Condition="[IsLoggedIn]" DisplayName="If logged in" sap:VirtualizedContainerService.HintSize="1294,2046" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="Checks if the user is logged in already&#xA;" Condition="[IsLoggedIn]" DisplayName="If logged in" sap:VirtualizedContainerService.HintSize="1294,2046" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -130,6 +130,7 @@
                 <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="875,1748" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="FailedLogIn" />
+                    <Variable x:TypeArguments="x:Boolean" Name="Popup" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -137,7 +138,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="797,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_2" Text="[in_Username]" />
-                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" Descriptor="[&quot;Target: InputBox (118,88,329,23)&quot; +&#xD;&#xA;&quot;Anchor: Text 'name' (79,97,27,6)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Click - InputBox" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_3" InformativeScreenshot="968570fdaa3679c73bd7754874633235" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
+                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" Descriptor="[&quot;Target: InputBox (118,88,329,23)&quot; +&#xA;&quot;Anchor: Text 'name' (79,97,27,6)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Click - InputBox" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_3" InformativeScreenshot="968570fdaa3679c73bd7754874633235" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
                     <p:CvClickWithDescriptor.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -184,7 +185,7 @@
                     </ui:SendHotkey.Target>
                   </ui:SendHotkey>
                   <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="797,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[Password]" />
-                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: InputBox (116,122,330,23)&quot; +&#xD;&#xA;&quot;Anchor: Text 'STEAM' (117,51,67,13)&quot; +&#xD;&#xA;&quot;Anchor: Image (46,123,67,22)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Click - InputBox" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="a5c60c144cb22ad8da47f664a925d868" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
+                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: InputBox (116,122,330,23)&quot; +&#xA;&quot;Anchor: Text 'STEAM' (117,51,67,13)&quot; +&#xA;&quot;Anchor: Image (46,123,67,22)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Click - InputBox" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="a5c60c144cb22ad8da47f664a925d868" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
                     <p:CvClickWithDescriptor.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -296,7 +297,7 @@
               </ActivityAction>
             </p:CVScope.Body>
             <p:CVScope.DesignTimeCache>
-              <uc:CVCache InformativeScreenshot="cf78aa5022bf643740712fbf1aa0bc84" LogicalPosition="1040, 535" OcrText="Steam name STEAM&#xD;&#xA;IjfybS10&#xD;&#xA;Remember my password&#xD;&#xA;LOGIN&#xD;&#xA;Need help witl sign in?&#xD;&#xA;Don' have a Steam account? CANCEL&#xD;&#xA;CANT SIGN&#xD;&#xA;CREATE A NEW AccouNT___" Position="1040, 535" ScaleFactor="1" ScreenshotGuid="a950d0bc-adb8-46a7-87e6-155591695696" ServerVersion="1">
+              <uc:CVCache InformativeScreenshot="cf78aa5022bf643740712fbf1aa0bc84" LogicalPosition="1040, 535" OcrText="Steam name STEAM&#xA;IjfybS10&#xA;Remember my password&#xA;LOGIN&#xA;Need help witl sign in?&#xA;Don' have a Steam account? CANCEL&#xA;CANT SIGN&#xA;CREATE A NEW AccouNT___" Position="1040, 535" ScaleFactor="1" ScreenshotGuid="a950d0bc-adb8-46a7-87e6-155591695696" ServerVersion="1">
                 <uc:CVCache.CvUiElements>
                   <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="16">
                     <uc:CvElementInfo Category="InputBox" Confidence="DesignTime" Region="115, 122, 332, 23" Score="1" />
@@ -364,5 +365,132 @@
         </Sequence>
       </If.Else>
     </If>
+    <TryCatch sap2010:Annotation.AnnotationText="Try closing the steam popup" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1294,642" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="z3/oS5VBOns8fNleMTxYfrU+MUQjYRZx4LD5nQIEib0H4zbjRvFsnkQHPA2VBbi3TxuXc6PzZLuB9YYiKKh/Sw==" DisplayName="CV Screen Scope 'steam.exe Steam'" sap:VirtualizedContainerService.HintSize="434,384" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V1">
+          <p:CVScope.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'CLOSE' (614,794,34,7)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,106" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_4" InformativeScreenshot="d782d08534c58f04e41a112f6f41c097" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
+                  <p:CvClickWithDescriptor.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </p:CvClickWithDescriptor.CursorPosition>
+                  <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                    <uc:CvDescriptor>
+                      <uc:CvDescriptor.Target>
+                        <uc:CvElementDescriptor DesignTimeArea="614, 794, 34, 7" ElementType="Text" Text="CLOSE" />
+                      </uc:CvDescriptor.Target>
+                    </uc:CvDescriptor>
+                  </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                  <p:CvClickWithDescriptor.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </p:CvClickWithDescriptor.Target>
+                </p:CvClickWithDescriptor>
+              </Sequence>
+            </ActivityAction>
+          </p:CVScope.Body>
+          <p:CVScope.DesignTimeCache>
+            <uc:CVCache InformativeScreenshot="1feffed2eb59ae90bd44cb2c33ca0457" LogicalPosition="606, 98" OcrText="Steam - News (I of 4) WEEKEND DE&#xD;&#xA;OFF&#xD;&#xA;SHARE: CLICK FOR DETAILS $29.99 CLOSE" Position="606, 98" ScaleFactor="1" ScreenshotGuid="6d9874d2-745b-4b7e-b432-1f5f47d71be9" ServerVersion="1">
+              <uc:CVCache.CvUiElements>
+                <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
+                  <uc:CvElementInfo Category="CloseButton" Confidence="DesignTime" Region="684, 7, 16, 16" Score="1" />
+                  <uc:CvElementInfo Category="MinimizeButton" Confidence="DesignTime" Region="668, 9, 17, 15" Score="1" />
+                  <uc:CvElementInfo Category="Button" Confidence="DesignTime" Region="607, 785, 85, 26" Score="1" />
+                  <uc:CvElementInfo Category="Icon" Confidence="DesignTime" Region="103, 681, 18, 18" Score="1" />
+                  <uc:CvElementInfo Category="Button" Confidence="DesignTime" Region="239, 657, 229, 50" Score="1" />
+                  <uc:CvElementInfo Category="Icon" Confidence="DesignTime" Region="123, 681, 20, 19" Score="1" />
+                  <uc:CvElementInfo Category="Icon" Confidence="DesignTime" Region="83, 682, 18, 17" Score="1" />
+                  <uc:CvElementInfo Category="Button" Confidence="DesignTime" Region="510, 784, 89, 27" Score="1" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="DesignTime" Region="512, 785, 86, 26" Score="1" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="DesignTime" Region="419, 786, 85, 25" Score="1" />
+                  <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="415, 785, 87, 25" Score="1" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="241, 658, 216, 50" Score="1" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="608, 785, 86, 26" Score="1" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="223, 421, 60, 65" Score="1" />
+                  <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="83, 682, 16, 16" Score="1" />
+                  <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="123, 681, 19, 18" Score="1" />
+                  <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="102, 682, 19, 18" Score="1" />
+                  <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="492, 650, 142, 68" Score="1" />
+                  <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="587, 678, 14, 13" Score="1" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="66, 722, 12, 12" Score="1" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="279, 550, 45, 46" Score="1" />
+                  <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="420, 790, 14, 15" Score="1" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="421, 791, 13, 15" Score="1" />
+                  <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="544, 792, 12, 11" Score="1" />
+                </scg:List>
+              </uc:CVCache.CvUiElements>
+              <uc:CVCache.OcrTexts>
+                <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="16">
+                  <uc:OcrTextInfo Region="11, 11, 32, 8" Text="Steam" />
+                  <uc:OcrTextInfo Region="46, 16, 4, 1" Text="-" />
+                  <uc:OcrTextInfo Region="53, 11, 27, 8" Text="News" />
+                  <uc:OcrTextInfo Region="84, 11, 8, 10" Text="(I" />
+                  <uc:OcrTextInfo Region="97, 11, 9, 8" Text="of" />
+                  <uc:OcrTextInfo Region="108, 11, 10, 10" Text="4)" />
+                  <uc:OcrTextInfo Region="204, 69, 200, 22" Text="WEEKEND" />
+                  <uc:OcrTextInfo Region="429, 69, 48, 22" Text="DE" />
+                  <uc:OcrTextInfo Region="377, 103, 75, 22" Text="OFF" />
+                  <uc:OcrTextInfo Region="86, 670, 39, 8" Text="SHARE:" />
+                  <uc:OcrTextInfo Region="263, 677, 55, 14" Text="CLICK" />
+                  <uc:OcrTextInfo Region="325, 677, 37, 14" Text="FOR" />
+                  <uc:OcrTextInfo Region="370, 677, 75, 14" Text="DETAILS" />
+                  <uc:OcrTextInfo Region="539, 670, 60, 18" Text="$29.99" />
+                  <uc:OcrTextInfo Region="614, 794, 34, 7" Text="CLOSE" />
+                </scg:List>
+              </uc:CVCache.OcrTexts>
+            </uc:CVCache>
+          </p:CVScope.DesignTimeCache>
+          <p:CVScope.OCREngine>
+            <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+              <ActivityFunc.Argument>
+                <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+              </ActivityFunc.Argument>
+              <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_1" Image="[Image]" Profile="Screen" />
+            </ActivityFunc>
+          </p:CVScope.OCREngine>
+          <p:CVScope.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4a1056432fccee3cf4eabc615ad1576b" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam - News*' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+          </p:CVScope.Target>
+        </p:CVScope>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[&quot;No news popup happened&quot;]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
   </Sequence>
 </Activity>
