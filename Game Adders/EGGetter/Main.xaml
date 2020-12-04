@@ -1,19 +1,18 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_OutputWorkbookPath="Data/Output/GamesAdded.xlsx" this:Main.in_InputWorkbook="Data/Input/GamesToAdd" this:Main.in_InputWorkbookSheet="Epic" this:Main.in_OutputWorkbookSheet="Epic" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_OutputWorkbookPath" Type="InArgument(x:String)" />
-    <x:Property Name="in_OutputWorkbookSheetName" Type="InArgument(x:String)" />
     <x:Property Name="in_EpicCredential" Type="InArgument(x:String)" />
+    <x:Property Name="in_InputWorkbook" Type="InArgument(x:String)" />
+    <x:Property Name="in_InputWorkbookSheet" Type="InArgument(x:String)" />
+    <x:Property Name="in_OutputWorkbookSheet" Type="InArgument(x:String)" />
   </x:Members>
-  <this:Main.in_OutputWorkbookSheetName>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Main.in_OutputWorkbookSheetName>
   <this:Main.in_EpicCredential>
     <InArgument x:TypeArguments="x:String" />
   </this:Main.in_EpicCredential>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>707.2,858.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>707.2,898.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -198,7 +197,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="518.4,1192.8" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="230.4,194.4" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
                 <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="473.6,716.8" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
@@ -534,7 +533,7 @@
                                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke OutputResultsToWorkbook workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="OutputResultsToWorkbook.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_OutputWorkbookPath]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">[in_OutputWorkbookSheetName]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">[in_OutputWorkbookSheet]</InArgument>
                                           <InArgument x:TypeArguments="sd:DataRow[]" x:Key="in_ResultRows">[GamesToAdd]</InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
@@ -551,7 +550,7 @@
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                           </ActivityAction.Argument>
-                                          <ui:LogMessage DisplayName="Log message (Failed to write to Excel)" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Error" Message="[String.Format(&quot;Failed to write results to workbook file at [{0}], sheet named [{1}].&quot;, in_OutputWorkbookPath, in_OutputWorkbookSheetName)]" />
+                                          <ui:LogMessage DisplayName="Log message (Failed to write to Excel)" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Error" Message="[String.Format(&quot;Failed to write results to workbook file at [{0}], sheet named [{1}].&quot;, in_OutputWorkbookPath, in_OutputWorkbookSheet)]" />
                                         </ActivityAction>
                                       </Catch>
                                     </TryCatch.Catches>
