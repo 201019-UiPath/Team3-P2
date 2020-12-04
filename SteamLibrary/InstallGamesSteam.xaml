@@ -64,7 +64,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange AddHeaders="True" DataTable="[FreeGames]" DisplayName="Read Games to Install" sap:VirtualizedContainerService.HintSize="1191,51" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="FreeGames" WorkbookPath="TestExcel.xlsx">
+    <ui:ReadRange AddHeaders="True" DataTable="[FreeGames]" DisplayName="Read Games to Install" sap:VirtualizedContainerService.HintSize="1191,51" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="FreeGames" WorkbookPath="Steam Games.xlsx">
       <ui:ReadRange.Range>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
