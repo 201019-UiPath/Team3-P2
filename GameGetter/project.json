@@ -3,6 +3,7 @@
   "description": "An Automation for fetching and adding free games to one's game accounts.",
   "main": "Main.xaml",
   "dependencies": {
+    "EpicGamesLibrary": "[0.7.1]",
     "UiPath.Credentials.Activities": "[1.1.6479.13204]",
     "UiPath.Excel.Activities": "[2.7.2]",
     "UiPath.System.Activities": "[19.10.1]",

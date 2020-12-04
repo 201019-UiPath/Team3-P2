@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>262,743</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>395.2,890.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckForLaunchers_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -53,9 +53,10 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CheckForLaunchers" sap:VirtualizedContainerService.HintSize="242,643" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CheckForLaunchers" sap:VirtualizedContainerService.HintSize="375.2,790.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="EpicAppFound" />
       <Variable x:TypeArguments="x:String" Name="SteamAppFound" />
@@ -65,7 +66,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Open Apps &amp; Features" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Searching for installed, supported launchers...&quot;]" />
+    <Sequence DisplayName="Open Apps &amp; Features" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -110,7 +112,7 @@
         </ui:Click.Target>
       </ui:Click>
     </Sequence>
-    <Sequence DisplayName="Search For Steam Launcher" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="Search For Steam Launcher" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -191,7 +193,7 @@
         </ui:AnchorBase.AnchorProvider>
       </ui:AnchorBase>
     </Sequence>
-    <Sequence DisplayName="Search For Epic Launcher" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Search For Epic Launcher" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -249,7 +251,7 @@
         </ui:GetFullText.Text>
       </ui:GetFullText>
     </Sequence>
-    <If Condition="[SteamAppFound.ToString.Equals(&quot;&quot;)]" DisplayName="Return If Steam Found" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[SteamAppFound.ToString.Equals(&quot;&quot;)]" DisplayName="Return If Steam Found" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -277,7 +279,7 @@
         </Assign>
       </If.Else>
     </If>
-    <If Condition="[EpicAppFound.ToString.Equals(&quot;&quot;)]" DisplayName="Return If Epic Found" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[EpicAppFound.ToString.Equals(&quot;&quot;)]" DisplayName="Return If Epic Found" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -305,7 +307,7 @@
         </Assign>
       </If.Else>
     </If>
-    <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'ApplicationFrameHost.ex...'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="c692a7bbcdc07a6fdbfe37750f4c6b80" Selector="&lt;wnd app='applicationframehost.exe' appid='windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel' title='Settings' /&gt;" WaitForReady="INTERACTIVE">
+    <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'ApplicationFrameHost.ex...'" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="c692a7bbcdc07a6fdbfe37750f4c6b80" Selector="&lt;wnd app='applicationframehost.exe' appid='windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel' title='Settings' /&gt;" WaitForReady="INTERACTIVE">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
