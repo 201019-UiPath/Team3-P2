@@ -32,7 +32,8 @@
       "privateWorkflows": [
         "Web/test.xaml",
         "Native/test.xaml",
-        "Native/ExtractFreeGamesButMoist.xaml"
+        "Native/ExtractFreeGamesButMoist.xaml",
+        "Web/ExtractFreeGames.xaml"
       ]
     },
     "fileInfos": []
