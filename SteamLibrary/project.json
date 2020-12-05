@@ -31,7 +31,8 @@
       "includeOriginalXaml": false,
       "privateWorkflows": [
         "Web/test.xaml",
-        "Native/test.xaml"
+        "Native/test.xaml",
+        "Native/ExtractFreeGamesButMoist.xaml"
       ]
     },
     "fileInfos": []
