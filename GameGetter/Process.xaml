@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>586.4,2640.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>586.4,2675.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -38,7 +38,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -58,10 +58,11 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Process" sap:VirtualizedContainerService.HintSize="566.4,2540.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Process" sap:VirtualizedContainerService.HintSize="566.4,2575.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="UserChoice" />
       <Variable x:TypeArguments="scg:ICollection(x:String)" Name="PossibleOptions" />
@@ -170,7 +171,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </If>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Here we find all the free games the user could add from whichever clients they selected." DisplayName="Find Games To Add" sap:VirtualizedContainerService.HintSize="524.8,664.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence sap2010:Annotation.AnnotationText="Here we find all the free games the user could add from whichever clients they selected." DisplayName="Find Games To Add" sap:VirtualizedContainerService.HintSize="524.8,699.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:Browser" Name="getEpicGamesBrowser" />
       </Sequence.Variables>
@@ -193,14 +194,14 @@
             <ui:InvokeWorkflowFile.Arguments>
               <OutArgument x:TypeArguments="scg1:Queue(scg:KeyValuePair(x:String, x:String))" x:Key="out_UnaddedFreeGames" />
               <InArgument x:TypeArguments="x:Int32" x:Key="in_MaxResultNumber">150</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_Config("EpicWorkbookPath").ToString()]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_Config("WBGetOutputPath").ToString()]</InArgument>
               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">[EpicChoice]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </If.Then>
       </If>
-      <If Condition="[UserChoice = SteamChoice or UserChoice = PossibleOptions.Last]" DisplayName="If the user chose Steam" sap:VirtualizedContainerService.HintSize="483.2,263.2" sap2010:WorkflowViewState.IdRef="If_8">
+      <If Condition="[UserChoice = SteamChoice or UserChoice = PossibleOptions.Last]" DisplayName="If the user chose Steam" sap:VirtualizedContainerService.HintSize="483.2,297.6" sap2010:WorkflowViewState.IdRef="If_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -208,7 +209,18 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <ui:Comment sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Here is where we get the list of Steam games to add (compare library games to total free games and only leave the free games the user doesn't have)" />
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Here is where we get the list of Steam games to add (compare library games to total free games and only leave the free games the user doesn't have)" DisplayName="Invoke Get Unadded Steam Games workflow" sap:VirtualizedContainerService.HintSize="333.6,148" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Steam\Getter\Get Unadded Steam Games.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">[in_Config("WBSteamSheet").ToString()]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_Config("WBGetOutputPath").ToString()]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Credential">[in_Config("SteamCredential").ToString()]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
         </If.Then>
       </If>
     </Sequence>
