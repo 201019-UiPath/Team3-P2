@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Username" Type="InArgument(x:String)" />
     <x:Property Name="in_Password" Type="InArgument(ss:SecureString)" />
@@ -10,10 +10,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>661.6,1372.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1072.8,1672.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="22">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -36,10 +36,10 @@
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Security</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -56,22 +56,22 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow logs into a Steam account on the website by using the associated email and password directly. This workflow throws a AuthenticationException if the login failed with the given credentials." DisplayName="Login (Web)" sap:VirtualizedContainerService.HintSize="641.6,1272.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow logs into a Steam account on the website by using the associated email and password directly. This workflow throws a AuthenticationException if the login failed with the given credentials." DisplayName="Login (Web)" sap:VirtualizedContainerService.HintSize="1052.8,1612.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="600,1136" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="1011.2,1476" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="Takes in a username, a password (SecureString), and a pre-opened browser, and uses them to login to Steam on a website." DisplayName="Login with Steam Account" sap:VirtualizedContainerService.HintSize="566.4,983.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence sap2010:Annotation.AnnotationText="Takes in a username, a password (SecureString), and a pre-opened browser, and uses them to login to Steam on a website." DisplayName="Login with Steam Account" sap:VirtualizedContainerService.HintSize="977.6,1336" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -79,8 +79,8 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Login page" sap:VirtualizedContainerService.HintSize="524.8,60" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="https://steamcommunity.com/login/home/" />
-            <Sequence DisplayName="Do login inputs" sap:VirtualizedContainerService.HintSize="524.8,68.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Login page" sap:VirtualizedContainerService.HintSize="936,60" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="https://steamcommunity.com/login/home/" />
+            <Sequence DisplayName="Do login inputs" sap:VirtualizedContainerService.HintSize="936,68.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <Sequence.Variables>
                 <Variable x:TypeArguments="ui:UiElement" Name="emailInputElem" />
                 <Variable x:TypeArguments="ui:UiElement" Name="passwordInputElem" />
@@ -175,9 +175,10 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:SendHotkey>
             </Sequence>
-            <Sequence sap2010:Annotation.AnnotationText="This checks if the login failure prompt pops up. If it does, we throw a AuthenticationException to signal to the invoking workflow that it didn't work, and that the input credentials were invalid." DisplayName="Check login failure" sap:VirtualizedContainerService.HintSize="524.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence sap2010:Annotation.AnnotationText="This checks if the login failure prompt pops up. If it does, we throw a AuthenticationException to signal to the invoking workflow that it didn't work, and that the input credentials were invalid." DisplayName="Check login failure" sap:VirtualizedContainerService.HintSize="936,1003.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="errorElementExists" />
+                <Variable x:TypeArguments="x:Boolean" Name="steamGuardPopupExists" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -185,20 +186,87 @@
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:UiElementExists DisplayName="Error Element Exists" Exists="[errorElementExists]" sap:VirtualizedContainerService.HintSize="483.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists DisplayName="Element Exists 'Steam Guard popup'" Exists="[steamGuardPopupExists]" sap:VirtualizedContainerService.HintSize="894.4,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8e31516c46c6e4e5750f563801928120" Selector="&lt;webctrl id='error_display' tag='DIV' /&gt;" TimeoutMS="7000">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="6a96189aaa18bec42ee888463da187af" Selector="&lt;webctrl aaname='Steam Guard' tag='DIV' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
                     <ui:Target.WaitForReady>
                       <InArgument x:TypeArguments="ui:WaitForReady" />
                     </ui:Target.WaitForReady>
                   </ui:Target>
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
-              <ui:CheckFalse DisplayName="Check False" ErrorMessage="Login failed" Expression="[errorElementExists]" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="CheckFalse_1" />
-              <If Condition="[errorElementExists]" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[steamGuardPopupExists]" sap:VirtualizedContainerService.HintSize="894.4,719.2" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[New Authentication.AuthenticationException(&quot;Login failed&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" />
+                  <Sequence sap:VirtualizedContainerService.HintSize="475.2,569.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Steam Guard popup has appeared. Check your email and enter your code.&quot;]" />
+                    <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear 'DIV'" sap:VirtualizedContainerService.HintSize="433.6,376.8" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_1" RepeatForever="True">
+                      <ui:OnUiElementAppear.Body>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,200" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:Click DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="3000" DisplayName="Click 'A  success_continue_btn'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                            <ui:Click.CursorPosition>
+                              <ui:CursorPosition Position="Center">
+                                <ui:CursorPosition.OffsetX>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetX>
+                                <ui:CursorPosition.OffsetY>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetY>
+                              </ui:CursorPosition>
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="17d9821a2bda1c3ecd553140cb29dba6" Selector="&lt;webctrl id='success_continue_btn' tag='A' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:Click.Target>
+                          </ui:Click>
+                        </Sequence>
+                      </ui:OnUiElementAppear.Body>
+                      <ui:OnUiElementAppear.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f9974b74e38d5e45adf54a689aa2ce42" Selector="&lt;webctrl id='auth_message_success' tag='DIV' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:OnUiElementAppear.Target>
+                    </ui:OnUiElementAppear>
+                  </Sequence>
                 </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,328" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:UiElementExists DisplayName="Error Element Exists" Exists="[errorElementExists]" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8e31516c46c6e4e5750f563801928120" Selector="&lt;webctrl id='error_display' tag='DIV' /&gt;" TimeoutMS="7000" WaitForReady="COMPLETE" />
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <ui:CheckFalse DisplayName="Check False" ErrorMessage="Login failed" Expression="[errorElementExists]" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="CheckFalse_1" />
+                  </Sequence>
+                </If.Else>
               </If>
             </Sequence>
           </Sequence>
