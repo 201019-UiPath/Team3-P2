@@ -8,7 +8,7 @@
   <sap:VirtualizedContainerService.HintSize>550,2367</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractFreeGames_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="42">
+    <scg:List x:TypeArguments="x:String" Capacity="24">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -32,10 +32,11 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Excel</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -81,6 +82,9 @@
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="454,1795" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="s:String[]" Name="GameArray3" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -162,7 +166,7 @@
                 <InArgument x:TypeArguments="s:String[]">[GameArray1.Concat(GameArray2).ToArray]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Take every other element in GameArray, then add that value into the GamesList" Code="&#xA;    Dim i As Integer = 0&#xA;    For i = 0 To in_strArray.Length - 1&#xA;        If (i Mod 2 = 0) Then&#xA;            out_GameTitleList.Add(in_strArray(i).Trim())&#xA;        End If&#xA;    Next&#xA;" DisplayName="Invoke  code to get list" sap:VirtualizedContainerService.HintSize="412,206" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+            <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Take every other element in GameArray, then add that value into the GamesList" Code="&#xD;&#xA;Dim i As Integer = 0&#xD;&#xA;Dim str As String&#xD;&#xA;    Dim expr As Regex = New Regex(&quot;[\u00AE\u2122\u00A9]&quot;)&#xD;&#xA;For i = 0 To in_strArray.Length - 1&#xD;&#xA;    If (i Mod 2 = 0) Then&#xD;&#xA;&#x9;&#x9;str = expr.Replace(in_strArray(i), &quot;&quot;).Trim()&#xD;&#xA;        out_GameTitleList.Add(str)&#xD;&#xA;    End If&#xD;&#xA;Next&#xD;&#xA;" DisplayName="Invoke  code to get list" sap:VirtualizedContainerService.HintSize="412,206" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
               <ui:InvokeCode.Arguments>
                 <InArgument x:TypeArguments="s:String[]" x:Key="in_strArray">[GameArray]</InArgument>
                 <InArgument x:TypeArguments="scg:List(x:String)" x:Key="out_GameTitleList">[GameTitleList]</InArgument>
