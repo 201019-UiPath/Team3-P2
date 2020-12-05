@@ -3,7 +3,6 @@
   "description": "A library of activities for navigating and accessing the Steam launcher and website.",
   "main": "NewActivity.xaml",
   "dependencies": {
-    "System.Text.RegularExpressions": "4.3.1",
     "UiPath.Credentials.Activities": "1.1.6479.13204",
     "UiPath.Excel.Activities": "2.9.3",
     "UiPath.Mail.Activities": "1.7.2",
