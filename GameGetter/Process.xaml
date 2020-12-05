@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>261.6,813.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>586.4,2640.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -181,7 +181,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[UserChoice = &quot;Epic&quot; or UserChoice = PossibleOptions.Last]" DisplayName="If the user chose Epic" sap:VirtualizedContainerService.HintSize="483.2,237.6" sap2010:WorkflowViewState.IdRef="If_7">
+      <If Condition="[UserChoice = EpicChoice or UserChoice = PossibleOptions.Last]" DisplayName="If the user chose Epic" sap:VirtualizedContainerService.HintSize="483.2,237.6" sap2010:WorkflowViewState.IdRef="If_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -200,7 +200,7 @@
           </ui:InvokeWorkflowFile>
         </If.Then>
       </If>
-      <If Condition="[UserChoice = &quot;Steam&quot; or UserChoice = PossibleOptions.Last]" DisplayName="If the user chose Steam" sap:VirtualizedContainerService.HintSize="483.2,263.2" sap2010:WorkflowViewState.IdRef="If_8">
+      <If Condition="[UserChoice = SteamChoice or UserChoice = PossibleOptions.Last]" DisplayName="If the user chose Steam" sap:VirtualizedContainerService.HintSize="483.2,263.2" sap2010:WorkflowViewState.IdRef="If_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -228,7 +228,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[UserChoice = &quot;Epic&quot; or UserChoice = PossibleOptions.Last]" sap:VirtualizedContainerService.HintSize="483.2,237.6" sap2010:WorkflowViewState.IdRef="If_9">
+      <If Condition="[UserChoice = EpicChoice or UserChoice = PossibleOptions.Last]" sap:VirtualizedContainerService.HintSize="483.2,237.6" sap2010:WorkflowViewState.IdRef="If_9">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -236,7 +236,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EGAdderMain workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Epic\EpicAdder\EGAdderMain.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EGAdderMain workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Epic/EpicAdder/EGAdderMain.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_OutputWorkbookPath">Data/Output/GamesAdded.xlsx</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_EpicCredential">EpicCredential</InArgument>
@@ -247,7 +247,7 @@
           </ui:InvokeWorkflowFile>
         </If.Then>
       </If>
-      <If Condition="[UserChoice = &quot;Steam&quot; or UserChoice = PossibleOptions.Last]" sap:VirtualizedContainerService.HintSize="483.2,301.6" sap2010:WorkflowViewState.IdRef="If_10">
+      <If Condition="[UserChoice = SteamChoice or UserChoice = PossibleOptions.Last]" sap:VirtualizedContainerService.HintSize="483.2,301.6" sap2010:WorkflowViewState.IdRef="If_10">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -268,7 +268,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:Comment sap:VirtualizedContainerService.HintSize="333.6,56" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Write your comments in the Text property" />
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Here we show the user the games that were successfully installed. Probably email them or something cool like that.&#xD;&#xA;&#xD;&#xA;We could also ask the user if they want to run it again, and if they don't we could throw a BusinessRuleException." DisplayName="End process and show user result" sap:VirtualizedContainerService.HintSize="524.8,240.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence sap2010:Annotation.AnnotationText="Here we show the user the games that were successfully installed. Probably email them or something cool like that.&#xA;&#xA;We could also ask the user if they want to run it again, and if they don't we could throw a BusinessRuleException." DisplayName="End process and show user result" sap:VirtualizedContainerService.HintSize="524.8,240.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
