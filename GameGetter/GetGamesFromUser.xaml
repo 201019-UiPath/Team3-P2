@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>496,1221</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1136,2579</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetGamesFromUser_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -65,7 +65,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This sequence takes in a datatable, then displays the game titles to the user with checkboxes for wanting to install and add a game. &#xD;&#xA;&#xD;&#xA;Input Arguments:&#xD;&#xA;in_workbook (string): workbook path of the list of all free games&#xD;&#xA;in_launcher (string): the name of the launcher being used. (Steam or Epic Games)&#xD;&#xA;&#xD;&#xA;Precondition: N/A&#xD;&#xA;Post action: writes 2 excel sheets to Temp data called {launcher}GamesToAdd.xlsx and {launcher}GamesToInstall.xslx" DisplayName="GetGamesFromUser" sap:VirtualizedContainerService.HintSize="476,1161" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This sequence takes in a datatable, then displays the game titles to the user with checkboxes for wanting to install and add a game. &#xA;&#xA;Input Arguments:&#xA;in_workbook (string): workbook path of the list of all free games&#xA;in_launcher (string): the name of the launcher being used. (Steam or Epic Games)&#xA;&#xA;Precondition: N/A&#xA;Post action: writes 2 excel sheets to Temp data called {launcher}GamesToAdd.xlsx and {launcher}GamesToInstall.xslx" DisplayName="GetGamesFromUser" sap:VirtualizedContainerService.HintSize="1116,2479" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="data" />
       <Variable x:TypeArguments="njl:JObject" Name="jsonObject" />
@@ -79,7 +79,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange AddHeaders="True" sap2010:Annotation.AnnotationText="You can send in any list of games as long as they have the columns: &#xA;Titile, Add, Install&#xA;&#xA;Use in_workbook to pass in filepath to file" DataTable="[data]" DisplayName="Read Range of games" sap:VirtualizedContainerService.HintSize="434,179" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[in_workbook]">
+    <ui:ReadRange AddHeaders="True" sap2010:Annotation.AnnotationText="You can send in any list of games as long as they have the columns: &#xA;Titile, Add, Install&#xA;&#xA;Use in_workbook to pass in filepath to file" DataTable="[data]" DisplayName="Read Range of games" sap:VirtualizedContainerService.HintSize="1074,174" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[in_workbook]">
       <ui:ReadRange.Range>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
@@ -91,10 +91,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReadRange>
-    <ufa:FormActivity Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormTitle="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" sap2010:Annotation.AnnotationText="Creates form for user interactrion. &#xA;&#xA;Input: datatable&#xA;Output: Json string" DisableMaximizeButton="False" DisableMinimizeButton="False" DisplayName="Create Form" FormFieldsOutputData="[jsonString]" FormHeight="400" FormSchema="%[{&quot;tag&quot;:&quot;h2&quot;,&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;Launcher: {{data.launcher}}&quot;,&quot;key&quot;:&quot;launcher&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;},{&quot;label&quot;:&quot;List of Game Titles&quot;,&quot;disableAddingRemovingRows&quot;:true,&quot;reorder&quot;:false,&quot;defaultOpen&quot;:false,&quot;layoutFixed&quot;:false,&quot;enableRowGroups&quot;:false,&quot;key&quot;:&quot;data&quot;,&quot;type&quot;:&quot;datagrid&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Game Title&quot;,&quot;spellcheck&quot;:true,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;Title&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;Add Game to Library&quot;,&quot;optionsLabelPosition&quot;:&quot;right&quot;,&quot;inline&quot;:false,&quot;tableView&quot;:false,&quot;defaultValue&quot;:&quot;yes&quot;,&quot;values&quot;:[{&quot;label&quot;:&quot;Yes&quot;,&quot;value&quot;:&quot;yes&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;No&quot;,&quot;value&quot;:&quot;no&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;Add&quot;,&quot;type&quot;:&quot;radio&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;Install Game&quot;,&quot;optionsLabelPosition&quot;:&quot;right&quot;,&quot;inline&quot;:false,&quot;tableView&quot;:false,&quot;defaultValue&quot;:&quot;no&quot;,&quot;values&quot;:[{&quot;label&quot;:&quot;Yes&quot;,&quot;value&quot;:&quot;yes&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;No&quot;,&quot;value&quot;:&quot;no&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;Install&quot;,&quot;type&quot;:&quot;radio&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false}],&quot;calculateServer&quot;:false},{&quot;type&quot;:&quot;button&quot;,&quot;label&quot;:&quot;Submit&quot;,&quot;key&quot;:&quot;submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;input&quot;:true,&quot;alwaysEnabled&quot;:true,&quot;tableView&quot;:true,&quot;calculateServer&quot;:false}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100200&quot;,&quot;Name&quot;:&quot;Paper&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/paper.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/paper.png&quot;,&quot;OverrideCssUrl&quot;:&quot;&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormWidth="800" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="434,286" sap2010:WorkflowViewState.IdRef="FormActivity_1" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False">
+    <ufa:FormActivity Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormTitle="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" sap2010:Annotation.AnnotationText="Creates form for user interactrion. &#xA;&#xA;Input: datatable&#xA;Output: Json string" DisableMaximizeButton="False" DisableMinimizeButton="False" DisplayName="Create Form" FormFieldsOutputData="[jsonString]" FormHeight="400" FormSchema="%[{&quot;tag&quot;:&quot;h2&quot;,&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;Launcher: {{data.launcher}}&quot;,&quot;key&quot;:&quot;launcher&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;},{&quot;label&quot;:&quot;List of Game Titles&quot;,&quot;disableAddingRemovingRows&quot;:true,&quot;reorder&quot;:false,&quot;defaultOpen&quot;:false,&quot;layoutFixed&quot;:false,&quot;enableRowGroups&quot;:false,&quot;key&quot;:&quot;data&quot;,&quot;type&quot;:&quot;datagrid&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Game Title&quot;,&quot;spellcheck&quot;:true,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;Title&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;Add Game to Library&quot;,&quot;optionsLabelPosition&quot;:&quot;right&quot;,&quot;inline&quot;:false,&quot;tableView&quot;:false,&quot;defaultValue&quot;:&quot;yes&quot;,&quot;values&quot;:[{&quot;label&quot;:&quot;Yes&quot;,&quot;value&quot;:&quot;yes&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;No&quot;,&quot;value&quot;:&quot;no&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;Add&quot;,&quot;type&quot;:&quot;radio&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false},{&quot;label&quot;:&quot;Install Game&quot;,&quot;optionsLabelPosition&quot;:&quot;right&quot;,&quot;inline&quot;:false,&quot;tableView&quot;:false,&quot;defaultValue&quot;:&quot;no&quot;,&quot;values&quot;:[{&quot;label&quot;:&quot;Yes&quot;,&quot;value&quot;:&quot;yes&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;No&quot;,&quot;value&quot;:&quot;no&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;key&quot;:&quot;Install&quot;,&quot;type&quot;:&quot;radio&quot;,&quot;input&quot;:true,&quot;calculateServer&quot;:false}],&quot;calculateServer&quot;:false},{&quot;type&quot;:&quot;button&quot;,&quot;label&quot;:&quot;Submit&quot;,&quot;key&quot;:&quot;submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;input&quot;:true,&quot;alwaysEnabled&quot;:true,&quot;tableView&quot;:true,&quot;calculateServer&quot;:false}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100200&quot;,&quot;Name&quot;:&quot;Paper&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/paper.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/paper.png&quot;,&quot;OverrideCssUrl&quot;:&quot;&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormWidth="800" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="1074,281" sap2010:WorkflowViewState.IdRef="FormActivity_1" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False">
       <ufa:FormActivity.Body>
         <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -118,40 +118,40 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ufa:FormActivity>
-    <TryCatch sap2010:Annotation.AnnotationText="If the input form gets closed without saving the form, the jsonString will be null and deserializing it will throw an  ArgumentNullException.&#xD;&#xA;" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,352" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch sap2010:Annotation.AnnotationText="If the input form gets closed without saving the form, the jsonString will be null and deserializing it will throw an  ArgumentNullException.&#xA;" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1074,1720" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1036,1539" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="1036,1471" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON string from input form" sap:VirtualizedContainerService.HintSize="994,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_6" JsonObject="[jsonObject]" JsonString="[jsonString]" />
-          <ui:BuildDataTable DataTable="[GamesToAdd]" DisplayName="Build Data Table for added games" sap:VirtualizedContainerService.HintSize="994,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Title&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-          <ui:BuildDataTable DataTable="[GamesToInstall]" DisplayName="Build Data Table for installed games" sap:VirtualizedContainerService.HintSize="994,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Title&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-          <If Condition="[jsonObject(&quot;submit&quot;).ToString = (True).ToString]" DisplayName="If the form was submitted properly" sap:VirtualizedContainerService.HintSize="994,1149" sap2010:WorkflowViewState.IdRef="If_2">
+          <ui:BuildDataTable DataTable="[GamesToAdd]" DisplayName="Build Data Table for added games" sap:VirtualizedContainerService.HintSize="994,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Title&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+          <ui:BuildDataTable DataTable="[GamesToInstall]" DisplayName="Build Data Table for installed games" sap:VirtualizedContainerService.HintSize="994,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Title&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+          <If Condition="[jsonObject(&quot;submit&quot;).ToString = (True).ToString]" DisplayName="If the form was submitted properly" sap:VirtualizedContainerService.HintSize="994,1081" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
-              <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each item in the json data set" sap:VirtualizedContainerService.HintSize="849,999" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[jsonObject(&quot;data&quot;)]">
+              <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each item in the json data set" sap:VirtualizedContainerService.HintSize="849,933" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[jsonObject(&quot;data&quot;)]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="njl:JObject">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="njl:JObject" Name="item" />
                     </ActivityAction.Argument>
-                    <Sequence sap2010:Annotation.AnnotationText="For each item in the data set, we need to check if they game should be installed or added. All installed games must be added to the library first.&#xD;&#xA;&#xD;&#xA;Once completed, this sequence then updates the respective files in the Temp folder." DisplayName="Body" sap:VirtualizedContainerService.HintSize="813,864" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence sap2010:Annotation.AnnotationText="For each item in the data set, we need to check if they game should be installed or added. All installed games must be added to the library first.&#xA;&#xA;Once completed, this sequence then updates the respective files in the Temp folder." DisplayName="Body" sap:VirtualizedContainerService.HintSize="813,799" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[item(&quot;Install&quot;).ToString = &quot;yes&quot;]" DisplayName="If game should be installed" sap:VirtualizedContainerService.HintSize="771,402" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If Condition="[item(&quot;Install&quot;).ToString = &quot;yes&quot;]" DisplayName="If game should be installed" sap:VirtualizedContainerService.HintSize="771,396" sap2010:WorkflowViewState.IdRef="If_3">
                         <If.Then>
-                          <Sequence sap2010:Annotation.AnnotationText="If the game should be installed, it should also be added. This makes sure they get added to both&#xD;&#xA;" DisplayName="Add gamesto tables" sap:VirtualizedContainerService.HintSize="242,252" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <Sequence sap2010:Annotation.AnnotationText="If the game should be installed, it should also be added. This makes sure they get added to both&#xA;" DisplayName="Add gamesto tables" sap:VirtualizedContainerService.HintSize="242,248" sap2010:WorkflowViewState.IdRef="Sequence_7">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -163,27 +163,27 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <If Condition="[item(&quot;Add&quot;).ToString = &quot;yes&quot;]" DisplayName="If game should be added" sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_4">
+                          <If Condition="[item(&quot;Add&quot;).ToString = &quot;yes&quot;]" DisplayName="If game should be added" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_4">
                             <If.Then>
                               <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{item(&quot;Title&quot;), &quot;Received&quot;}]" DataTable="[GamesToAdd]" DisplayName="Add Data Row to GamesToAdd" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
                             </If.Then>
                           </If>
                         </If.Else>
                       </If>
-                      <ui:WriteRange AddHeaders="True" DataTable="[GamesToAdd]" DisplayName="Write to GamesToAdd file" sap:VirtualizedContainerService.HintSize="771,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="[&quot;Data\Temp\&quot; + in_launcher +&quot;GamesToAdd.xlsx&quot;]">
-                        <ui:WriteRange.StartingCell>
-                          <InArgument x:TypeArguments="x:String">
-                            <Literal x:TypeArguments="x:String" Value="" />
-                          </InArgument>
-                        </ui:WriteRange.StartingCell>
-                      </ui:WriteRange>
-                      <ui:WriteRange AddHeaders="True" DataTable="[GamesToInstall]" DisplayName="Write to GamesToInstall file" sap:VirtualizedContainerService.HintSize="771,115" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" WorkbookPath="[&quot;Data\Temp\&quot; + in_launcher +&quot;GamesToInstall.xlsx&quot;]">
-                        <ui:WriteRange.StartingCell>
-                          <InArgument x:TypeArguments="x:String">
-                            <Literal x:TypeArguments="x:String" Value="" />
-                          </InArgument>
-                        </ui:WriteRange.StartingCell>
-                      </ui:WriteRange>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WriteToOutputSheet workflow - Add Games" sap:VirtualizedContainerService.HintSize="771,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="WriteToOutputSheet.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">["Data\Temp\" + in_launcher +"GamesToAdd.xlsx"]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TableToWrite">[GamesToAdd]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">Sheet1</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WriteToOutputSheet workflow - Install Games" sap:VirtualizedContainerService.HintSize="771,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="WriteToOutputSheet.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">["Data\Temp\" + in_launcher +"GamesToInstall.xlsx"]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TableToWrite">[GamesToInstall]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">Sheet1</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEach.Body>
@@ -193,7 +193,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1040,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -204,13 +204,13 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Input was cancelled&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Input was cancelled&quot;]" />
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="s:ArgumentNullException" sap:VirtualizedContainerService.HintSize="400,163" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+        <Catch x:TypeArguments="s:ArgumentNullException" sap:VirtualizedContainerService.HintSize="1040,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -218,7 +218,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:ArgumentNullException" Name="exception" />
             </ActivityAction.Argument>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Input was cancelled&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Input was cancelled&quot;]" />
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
