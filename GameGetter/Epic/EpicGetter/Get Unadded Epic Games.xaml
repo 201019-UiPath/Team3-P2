@@ -2,17 +2,11 @@
   <x:Members>
     <x:Property Name="out_UnaddedFreeGames" Type="OutArgument(scg:Queue(scg1:KeyValuePair(x:String, x:String)))" />
     <x:Property sap2010:Annotation.AnnotationText="This number represents the cap on how many possible results to find from the Epic free games." Name="in_MaxResultNumber" Type="InArgument(x:Int32)" />
-    <x:Property Name="in_EpicCredential" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="This represents the relative path for this workflow to write an XLSX file to." Name="in_WorkbookOutputPath" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="The name of the sheet written to for the workbook at the path specified by the in_WorkbookPath argument." Name="in_WorkbookOutputSheetName" Type="InArgument(x:String)" />
-    <x:Property Name="in_StatusText" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg1:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <this:Main.in_EpicCredential>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Main.in_EpicCredential>
-  <this:Main.in_StatusText>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Main.in_StatusText>
+  <this:Main.in_Config>
+    <InArgument x:TypeArguments="scg1:Dictionary(x:String, x:Object)" />
+  </this:Main.in_Config>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
@@ -110,7 +104,7 @@
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetAppCredentials workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\GetAppCredentials.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="x:String" x:Key="out_Username">[email]</OutArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_Credential">[in_EpicCredential]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Credential">[in_Config("EpicCredential").ToString()]</InArgument>
                   <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">[password]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
@@ -220,14 +214,14 @@
       </Sequence>
       <If Condition="[GameDT.Columns(&quot;Status&quot;) is nothing]" DisplayName="If there is no status column" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_4">
         <If.Then>
-          <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Status" DataTable="[GameDT]" DefaultValue="[in_StatusText]" DisplayName="Add Status Column" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+          <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Status" DataTable="[GameDT]" DefaultValue="[in_Config(&quot;StatusRetrieved&quot;).ToString()]" DisplayName="Add Status Column" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
         </If.Then>
       </If>
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WriteToOutputSheet workflow" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="WriteToOutputSheet.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_WorkbookOutputPath]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_Config("EpicGetOutputPath").ToString()]</InArgument>
           <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TableToWrite">[GameDT]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">[in_WorkbookOutputSheetName]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">[in_Config("EpicGetOutputSheet").ToString()]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
