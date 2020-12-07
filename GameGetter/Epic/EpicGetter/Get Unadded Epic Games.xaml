@@ -5,14 +5,18 @@
     <x:Property Name="in_EpicCredential" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="This represents the relative path for this workflow to write an XLSX file to." Name="in_WorkbookOutputPath" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="The name of the sheet written to for the workbook at the path specified by the in_WorkbookPath argument." Name="in_WorkbookOutputSheetName" Type="InArgument(x:String)" />
+    <x:Property Name="in_StatusText" Type="InArgument(x:String)" />
   </x:Members>
   <this:Main.in_EpicCredential>
     <InArgument x:TypeArguments="x:String" />
   </this:Main.in_EpicCredential>
+  <this:Main.in_StatusText>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_StatusText>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>512,1649.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>586.4,1899.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg1:List x:TypeArguments="x:String" Capacity="24">
@@ -64,11 +68,11 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg1:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get Unadded Epic Games" sap:VirtualizedContainerService.HintSize="492,1549.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
+  <Sequence DisplayName="Get Unadded Epic Games" sap:VirtualizedContainerService.HintSize="566.4,1799.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="CurrentBrowser" />
       <Variable x:TypeArguments="scg:Queue(scg1:KeyValuePair(x:String, x:String))" Default="[new Queue(of KeyValuePair(Of String, String))]" Name="GamesToProcess" />
@@ -80,7 +84,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg1:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser BrowserType="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="450.4,560.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[CurrentBrowser]" Url="https://www.epicgames.com/logout">
+    <ui:OpenBrowser BrowserType="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="524.8,560.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[CurrentBrowser]" Url="https://www.epicgames.com/logout">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -118,7 +122,7 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <ui:ForEach x:TypeArguments="scg1:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each Found Free Game" sap:VirtualizedContainerService.HintSize="450.4,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[freeGamesDict]">
+    <ui:ForEach x:TypeArguments="scg1:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each Found Free Game" sap:VirtualizedContainerService.HintSize="524.8,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[freeGamesDict]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="scg1:KeyValuePair(x:String, x:String)">
           <ActivityAction.Argument>
@@ -170,7 +174,7 @@
         </scg1:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <Assign sap:VirtualizedContainerService.HintSize="450.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="524.8,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:Queue(scg1:KeyValuePair(x:String, x:String))">[out_UnaddedFreeGames]</OutArgument>
       </Assign.To>
@@ -178,7 +182,7 @@
         <InArgument x:TypeArguments="scg:Queue(scg1:KeyValuePair(x:String, x:String))">[GamesToProcess]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="Write unadded games to Excel workbook" sap:VirtualizedContainerService.HintSize="450.4,663.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence DisplayName="Write unadded games to Excel workbook" sap:VirtualizedContainerService.HintSize="524.8,912.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="GameDT" />
       </Sequence.Variables>
@@ -188,7 +192,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg1:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Make Data Table" sap:VirtualizedContainerService.HintSize="375.2,442.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <Sequence DisplayName="Make Data Table" sap:VirtualizedContainerService.HintSize="483.2,442.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
         <sap:WorkflowViewStateService.ViewState>
           <scg1:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -214,7 +218,12 @@
           </ui:ForEach.Body>
         </ui:ForEach>
       </Sequence>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WriteToOutputSheet workflow" sap:VirtualizedContainerService.HintSize="375.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="WriteToOutputSheet.xaml">
+      <If Condition="[GameDT.Columns(&quot;Status&quot;) is nothing]" DisplayName="If there is no status column" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_4">
+        <If.Then>
+          <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Status" DataTable="[GameDT]" DefaultValue="[in_StatusText]" DisplayName="Add Status Column" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+        </If.Then>
+      </If>
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WriteToOutputSheet workflow" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="WriteToOutputSheet.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_WorkbookOutputPath]</InArgument>
           <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TableToWrite">[GameDT]</InArgument>
