@@ -137,7 +137,7 @@
                             <scg:Dictionary x:TypeArguments="x:String, Argument" />
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RunAllTests_Logging workflow (Success)" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Epic/EpicInstaller/Tests/RunAllTests_Logging.xaml">
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RunAllTests_Logging workflow (Success)" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Epic/Installer/Tests/RunAllTests_Logging.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:Int32" x:Key="in_TestCounter">[TestCounter]</InArgument>
                             <InOutArgument x:TypeArguments="x:Int32" x:Key="io_FailedTestsCounter">[FailedTestsCounter]</InOutArgument>
@@ -165,7 +165,7 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
                           </ActivityAction.Argument>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RunAllTests_Loggingg (System Exception)" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Epic/EpicInstaller/Tests/RunAllTests_Logging.xaml">
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RunAllTests_Loggingg (System Exception)" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Epic/Installer/Tests/RunAllTests_Logging.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:Int32" x:Key="in_TestCounter">[TestCounter]</InArgument>
                               <InOutArgument x:TypeArguments="x:Int32" x:Key="io_FailedTestsCounter">[FailedTestsCounter]</InOutArgument>
@@ -192,7 +192,7 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="Exception" />
                           </ActivityAction.Argument>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RunAllTests_Logging (Business Exception)" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Epic/EpicInstaller/Tests/RunAllTests_Logging.xaml">
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RunAllTests_Logging (Business Exception)" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Epic/Installer/Tests/RunAllTests_Logging.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:Int32" x:Key="in_TestCounter">[TestCounter]</InArgument>
                               <InOutArgument x:TypeArguments="x:Int32" x:Key="io_FailedTestsCounter">[FailedTestsCounter]</InOutArgument>
