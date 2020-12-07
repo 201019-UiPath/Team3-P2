@@ -1,21 +1,18 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_MaxResultNumber="150" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ewf="clr-namespace:EpicGamesLibrary.Web.Find;assembly=EpicGamesLibrary" xmlns:ewl="clr-namespace:EpicGamesLibrary.Web.Login;assembly=EpicGamesLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_MaxResultNumber="150" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ewf="clr-namespace:EpicGamesLibrary.Web.Find;assembly=EpicGamesLibrary" xmlns:ewl="clr-namespace:EpicGamesLibrary.Web.Login;assembly=EpicGamesLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="out_UnaddedFreeGames" Type="OutArgument(scg:Queue(scg1:KeyValuePair(x:String, x:String)))" />
     <x:Property sap2010:Annotation.AnnotationText="This number represents the cap on how many possible results to find from the Epic free games." Name="in_MaxResultNumber" Type="InArgument(x:Int32)" />
-    <x:Property Name="in_EpicCredential" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="This represents the relative path for this workflow to write an XLSX file to." Name="in_WorkbookOutputPath" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="The name of the sheet written to for the workbook at the path specified by the in_WorkbookPath argument." Name="in_WorkbookOutputSheetName" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <this:Main.in_EpicCredential>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Main.in_EpicCredential>
+  <this:Main.in_Config>
+    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
+  </this:Main.in_Config>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>512,1649.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>586.4,1759.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg1:List x:TypeArguments="x:String" Capacity="24">
+    <scg:List x:TypeArguments="x:String" Capacity="24">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -40,10 +37,10 @@
       <x:String>System.Security</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>System.Xml.Serialization</x:String>
-    </scg1:List>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg1:List x:TypeArguments="AssemblyReference" Capacity="42">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="42">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -64,23 +61,22 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
-    </scg1:List>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get Unadded Epic Games" sap:VirtualizedContainerService.HintSize="492,1549.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
+  <Sequence DisplayName="Get Unadded Epic Games" sap:VirtualizedContainerService.HintSize="566.4,1699.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="CurrentBrowser" />
-      <Variable x:TypeArguments="scg:Queue(scg1:KeyValuePair(x:String, x:String))" Default="[new Queue(of KeyValuePair(Of String, String))]" Name="GamesToProcess" />
-      <Variable x:TypeArguments="scg1:Dictionary(x:String, x:String)" Default="[new Dictionary(Of String, String)]" Name="freeGamesDict" />
-      <Variable x:TypeArguments="scg1:ICollection(x:String)" Default="[new List(Of String)]" Name="libraryGameList" />
+      <Variable x:TypeArguments="scg1:Queue(scg:KeyValuePair(x:String, x:String))" Default="[new Queue(of KeyValuePair(Of String, String))]" Name="GamesToProcess" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[new Dictionary(Of String, String)]" Name="freeGamesDict" />
+      <Variable x:TypeArguments="scg:ICollection(x:String)" Default="[new List(Of String)]" Name="libraryGameList" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
-      <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-      </scg1:Dictionary>
+      </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser BrowserType="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="450.4,560.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[CurrentBrowser]" Url="https://www.epicgames.com/logout">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="524.8,560.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[CurrentBrowser]" Url="https://www.epicgames.com/logout">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -88,9 +84,9 @@
           </ActivityAction.Argument>
           <Sequence DisplayName="In Browser" sap:VirtualizedContainerService.HintSize="416.8,460.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
             <sap:WorkflowViewStateService.ViewState>
-              <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg1:Dictionary>
+              </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Sequence DisplayName="Get Games To Process" sap:VirtualizedContainerService.HintSize="375.2,368" sap2010:WorkflowViewState.IdRef="Sequence_21">
               <Sequence.Variables>
@@ -98,15 +94,15 @@
                 <Variable x:TypeArguments="ss:SecureString" Name="password" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
-                <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg1:Dictionary>
+                </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetAppCredentials workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\GetAppCredentials.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="x:String" x:Key="out_Username">[email]</OutArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_Credential">[in_EpicCredential]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Credential">[in_Config("EpicCredential").ToString()]</InArgument>
                   <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">[password]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
@@ -118,26 +114,26 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <ui:ForEach x:TypeArguments="scg1:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each Found Free Game" sap:VirtualizedContainerService.HintSize="450.4,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[freeGamesDict]">
+    <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each Found Free Game" sap:VirtualizedContainerService.HintSize="524.8,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[freeGamesDict]">
       <ui:ForEach.Body>
-        <ActivityAction x:TypeArguments="scg1:KeyValuePair(x:String, x:String)">
+        <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:String)">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="scg1:KeyValuePair(x:String, x:String)" Name="freeGame" />
+            <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, x:String)" Name="freeGame" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Process each found free game" sap:VirtualizedContainerService.HintSize="836,500" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
-              <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg1:Dictionary>
+              </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If Condition="[libraryGameList.Contains(freeGame.Key)]" sap:VirtualizedContainerService.HintSize="794.4,407.2" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Then>
                 <Sequence DisplayName="Prevent the matching game from being processed" sap:VirtualizedContainerService.HintSize="375.2,248" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
-                    <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg1:Dictionary>
+                    </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;This game is in both lists: &quot; + freeGame.Key]" />
                   <ui:Continue sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="Continue_1" />
@@ -146,15 +142,15 @@
               <If.Else>
                 <Sequence DisplayName="Enqueue Free Game to process" sap:VirtualizedContainerService.HintSize="375.2,257.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
-                    <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg1:Dictionary>
+                    </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:InvokeCode ContinueOnError="{x:Null}" Code="io_queue.Enqueue(in_gameToAdd)" DisplayName="Add Game to list" sap:VirtualizedContainerService.HintSize="333.6,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
                     <ui:InvokeCode.Arguments>
-                      <InOutArgument x:TypeArguments="scg:Queue(scg1:KeyValuePair(x:String, x:String))" x:Key="io_queue">[GamesToProcess]</InOutArgument>
-                      <InArgument x:TypeArguments="scg1:KeyValuePair(x:String, x:String)" x:Key="in_gameToAdd">[freeGame]</InArgument>
+                      <InOutArgument x:TypeArguments="scg1:Queue(scg:KeyValuePair(x:String, x:String))" x:Key="io_queue">[GamesToProcess]</InOutArgument>
+                      <InArgument x:TypeArguments="scg:KeyValuePair(x:String, x:String)" x:Key="in_gameToAdd">[freeGame]</InArgument>
                     </ui:InvokeCode.Arguments>
                   </ui:InvokeCode>
                 </Sequence>
@@ -164,49 +160,41 @@
         </ActivityAction>
       </ui:ForEach.Body>
       <sap:WorkflowViewStateService.ViewState>
-        <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg1:Dictionary>
+        </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <Assign sap:VirtualizedContainerService.HintSize="450.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="scg:Queue(scg1:KeyValuePair(x:String, x:String))">[out_UnaddedFreeGames]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="scg:Queue(scg1:KeyValuePair(x:String, x:String))">[GamesToProcess]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Sequence DisplayName="Write unadded games to Excel workbook" sap:VirtualizedContainerService.HintSize="450.4,663.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence DisplayName="Write unadded games to Excel workbook" sap:VirtualizedContainerService.HintSize="524.8,912.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="GameDT" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
-        <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg1:Dictionary>
+        </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Make Data Table" sap:VirtualizedContainerService.HintSize="375.2,442.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <Sequence DisplayName="Make Data Table" sap:VirtualizedContainerService.HintSize="483.2,442.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
         <sap:WorkflowViewStateService.ViewState>
-          <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg1:Dictionary>
+          </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <ui:BuildDataTable DataTable="[GameDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Title&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;300&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;URL&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;300&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;300&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;      &lt;xs:unique name=&quot;Constraint1&quot;&gt;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xA;        &lt;xs:field xpath=&quot;Title&quot; /&gt;&#xA;      &lt;/xs:unique&gt;&#xA;      &lt;xs:unique name=&quot;Constraint2&quot;&gt;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xA;        &lt;xs:field xpath=&quot;URL&quot; /&gt;&#xA;      &lt;/xs:unique&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-        <ui:ForEach x:TypeArguments="scg1:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="333.6,249.6" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[GamesToProcess]">
+        <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="333.6,249.6" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[GamesToProcess]">
           <ui:ForEach.Body>
-            <ActivityAction x:TypeArguments="scg1:KeyValuePair(x:String, x:String)">
+            <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:String)">
               <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="scg1:KeyValuePair(x:String, x:String)" Name="game" />
+                <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, x:String)" Name="game" />
               </ActivityAction.Argument>
               <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_23">
                 <sap:WorkflowViewStateService.ViewState>
-                  <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg1:Dictionary>
+                  </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{game.Key,game.Value, &quot;Unadded&quot;}]" DataTable="[GameDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
               </Sequence>
@@ -214,11 +202,16 @@
           </ui:ForEach.Body>
         </ui:ForEach>
       </Sequence>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WriteToOutputSheet workflow" sap:VirtualizedContainerService.HintSize="375.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="WriteToOutputSheet.xaml">
+      <If Condition="[GameDT.Columns(&quot;Status&quot;) is nothing]" DisplayName="If there is no status column" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_4">
+        <If.Then>
+          <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Status" DataTable="[GameDT]" DefaultValue="[in_Config(&quot;StatusRetrieved&quot;).ToString()]" DisplayName="Add Status Column" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+        </If.Then>
+      </If>
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WriteToOutputSheet workflow" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Components/WriteToOutputSheet.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_WorkbookOutputPath]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_Config("EpicGetOutputPath").ToString()]</InArgument>
           <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TableToWrite">[GameDT]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">[in_WorkbookOutputSheetName]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">[in_Config("EpicGetOutputSheet").ToString()]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
