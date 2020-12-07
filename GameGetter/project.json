@@ -4,6 +4,7 @@
   "main": "Main.xaml",
   "dependencies": {
     "EpicGamesLibrary": "[0.7.2]",
+    "FindFileLocation.Activities": "[1.0.0]",
     "SteamLibrary": "[0.5.2]",
     "UiPath.Credentials.Activities": "[1.1.6479.13204]",
     "UiPath.Excel.Activities": "[2.9.3]",
