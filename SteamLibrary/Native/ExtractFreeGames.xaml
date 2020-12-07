@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>547.2,2237.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>550,2344</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractFreeGames_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -59,7 +59,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Extracts the first 30 games in the &quot;New and Trending&quot; free games list&#xA;&#xA;Precondition: Steam is on the Free To Play genre&#xA;Post Action: Creates list of Game Titles in excel sheet" DisplayName="ExtractFreeGames" sap:VirtualizedContainerService.HintSize="527.2,2137.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Extracts the first 30 games in the &quot;New and Trending&quot; free games list&#xA;&#xA;Precondition: Steam is on the Free To Play genre&#xA;Post Action: Creates list of Game Titles in excel sheet" DisplayName="ExtractFreeGames" sap:VirtualizedContainerService.HintSize="530,2244" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="GamesText" />
       <Variable x:TypeArguments="ui:GenericValue" Name="game" />
@@ -74,14 +74,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="485.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Extracting free games from Steam&quot;]" />
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" sap2010:Annotation.AnnotationText="" DisplayName="Attach Window Steam Client" sap:VirtualizedContainerService.HintSize="485.6,1836" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="dccc22e09e3272ee8b89306086765fbb" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Extracting free games from Steam&quot;]" />
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" sap2010:Annotation.AnnotationText="" DisplayName="Attach Window Steam Client" sap:VirtualizedContainerService.HintSize="488,1949" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="dccc22e09e3272ee8b89306086765fbb" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="452,1657.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="454,1772" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="s:String[]" Name="GameArray3" />
             </Sequence.Variables>
@@ -90,7 +90,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetFullText DisplayName="Get Full Text of 1st list of game titles" sap:VirtualizedContainerService.HintSize="410.4,107.2" sap2010:WorkflowViewState.IdRef="GetFullText_1" IgnoreHidden="False">
+            <ui:GetFullText DisplayName="Get Full Text of 1st list of game titles" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="GetFullText_1" IgnoreHidden="False">
               <ui:GetFullText.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c4dc3167f52fd5cf2d45d2da90278202" Selector="&lt;wnd cls='Chrome_WidgetWin_0' idx='1' /&gt;&lt;ctrl name='Free To Play Games on Steam' role='document' /&gt;&lt;ctrl idx='59' role='DIV' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -105,15 +105,20 @@
                 <OutArgument x:TypeArguments="x:String">[GamesText]</OutArgument>
               </ui:GetFullText.Text>
             </ui:GetFullText>
-            <Assign DisplayName="Assign first list of games" sap:VirtualizedContainerService.HintSize="410.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap2010:Annotation.AnnotationText="We take in the full text frome the Get Full Text activity. Then, &quot;Free&quot; and &quot;To Play&quot; are removed from the text, and then it is split at each &quot;\n&quot; and added to GameArray" DisplayName="Assign first list of games" sap:VirtualizedContainerService.HintSize="412,147" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="s:String[]">[GameArray1]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="s:String[]">[GamesText.Replace("Free", "").Replace("To Play", "").Split(Environment.NewLine.ToCharArray, StringSplitOptions.RemoveEmptyEntries)]</InArgument>
               </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click next button" sap:VirtualizedContainerService.HintSize="410.4,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click next button" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -135,7 +140,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text of 2nd list of game titles" sap:VirtualizedContainerService.HintSize="410.4,107.2" sap2010:WorkflowViewState.IdRef="GetFullText_2">
+            <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text of 2nd list of game titles" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="GetFullText_2">
               <ui:GetFullText.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="3307b979534a11f6b8344dafb08414e4" Selector="&lt;wnd cls='Chrome_WidgetWin_0' idx='1' /&gt;&lt;ctrl name='Free To Play Games on Steam' role='document' /&gt;&lt;ctrl idx='59' role='DIV' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -150,15 +155,20 @@
                 <OutArgument x:TypeArguments="x:String">[GamesText]</OutArgument>
               </ui:GetFullText.Text>
             </ui:GetFullText>
-            <Assign DisplayName="Assign second list of games" sap:VirtualizedContainerService.HintSize="410.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign sap2010:Annotation.AnnotationText="We take in the full text frome the Get Full Text activity. Then, &quot;Free&quot; and &quot;To Play&quot; are removed from the text, and then it is split at each &quot;\n&quot; and added to GameArray" DisplayName="Assign second list of games" sap:VirtualizedContainerService.HintSize="412,147" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="s:String[]">[GameArray2]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="s:String[]">[GamesText.Replace("Free", "").Replace("To Play", "").Split(Environment.NewLine.ToCharArray, StringSplitOptions.RemoveEmptyEntries)]</InArgument>
               </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <Assign DisplayName="Concatenate both arrays into one" sap:VirtualizedContainerService.HintSize="410.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign DisplayName="Concatenate both arrays into one" sap:VirtualizedContainerService.HintSize="412,60" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="s:String[]">[GameArray]</OutArgument>
               </Assign.To>
@@ -166,38 +176,38 @@
                 <InArgument x:TypeArguments="s:String[]">[GameArray1.Concat(GameArray2).ToArray]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Take every other element in GameArray, then add that value into the GamesList" Code="&#xA;Dim i As Integer = 0&#xA;Dim str As String&#xA;    Dim expr As Regex = New Regex(&quot;[\u00AE\u2122\u00A9]&quot;)&#xA;For i = 0 To in_strArray.Length - 1&#xA;    If (i Mod 2 = 0) Then&#xA;&#x9;&#x9;str = expr.Replace(in_strArray(i), &quot;&quot;).Trim()&#xA;        out_GameTitleList.Add(str)&#xA;    End If&#xA;Next&#xA;" DisplayName="Invoke  code to get list" sap:VirtualizedContainerService.HintSize="410.4,208.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+            <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="This code takes an array of strings from the full text read of the free games list. Since every other element is the genre tags and we only want the game titles, we only add at every other index. This code also removes any trademark or copyright symbols&#xA;&#xA;Input: Array of strings&#xA;Output: Adds parsed game to list of gmaes ot be added&#xA;&#xA;Take every other element in GameArray, then add that value into the GamesList" Code="&#xA;Dim i As Integer = 0 'Index to iteratre through array input&#xA;Dim str As String&#xA;    Dim expr As Regex = New Regex(&quot;[\u00AE\u2122\u00A9]&quot;) 'Regex to find any trademark or copyright symbols&#xA;For i = 0 To in_strArray.Length - 1 'Iterate through array&#xA;    If (i Mod 2 = 0) Then 'We only want every other index, including the first one &#xA;&#x9;&#x9;str = expr.Replace(in_strArray(i), &quot;&quot;).Trim() 'Remove trandmark symbols found by regex&#xA;        out_GameTitleList.Add(str) 'Add extracted game title to GameTitlleList&#xA;    End If&#xA;Next&#xA;" DisplayName="Invoke  code to get list" sap:VirtualizedContainerService.HintSize="412,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
               <ui:InvokeCode.Arguments>
                 <InArgument x:TypeArguments="s:String[]" x:Key="in_strArray">[GameArray]</InArgument>
                 <InArgument x:TypeArguments="scg:List(x:String)" x:Key="out_GameTitleList">[GameTitleList]</InArgument>
               </ui:InvokeCode.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeCode>
-            <ui:BuildDataTable DataTable="[out_GameTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="410.4,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Game_x0020_Title&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Add&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Install&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="410.4,474.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[GameTitleList]">
+            <ui:BuildDataTable DataTable="[out_GameTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="412,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Game_x0020_Title&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Add&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Install&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412,465" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[GameTitleList]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,340" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,332" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="Adds data row the GameTable.&#xA;&#xA;Add and installed are set to &quot;No&quot; when first added" ArrayRow="[{item, &quot;No&quot;, &quot;No&quot;}]" DataTable="[out_GameTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,114.4" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+                    <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="Adds data row the GameTable.&#xA;&#xA;Add and installed are set to &quot;No&quot; when first added" ArrayRow="[{item, &quot;No&quot;, &quot;No&quot;}]" DataTable="[out_GameTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,109" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:AddDataRow>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[item]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[item]" />
                   </Sequence>
                 </ActivityAction>
               </ui:ForEach.Body>
