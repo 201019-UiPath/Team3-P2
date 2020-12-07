@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>544.8,1099.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>544.8,1658.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_Unadded_Steam_Games_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -60,7 +60,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get Unadded Epic Games" sap:VirtualizedContainerService.HintSize="524.8,999.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+  <Sequence DisplayName="Get Unadded Steam Games" sap:VirtualizedContainerService.HintSize="524.8,1558.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="steamFileLocs" />
       <Variable x:TypeArguments="x:String" Name="username" />
@@ -72,8 +72,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ffa:FindFileLocation ContinueOnError="{x:Null}" DisplayName="Find File Location" FileLocations="[steamFileLocs]" FileName="steam.exe" sap:VirtualizedContainerService.HintSize="483.2,85.6" sap2010:WorkflowViewState.IdRef="FindFileLocation_1" SearchDirectories="[{&quot;C:\&quot;}]" />
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[steamFileLocs(0)]" />
+    <ffa:FindFileLocation ContinueOnError="{x:Null}" DisplayName="Find File Location" FileLocations="[steamFileLocs]" FileName="steam.exe" sap:VirtualizedContainerService.HintSize="483.2,85.6" sap2010:WorkflowViewState.IdRef="FindFileLocation_1" SearchDirectories="[{&quot;C:\Program Files (x86)\&quot;,&quot;C:\Program Files\&quot;}]" />
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetAppCredentials workflow" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\GetAppCredentials.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="out_Username">[username]</OutArgument>
@@ -81,9 +80,66 @@
         <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">[password]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <sn:Login sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="Login_1" in_Password="[password]" in_SteamFilePath="[steamFileLocs(0)]" in_Username="[username]" />
-    <sn:NavigateToFreeGames sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="NavigateToFreeGames_1" />
-    <sn:ExtractFreeGames sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="ExtractFreeGames_1" out_GameTable="[GameDT]" />
+    <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="483.2,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+      <ui:ClickImage.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:ClickImage.CursorPosition>
+      <ui:ClickImage.Image>
+        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" InitialScalingFactor="1.25" Profile="Basic" TargetImageBase64="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" />
+      </ui:ClickImage.Image>
+      <ui:ClickImage.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:ClickImage.Target>
+    </ui:ClickImage>
+    <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" WorkingDirectory="{x:Null}" ContinueOnError="True" DisplayName="Open Application 'steam.exe  Steam'" FileName="[steamFileLocs(0)]" sap:VirtualizedContainerService.HintSize="483.2,232" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="2ef4c9f4f2347865afcba07b9050d75d" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;" TimeoutMS="10000">
+      <ui:OpenApplication.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,84.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenApplication.Body>
+    </ui:OpenApplication>
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="483.2,387.2" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="60385ac6faecb61c746b6f37e1b6d852" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;">
+      <ui:WindowScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="241.6,240" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <sn:Login sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Login_1" in_Password="[password]" in_SteamFilePath="[steamFileLocs(0)]" in_Username="[username]" />
+            <sn:NavigateToFreeGames sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="NavigateToFreeGames_1" />
+            <sn:ExtractFreeGames sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="ExtractFreeGames_1" out_GameTable="[GameDT]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:WindowScope.Body>
+    </ui:WindowScope>
     <If Condition="[GameDT.Columns(&quot;Status&quot;) is nothing]" DisplayName="If there is no status column" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Status" DataTable="[GameDT]" DefaultValue="[in_Config(&quot;StatusRetrieved&quot;).ToString()]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
