@@ -491,7 +491,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InstallGamesSteamMain workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Steam\Installer\InstallGamesSteamMain.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InstallGamesSteamMain workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Steam/Installer/SteamInstallerMain.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorQueueName" />
               <InArgument x:TypeArguments="x:String" x:Key="in_InputWorkbookSheet">[SteamSheetName]</InArgument>
