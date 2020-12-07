@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>586.4,2675.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>586.4,4192.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -38,7 +38,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="21">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -62,18 +62,66 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Process" sap:VirtualizedContainerService.HintSize="566.4,2575.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Process" sap:VirtualizedContainerService.HintSize="566.4,4092.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="UserChoice" />
       <Variable x:TypeArguments="scg:ICollection(x:String)" Name="PossibleOptions" />
       <Variable x:TypeArguments="x:String" Name="EpicChoice" />
       <Variable x:TypeArguments="x:String" Name="SteamChoice" />
+      <Variable x:TypeArguments="x:String" Name="EpicCredential" />
+      <Variable x:TypeArguments="x:String" Name="SteamCredential" />
+      <Variable x:TypeArguments="x:String" Name="EpicSheetName" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="SteamSheetName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:MultipleAssign DisplayName="Read Credential names" sap:VirtualizedContainerService.HintSize="524.8,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[EpicCredential]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("EpicCredential").ToString()]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[SteamCredential]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("SteamCredential").ToString()]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:MultipleAssign DisplayName="Read sheet names" sap:VirtualizedContainerService.HintSize="524.8,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[EpicSheetName]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("WBEpicSheet").ToString()]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="ui:GenericValue">[SteamSheetName]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="ui:GenericValue">[in_Config("WBSteamSheet").ToString()]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
     <Sequence sap2010:Annotation.AnnotationText="Check which launchers are installed, and ask the user which launchers they want to use." DisplayName="Get User selection" sap:VirtualizedContainerService.HintSize="524.8,144.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -82,7 +130,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Assign supported launchers as options" sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign DisplayName="Assign supported launchers as options" sap:VirtualizedContainerService.HintSize="337.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:ICollection(x:String)">[PossibleOptions]</OutArgument>
         </Assign.To>
@@ -90,7 +138,7 @@
           <InArgument x:TypeArguments="scg:ICollection(x:String)">[new List(Of String)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:MultipleAssign sap2010:Annotation.AnnotationText="This sets constants to represent the text displayed to the user." DisplayName="Set choice constants" sap:VirtualizedContainerService.HintSize="483.2,174.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign sap2010:Annotation.AnnotationText="This sets constants to represent the text displayed to the user." DisplayName="Set choice constants" sap:VirtualizedContainerService.HintSize="337.6,174.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -117,11 +165,12 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
-      <Sequence DisplayName="Populate Launcher Options" sap:VirtualizedContainerService.HintSize="483.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <Sequence sap2010:Annotation.AnnotationText="This sequence populates the options the user can pick based on the launchers installed, and throws an error if none of them are available." DisplayName="Populate Launcher Options" sap:VirtualizedContainerService.HintSize="337.6,160.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If Condition="[in_EpicFound]" DisplayName="If Epic is installed" sap:VirtualizedContainerService.HintSize="577.6,209.6" sap2010:WorkflowViewState.IdRef="If_11">
@@ -143,7 +192,7 @@
           </If.Else>
         </If>
       </Sequence>
-      <ui:InputDialog DisplayName="User Select Launcher to Check" sap:VirtualizedContainerService.HintSize="483.2,92.8" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Which launcher would you like to check?" Options="[PossibleOptions.ToArray()]" Title="Select Launcher">
+      <ui:InputDialog DisplayName="User Select Launcher to Check" sap:VirtualizedContainerService.HintSize="337.6,92.8" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Which launcher would you like to check?" Options="[PossibleOptions.ToArray()]" Title="Select Launcher">
         <ui:InputDialog.Result>
           <OutArgument x:TypeArguments="x:String">[UserChoice]</OutArgument>
         </ui:InputDialog.Result>
@@ -154,26 +203,27 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InputDialog>
-      <If Condition="[UserChoice = EpicChoice or UserChoice = PossibleOptions.Last]" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_6">
+      <If Condition="[UserChoice = EpicChoice or UserChoice = PossibleOptions.Last]" DisplayName="If the user picked Epic" sap:VirtualizedContainerService.HintSize="337.6,52.8" sap2010:WorkflowViewState.IdRef="If_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </If>
-      <If Condition="[UserChoice = SteamChoice or UserChoice = PossibleOptions.Last]" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_5">
+      <If Condition="[UserChoice = SteamChoice or UserChoice = PossibleOptions.Last]" DisplayName="If the user picked Steam" sap:VirtualizedContainerService.HintSize="337.6,52.8" sap2010:WorkflowViewState.IdRef="If_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </If>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Here we find all the free games the user could add from whichever clients they selected." DisplayName="Find Games To Add" sap:VirtualizedContainerService.HintSize="524.8,699.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence sap2010:Annotation.AnnotationText="Here we find all the free games the user could add from whichever clients they selected." DisplayName="Find Games To Add" sap:VirtualizedContainerService.HintSize="524.8,799.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:Browser" Name="getEpicGamesBrowser" />
+        <Variable x:TypeArguments="x:String" Name="GetterOutputPath" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -182,6 +232,14 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[GetterOutputPath]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[in_Config("WBGetOutputPath").ToString()]</InArgument>
+        </Assign.Value>
+      </Assign>
       <If Condition="[UserChoice = EpicChoice or UserChoice = PossibleOptions.Last]" DisplayName="If the user chose Epic" sap:VirtualizedContainerService.HintSize="483.2,237.6" sap2010:WorkflowViewState.IdRef="If_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -194,9 +252,9 @@
             <ui:InvokeWorkflowFile.Arguments>
               <OutArgument x:TypeArguments="scg1:Queue(scg:KeyValuePair(x:String, x:String))" x:Key="out_UnaddedFreeGames" />
               <InArgument x:TypeArguments="x:Int32" x:Key="in_MaxResultNumber">150</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_Config("WBGetOutputPath").ToString()]</InArgument>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">[EpicChoice]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_EpicCredential">[EpicCredential]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookOutputPath">[GetterOutputPath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookOutputSheetName">[EpicSheetName]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </If.Then>
@@ -211,9 +269,9 @@
         <If.Then>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Here is where we get the list of Steam games to add (compare library games to total free games and only leave the free games the user doesn't have)" DisplayName="Invoke Get Unadded Steam Games workflow" sap:VirtualizedContainerService.HintSize="333.6,148" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Steam\Getter\Get Unadded Steam Games.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">[in_Config("WBSteamSheet").ToString()]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_Config("WBGetOutputPath").ToString()]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_Credential">[in_Config("SteamCredential").ToString()]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">[SteamSheetName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[GetterOutputPath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Credential">[SteamCredential]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -229,10 +287,15 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="This sequence is used to invoke workflows that read a workbook sheet, and add games listed in that sheet. Whatever is successfully/unsuccessfully added should be written to an output workbook that we can read in the next sequence." DisplayName="Add Games" sap:VirtualizedContainerService.HintSize="524.8,732" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence sap2010:Annotation.AnnotationText="This sequence is used to invoke workflows that read a workbook sheet, and add games listed in that sheet. Whatever is successfully/unsuccessfully added should be written to an output workbook that we can read in the next sequence." DisplayName="Add Games" sap:VirtualizedContainerService.HintSize="524.8,930.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="AdderInputPath" />
+        <Variable x:TypeArguments="x:String" Name="AdderOutputPath" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -240,7 +303,29 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[UserChoice = EpicChoice or UserChoice = PossibleOptions.Last]" sap:VirtualizedContainerService.HintSize="483.2,237.6" sap2010:WorkflowViewState.IdRef="If_9">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="483.2,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[AdderInputPath]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[in_Config("WBAddInputPath").ToString()]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[AdderOutputPath]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[in_Config("WBAddOutputPath").ToString()]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+      <If Condition="[UserChoice = EpicChoice or UserChoice = PossibleOptions.Last]" DisplayName="If the user picked Epic" sap:VirtualizedContainerService.HintSize="483.2,237.6" sap2010:WorkflowViewState.IdRef="If_9">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -250,16 +335,16 @@
         <If.Then>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EGAdderMain workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Epic/EpicAdder/EGAdderMain.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_OutputWorkbookPath">Data/Output/GamesAdded.xlsx</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_EpicCredential">EpicCredential</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_InputWorkbook">Data/Input/GamesToAdd</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_InputWorkbookSheet">Epic</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_OutputWorkbookSheet">Epic</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OutputWorkbookPath">[AdderOutputPath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_EpicCredential">[EpicCredential]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_InputWorkbookSheet">[EpicSheetName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OutputWorkbookSheet">[EpicSheetName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_InputWorkbookPath">[AdderInputPath]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </If.Then>
       </If>
-      <If Condition="[UserChoice = SteamChoice or UserChoice = PossibleOptions.Last]" sap:VirtualizedContainerService.HintSize="483.2,301.6" sap2010:WorkflowViewState.IdRef="If_10">
+      <If Condition="[UserChoice = SteamChoice or UserChoice = PossibleOptions.Last]" DisplayName="If the user picked Steam" sap:VirtualizedContainerService.HintSize="483.2,329.6" sap2010:WorkflowViewState.IdRef="If_10">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -267,7 +352,17 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <ui:Comment sap:VirtualizedContainerService.HintSize="333.6,152" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Here, we invoke a workflow that uses REFramework and adds the games. The workflow should take in arguments that represents the workbook path and sheet name so the workflow knows what to read to add the games." />
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Here, we invoke a workflow that uses REFramework and adds the games. The workflow should take in arguments that represents the workbook path and sheet name so the workflow knows what to read to add the games." DisplayName="Invoke SteamAdderMain workflow" sap:VirtualizedContainerService.HintSize="333.6,180" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Steam\Adder\SteamAdderMain.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorQueueName" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[AdderInputPath]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
         </If.Then>
       </If>
     </Sequence>
@@ -279,6 +374,78 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:Comment sap:VirtualizedContainerService.HintSize="333.6,56" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Write your comments in the Text property" />
+    </Sequence>
+    <Sequence sap2010:Annotation.AnnotationText="This sequence is used to invoke workflows that read a workbook sheet, and install games listed in that sheet. Whatever is successfully/unsuccessfully installed should be written to an output workbook that we can read in the next sequence." DisplayName="Install Games" sap:VirtualizedContainerService.HintSize="524.8,838.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="ui:GenericValue" Name="InstallerInputPath" />
+        <Variable x:TypeArguments="ui:GenericValue" Name="InstallerOutputPath" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="483.2,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[InstallerInputPath]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[in_Config("WBInstallInputPath").ToString()]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[InstallerOutputPath]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[in_Config("WBInstallOutputPath").ToString()]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+      <If Condition="[UserChoice = EpicChoice or UserChoice = PossibleOptions.Last]" DisplayName="If the user picked Epic" sap:VirtualizedContainerService.HintSize="483.2,237.6" sap2010:WorkflowViewState.IdRef="If_14">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EGInstallerMain workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Epic\EpicInstaller\EGInstallerMain.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorQueueName" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_InputWorkbookPath">[InstallerInputPath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_InputWorkbookSheetName">[EpicSheetName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OutputWorkbookPath">[InstallerOutputPath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OutputWorkbookSheet">[EpicSheetName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_EpicCredential">[EpicCredential]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </If.Then>
+      </If>
+      <If Condition="[UserChoice = SteamChoice or UserChoice = PossibleOptions.Last]" DisplayName="If the user picked Steam" sap:VirtualizedContainerService.HintSize="483.2,237.6" sap2010:WorkflowViewState.IdRef="If_15">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InstallGamesSteamMain workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Steam\Installer\InstallGamesSteamMain.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorQueueName" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[InstallerInputPath]</InArgument>
+              <OutArgument x:TypeArguments="sd:DataRow[]" x:Key="out_GamesToInstall" />
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </If.Then>
+      </If>
     </Sequence>
     <Sequence sap2010:Annotation.AnnotationText="Here we show the user the games that were successfully installed. Probably email them or something cool like that.&#xA;&#xA;We could also ask the user if they want to run it again, and if they don't we could throw a BusinessRuleException." DisplayName="End process and show user result" sap:VirtualizedContainerService.HintSize="524.8,240.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <sap:WorkflowViewStateService.ViewState>
