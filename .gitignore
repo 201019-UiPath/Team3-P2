@@ -10,8 +10,9 @@
 *.props
 *.backup
 *AllDependencies.json
-*.local
-[Tt]emp/
+*.local/
+*Data/[Tt]emp/
+*Data/[Oo]utput/
 
 # User-specific files
 *.rsuser
