@@ -227,7 +227,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="Adds data row the GameTable.&#xA;&#xA;Add and installed are set to &quot;No&quot; when first added" ArrayRow="[{item, &quot;No&quot;, &quot;No&quot;}]" DataTable="[out_GameTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,109" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+                    <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="Adds data row the GameTable.&#xA;&#xA;Add and installed are set to &quot;No&quot; when first added" ArrayRow="[{item, &quot;Added&quot;}]" DataTable="[out_GameTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,109" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
