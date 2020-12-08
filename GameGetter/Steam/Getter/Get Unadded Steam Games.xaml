@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>498,1254</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>498,1316</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_Unadded_Steam_Games_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -60,9 +60,10 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get Unadded Steam Games" sap:VirtualizedContainerService.HintSize="478,1154" sap2010:WorkflowViewState.IdRef="Sequence_10">
+  <Sequence DisplayName="Get Unadded Steam Games" sap:VirtualizedContainerService.HintSize="478,1216" sap2010:WorkflowViewState.IdRef="Sequence_10">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="steamFileLocs" />
       <Variable x:TypeArguments="x:String" Name="username" />
@@ -120,6 +121,7 @@
     <sn:Login sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="Login_1" in_Password="[password]" in_Username="[username]" />
     <sn:NavigateToFreeGames sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="NavigateToFreeGames_1" />
     <sn:ExtractFreeGames sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="ExtractFreeGames_1" out_GameTable="[GameDT]" />
+    <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[in_Config(&quot;SteamGameList&quot;).ToString]" />
     <ui:WriteRange AddHeaders="True" DataTable="[GameDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_Config(&quot;WBSteamSheet&quot;).ToString]" WorkbookPath="[in_Config(&quot;SteamGameList&quot;).ToString()]">
       <ui:WriteRange.StartingCell>
         <InArgument x:TypeArguments="x:String">
