@@ -120,7 +120,7 @@
     <sn:Login sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="Login_1" in_Password="[password]" in_Username="[username]" />
     <sn:NavigateToFreeGames sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="NavigateToFreeGames_1" />
     <sn:ExtractFreeGames sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="ExtractFreeGames_1" out_GameTable="[GameDT]" />
-    <ui:WriteRange AddHeaders="False" DataTable="[GameDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_Config(&quot;WBSteamSheet&quot;).ToString]" WorkbookPath="[in_Config(&quot;SteamGameList&quot;).ToString()]">
+    <ui:WriteRange AddHeaders="True" DataTable="[GameDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_Config(&quot;WBSteamSheet&quot;).ToString]" WorkbookPath="[in_Config(&quot;SteamGameList&quot;).ToString()]">
       <ui:WriteRange.StartingCell>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
