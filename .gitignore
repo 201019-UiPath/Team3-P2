@@ -11,8 +11,8 @@
 *.backup
 *AllDependencies.json
 *.local/
-*Data/[Tt]emp/
-*Data/[Oo]utput/
+*[Tt]emp/
+*[Oo]utput/
 
 # User-specific files
 *.rsuser
