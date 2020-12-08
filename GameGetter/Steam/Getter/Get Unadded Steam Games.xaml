@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>396,914</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>498,1254</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_Unadded_Steam_Games_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -60,10 +60,9 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get Unadded Steam Games" sap:VirtualizedContainerService.HintSize="376,814" sap2010:WorkflowViewState.IdRef="Sequence_10">
+  <Sequence DisplayName="Get Unadded Steam Games" sap:VirtualizedContainerService.HintSize="478,1154" sap2010:WorkflowViewState.IdRef="Sequence_10">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="steamFileLocs" />
       <Variable x:TypeArguments="x:String" Name="username" />
@@ -75,31 +74,53 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ffa:FindFileLocation ContinueOnError="{x:Null}" DisplayName="Find File Location" FileLocations="[steamFileLocs]" FileName="steam.exe" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="FindFileLocation_1" SearchDirectories="[{&quot;C:\&quot;}]" />
-    <ui:Callout Timer="{x:Null}" Content="[steamFileLocs(0)]" DisplayName="Tooltip" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Callout_1" Title="Steam File Path">
-      <ui:Callout.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:Callout.Target>
-    </ui:Callout>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetAppCredentials workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\GetAppCredentials.xaml">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,254" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,176" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ffa:FindFileLocation ContinueOnError="{x:Null}" DisplayName="Find File Location" FileLocations="[steamFileLocs]" FileName="steam.exe" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="FindFileLocation_1" SearchDirectories="[{&quot;C:\&quot;}]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,238" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,160" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Callout Timer="{x:Null}" Content="[steamFileLocs(0)]" DisplayName="Tooltip" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Callout_1" Title="Steam File Path">
+            <ui:Callout.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:Callout.Target>
+          </ui:Callout>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetAppCredentials workflow" sap:VirtualizedContainerService.HintSize="436,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\GetAppCredentials.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="out_Username">[username]</OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_Credential">[in_Config("Steam_Credential").ToString()]</InArgument>
         <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">[password]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <sn:OpenSteam sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OpenSteam_1" in_filepath="[steamFileLocs(0)]" />
-    <sn:Login sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Login_1" in_Password="[password]" in_Username="[username]" />
-    <sn:NavigateToFreeGames sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="NavigateToFreeGames_1" />
-    <sn:ExtractFreeGames sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="ExtractFreeGames_1" out_GameTable="[GameDT]" />
-    <ui:WriteRange AddHeaders="False" DataTable="[GameDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_Config(&quot;WBSteamSheet&quot;).ToString]" WorkbookPath="[in_Config(&quot;SteamGameList&quot;).ToString()]">
+    <sn:OpenSteam sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OpenSteam_1" in_filepath="C:\Program Files (x86)\Steam\steam.exe" />
+    <sn:Login sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="Login_1" in_Password="[password]" in_Username="[username]" />
+    <sn:NavigateToFreeGames sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="NavigateToFreeGames_1" />
+    <sn:ExtractFreeGames sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="ExtractFreeGames_1" out_GameTable="[GameDT]" />
+    <ui:WriteRange AddHeaders="False" DataTable="[GameDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_Config(&quot;WBSteamSheet&quot;).ToString]" WorkbookPath="[in_Config(&quot;SteamGameList&quot;).ToString()]">
       <ui:WriteRange.StartingCell>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
