@@ -11,6 +11,7 @@
 *.backup
 *AllDependencies.json
 *.local/
+*[Ii]nput/
 *[Tt]emp/
 *[Oo]utput/
 
