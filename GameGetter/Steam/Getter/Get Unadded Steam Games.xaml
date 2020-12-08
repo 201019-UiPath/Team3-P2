@@ -1,16 +1,14 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Get_Unadded_Steam_Games" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ffa="clr-namespace:File.FindFileLocation.Activities;assembly=File.FindFileLocation.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sn="clr-namespace:SteamLibrary.Native;assembly=SteamLibrary" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="The name of the sheet written to for the workbook at the path specified by the in_WorkbookPath argument." Name="in_WorkbookSheetName" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="This represents the relative path for this workflow to write an XLSX file to." Name="in_WorkbookPath" Type="InArgument(x:String)" />
-    <x:Property Name="in_Credential" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <this:Get_Unadded_Steam_Games.in_Credential>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Get_Unadded_Steam_Games.in_Credential>
+  <this:Get_Unadded_Steam_Games.in_Config>
+    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
+  </this:Get_Unadded_Steam_Games.in_Config>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>396,905</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>395.2,920.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_Unadded_Steam_Games_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -62,10 +60,9 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get Unadded Epic Games" sap:VirtualizedContainerService.HintSize="376,805" sap2010:WorkflowViewState.IdRef="Sequence_10">
+  <Sequence DisplayName="Get Unadded Epic Games" sap:VirtualizedContainerService.HintSize="375.2,820.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="steamFileLocs" />
       <Variable x:TypeArguments="x:String" Name="username" />
@@ -77,20 +74,31 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ffa:FindFileLocation ContinueOnError="{x:Null}" DisplayName="Find File Location" FileLocations="[steamFileLocs]" FileName="steam.exe" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="FindFileLocation_1" SearchDirectories="[{&quot;C:\&quot;}]" />
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[steamFileLocs(0)]" />
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetAppCredentials workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\GetAppCredentials.xaml">
+    <ffa:FindFileLocation ContinueOnError="{x:Null}" DisplayName="Find File Location" FileLocations="[steamFileLocs]" FileName="steam.exe" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="FindFileLocation_1" SearchDirectories="[{&quot;C:\&quot;}]" />
+    <ui:Callout Timer="{x:Null}" Content="[steamFileLocs(0)]" DisplayName="Tooltip" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="Callout_1" Title="Steam File Path">
+      <ui:Callout.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Callout.Target>
+    </ui:Callout>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetAppCredentials workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\GetAppCredentials.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="out_Username">[username]</OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Credential">[in_Credential]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Credential">[in_Config("Steam_Credential").ToString()]</InArgument>
         <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">[password]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <sn:OpenSteam sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OpenSteam_1" in_filepath="[steamFileLocs(0)]" />
-    <sn:Login sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Login_1" in_Password="[password]" in_Username="[username]" />
-    <sn:NavigateToFreeGames sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="NavigateToFreeGames_1" />
-    <sn:ExtractFreeGames sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="ExtractFreeGames_1" out_GameTable="[GameDT]" />
-    <ui:WriteRange AddHeaders="False" DataTable="[GameDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_WorkbookSheetName]" WorkbookPath="[in_WorkbookPath]">
+    <sn:OpenSteam sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="OpenSteam_1" in_filepath="[steamFileLocs(0)]" />
+    <sn:Login sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="Login_1" in_Password="[password]" in_Username="[username]" />
+    <sn:NavigateToFreeGames sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="NavigateToFreeGames_1" />
+    <sn:ExtractFreeGames sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="ExtractFreeGames_1" out_GameTable="[GameDT]" />
+    <ui:WriteRange AddHeaders="False" DataTable="[GameDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_Config(&quot;SteamGetOutputSheet&quot;).ToString()]" WorkbookPath="[in_Config(&quot;SteamGetOutputPath&quot;).ToString()]">
       <ui:WriteRange.StartingCell>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
