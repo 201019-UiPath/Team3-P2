@@ -68,7 +68,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,287" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <s:AddGameSteam sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddGameSteam_1" in_GameName="[in_TransactionItem(&quot;Title&quot;).ToString]" in_WorkbookPath="[in_Config(&quot;SteamAddOutputPath&quot;).ToString]" in_WorkbookSheetName="[in_Config(&quot;WBSteamSheet&quot;).ToString]" />
+        <s:AddGameSteam sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddGameSteam_1" in_GameName="[in_TransactionItem(&quot;Game Title&quot;).ToString]" in_WorkbookPath="[in_Config(&quot;SteamAddOutputPath&quot;).ToString]" in_WorkbookSheetName="[in_Config(&quot;WBSteamSheet&quot;).ToString]" />
       </TryCatch.Try>
       <TryCatch.Catches>
         <Catch x:TypeArguments="s1:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
