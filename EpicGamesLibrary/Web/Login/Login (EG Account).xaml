@@ -256,7 +256,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:UiElementExists DisplayName="Element Exists 'HTML '" Exists="[captchaExists]" sap:VirtualizedContainerService.HintSize="483.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="761b82cb4b665574aa7fe80b0727118d" Selector="&lt;webctrl id='fc-iframe-wrap' tag='IFRAME' /&gt;&lt;webctrl id='CaptchaFrame' tag='IFRAME' /&gt;" TimeoutMS="6500">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="761b82cb4b665574aa7fe80b0727118d" Selector="&lt;webctrl id='CaptchaFrame' /&gt;" TimeoutMS="6500">
                     <ui:Target.WaitForReady>
                       <InArgument x:TypeArguments="ui:WaitForReady" />
                     </ui:Target.WaitForReady>
