@@ -96,9 +96,7 @@
             </ui:CommentOut>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtractFreeGames workflow" sap:VirtualizedContainerService.HintSize="435.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Web/ExtractFreeGames.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="ui:Browser" x:Key="in_Browser">[CurrentBrowser]</InArgument>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FreeGamesDT">[FreeGamesDT]</OutArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_MaxNumOfResults">120</InArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_GameTable" />
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:WriteRange AddHeaders="False" DataTable="[FreeGamesDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="435.2,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="TestExcel.xlsx">
