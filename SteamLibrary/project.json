@@ -32,7 +32,6 @@
       "privateWorkflows": [
         "Web/test.xaml",
         "Native/test.xaml",
-        "Native/ExtractFreeGamesButMoist.xaml",
         "Web/ExtractFreeGames.xaml",
         "InstallGameSteamTest.xaml"
       ]
