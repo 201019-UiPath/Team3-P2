@@ -90,7 +90,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange AddHeaders="True" sap2010:Annotation.AnnotationText="You can send in any list of games as long as they have the columns: &#xA;Titile, Add, Install&#xA;&#xA;Use in_workbook to pass in filepath to file" DataTable="[data]" DisplayName="Read Range of games" sap:VirtualizedContainerService.HintSize="1116,174" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[in_GetOutputSheet]" WorkbookPath="[in_GetOutputWorkbook]">
+    <ui:ReadRange AddHeaders="True" sap2010:Annotation.AnnotationText="You can send in any list of games as long as they have the columns: &#xA;Titile, Status&#xA;&#xA;Use in_workbook to pass in filepath to file" DataTable="[data]" DisplayName="Read Range of games" sap:VirtualizedContainerService.HintSize="1116,174" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[in_GetOutputSheet]" WorkbookPath="[in_GetOutputWorkbook]">
       <ui:ReadRange.Range>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
