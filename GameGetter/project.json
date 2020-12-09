@@ -3,7 +3,7 @@
   "description": "An Automation for fetching and adding free games to one's game accounts.",
   "main": "Main.xaml",
   "dependencies": {
-    "EpicGamesLibrary": "[0.7.2]",
+    "EpicGamesLibrary": "[0.7.3]",
     "FindFileLocation.Activities": "[1.0.0]",
     "SteamLibrary": "[0.5.7]",
     "UiPath.Credentials.Activities": "[1.1.6479.13204]",
