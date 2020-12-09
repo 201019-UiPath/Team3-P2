@@ -5,7 +5,7 @@
   "dependencies": {
     "EpicGamesLibrary": "[0.7.7]",
     "FindFileLocation.Activities": "[1.0.0]",
-    "SteamLibrary": "[0.5.7]",
+    "SteamLibrary": "[0.5.8]",
     "UiPath.Credentials.Activities": "[1.1.6479.13204]",
     "UiPath.Excel.Activities": "[2.9.3]",
     "UiPath.Form.Activities": "[1.1.8]",
