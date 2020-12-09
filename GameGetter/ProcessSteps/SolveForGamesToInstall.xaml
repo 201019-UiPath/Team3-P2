@@ -42,6 +42,10 @@
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Here, we show the user which games were successfully added by aggregating the output workbooks from the previous sequence and showing the results to the user. We then ask the user which games they want to install, take their response, and then update an Excel sheet that the next workflows read in order to start installing games." DisplayName="Verify successful additions" sap:VirtualizedContainerService.HintSize="548,684" sap2010:WorkflowViewState.IdRef="Sequence_7">

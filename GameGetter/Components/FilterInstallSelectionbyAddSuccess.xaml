@@ -21,7 +21,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>902.4,1200.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>902.4,1328.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FilterTableWithTable_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -72,9 +72,11 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FilterTableWithTable" sap:VirtualizedContainerService.HintSize="882.4,1100.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FilterTableWithTable" sap:VirtualizedContainerService.HintSize="882.4,1228.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="FilteredDT" />
       <Variable x:TypeArguments="sd:DataTable" Name="InstallInputDT" />
@@ -149,5 +151,12 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WriteToOutputSheet workflow" sap:VirtualizedContainerService.HintSize="840.8,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\WriteToOutputSheet.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_InstallInputPath]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TableToWrite">[FilteredDT]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookSheetName">[in_InstallInputSheet]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
