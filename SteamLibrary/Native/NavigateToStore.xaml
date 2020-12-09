@@ -99,10 +99,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e1e183b488a7446ae28009d249b0d9c7" Selector="&lt;wnd cls='Chrome_WidgetWin_0' idx='1' /&gt;&lt;ctrl name='Welcome to Steam' role='document' /&gt;&lt;ctrl name='Your Store' role='link' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e1e183b488a7446ae28009d249b0d9c7" Selector="&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&#xD;&#xA;&lt;ctrl name='Welcome to Steam' role='document' /&gt;&#xD;&#xA;&lt;ctrl name='Your Store' role='link' /&gt;&#xD;&#xA;" TimeoutMS="5000">
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
