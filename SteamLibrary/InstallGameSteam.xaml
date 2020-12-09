@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>496,950</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1203,2381</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InstallGamesSteam_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -61,7 +61,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InstallGamesSteam" sap:VirtualizedContainerService.HintSize="476,850" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="InstallGamesSteam" sap:VirtualizedContainerService.HintSize="1183,2281" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="GameName" />
       <Variable x:TypeArguments="x:Int32" Default="2" Name="Count" />
@@ -71,19 +71,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="434,758" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="83d9b727a451605530c33f58d41b899d" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1141,2189" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="83d9b727a451605530c33f58d41b899d" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="346,612" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1107,2043" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Library" sap:VirtualizedContainerService.HintSize="304,52" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Library" sap:VirtualizedContainerService.HintSize="1065,51" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:ClickImage.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -114,13 +114,13 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ClickImage>
-            <Sequence DisplayName="Install the Game" sap:VirtualizedContainerService.HintSize="304,428" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Install the Game" sap:VirtualizedContainerService.HintSize="1065,1860" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Assign Game Name" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign DisplayName="Assign Game Name" sap:VirtualizedContainerService.HintSize="1023,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[GameName]</OutArgument>
                 </Assign.To>
@@ -128,7 +128,7 @@
                   <InArgument x:TypeArguments="x:String">[in_GameName]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Game In Library" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Game In Library" sap:VirtualizedContainerService.HintSize="1023,51" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -156,7 +156,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:Click>
-              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Install" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Install" sap:VirtualizedContainerService.HintSize="1023,51" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -184,13 +184,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:Click>
-              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window Installer Popup" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="a8aa00d378f7a75ca3fc171629726bb8" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Install*' /&gt;">
+              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window Installer Popup" sap:VirtualizedContainerService.HintSize="1023,1486" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="a8aa00d378f7a75ca3fc171629726bb8" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Install*' /&gt;">
                 <ui:WindowScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="989,1194" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="989,1340" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Boolean" Name="EnoughStorage" />
                       </Sequence.Variables>
@@ -248,7 +248,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:UiElementExists>
-                      <If Condition="[EnoughStorage = False]" sap:VirtualizedContainerService.HintSize="947,820" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If Condition="[EnoughStorage = False]" sap:VirtualizedContainerService.HintSize="947,966" sap2010:WorkflowViewState.IdRef="If_1">
                         <If.Then>
                           <Sequence DisplayName="Abort Install and Document" sap:VirtualizedContainerService.HintSize="376,547" sap2010:WorkflowViewState.IdRef="Sequence_7">
                             <sap:WorkflowViewStateService.ViewState>
@@ -338,7 +338,7 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence DisplayName="Install" sap:VirtualizedContainerService.HintSize="526,673" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <Sequence DisplayName="Install" sap:VirtualizedContainerService.HintSize="526,819" sap2010:WorkflowViewState.IdRef="Sequence_6">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:Boolean" Name="TermsAgreement" />
                             </Sequence.Variables>
@@ -394,6 +394,31 @@
                                 </ui:ClickImage>
                               </If.Then>
                             </If>
+                            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'steam.exe Install'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="ClickImage_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:ClickImage.CursorPosition>
+                                <ui:CursorPosition Position="Center">
+                                  <ui:CursorPosition.OffsetX>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetX>
+                                  <ui:CursorPosition.OffsetY>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetY>
+                                </ui:CursorPosition>
+                              </ui:ClickImage.CursorPosition>
+                              <ui:ClickImage.Image>
+                                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFkAAAAYCAYAAACRD1FmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIlSURBVGhD7ZTPShtRFMbP83TRjZQWsX+i1WiaGtK0asX+pRRbYqqCiIouNI7G7FQkoNJmX00UkwdwIswLBJNXyEt8vefOJDOZ2+3dDHfxg2++852z+LgMPXg4AINe6P2XHAx6oelPWRj0QlMffsKgF3o7Nw+DXujN7HcY9ELpmW8w6IVS019h0AtNvvsMg14omfkIheUqGu0OmkHqJTHbwrlzB4szxTvhe9rDqndwXWQdyEkdvOXvWPUWzpf9/WSmhOvQzShAifQcFJYqsGsl1U9visIasFgXG7CdFpqBnFXr4KrYn8uWW7DLm70M73V3rJooecnzJSVctb37EYImUrNQWOSST1Q/tSHL22V9IEoub2CXiz1w577uzzX/e4vzouTFoHciS5Z7EYLikzNQ+CVKDv4q2jbycrYuyvN0wRYlrwuPi3G9PJdcCOW8rHrLzfu+Oo8KNJacgkLuUrzkY9VPruGMy2MtS15zfS5R5Lm0aiGUC8O3nUv8EDpfu8dZLjg/RpVL7n1HA3qZyEBh4UKUfKT6iVVZ3g7rfVHyn9XebMd7ldX9/hz7rtflCFXnAvNyJkpeCM1EyfJ+hKDh8TQUsn9h3xyq/vgKTp1bbLPeu4X9eyUwO0RFlFzZC+WkDv4O7nGadXe2b3zt3+juRQeKxVMw6IWej76GQS/0dOQVDHqhoeEJGPRCgy/iMOiFnjwbhUEv9HhoBAa90KPBGAw6ieEfVxNvmIFqxqQAAAAASUVORK5CYII=" />
+                              </ui:ClickImage.Image>
+                              <ui:ClickImage.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:ClickImage.Target>
+                            </ui:ClickImage>
                             <ui:WriteCell Cell="[&quot;A&quot;+ Count.ToString]" DisplayName="Update Excel with Game Name" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="InstallGames" Text="[GameName]" WorkbookPath="TestExcel.xlsx">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -426,7 +451,7 @@
                 </ui:WindowScope.Body>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
