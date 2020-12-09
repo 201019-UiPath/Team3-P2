@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>772,1924.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>872,2576</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Find_Games_in_Library_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -58,7 +58,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Extracts a list of all transactions one has already bought on the Epic Store by navigating to their transactions list in their account, getting all transactions, and returning as an out argument a list of those transactions by name of the associated products. This allows an easy way to filter through unadded games by comparing them to the games that are already added." DisplayName="Find Games in Library" sap:VirtualizedContainerService.HintSize="752,1824.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap2010:Annotation.AnnotationText="Extracts a list of all transactions one has already bought on the Epic Store by navigating to their transactions list in their account, getting all transactions, and returning as an out argument a list of those transactions by name of the associated products. This allows an easy way to filter through unadded games by comparing them to the games that are already added." DisplayName="Find Games in Library" sap:VirtualizedContainerService.HintSize="852,2476" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractedTXDT" />
     </Sequence.Variables>
@@ -69,27 +69,27 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_BrowserToUse]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="710.4,730.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_BrowserToUse]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="810.4,1381.6" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="Now the workflow should navigate to the transactions associated with the Epic Account, and get the associated transactions. This includes added games, but can also include other information. " DisplayName="In browser" sap:VirtualizedContainerService.HintSize="416.8,561.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence sap2010:Annotation.AnnotationText="Now the workflow should navigate to the transactions associated with the Epic Account, and get the associated transactions. This includes added games, but can also include other information. " DisplayName="In browser" sap:VirtualizedContainerService.HintSize="776.8,1228.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="375.2,60" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="https://www.epicgames.com/account/transactions" />
-            <Sequence DisplayName="Expand list of Transactions" sap:VirtualizedContainerService.HintSize="375.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="735.2,60" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="https://www.epicgames.com/account/transactions" />
+            <Sequence DisplayName="Expand list of Transactions" sap:VirtualizedContainerService.HintSize="735.2,752" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="showMoreButtonExists" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -114,7 +114,7 @@
                   </ui:UiElementExists>
                   <If Condition="[showMoreButtonExists]" sap:VirtualizedContainerService.HintSize="607.2,256.8" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
-                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -144,7 +144,7 @@
                 </Sequence>
               </DoWhile>
             </Sequence>
-            <Sequence DisplayName="Get Transaction information" sap:VirtualizedContainerService.HintSize="375.2,200" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence DisplayName="Get Transaction information" sap:VirtualizedContainerService.HintSize="735.2,200" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -170,7 +170,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BrowserScope>
-    <Sequence DisplayName="Filter Transactions" sap:VirtualizedContainerService.HintSize="710.4,901.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence DisplayName="Filter Transactions" sap:VirtualizedContainerService.HintSize="810.4,901.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
