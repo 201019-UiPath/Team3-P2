@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>559,565</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>559,525</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReportToUser_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -57,6 +57,10 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="ReportToUser" sap:VirtualizedContainerService.HintSize="539,465" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -70,7 +74,10 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_UserChoice]" sap:VirtualizedContainerService.HintSize="497,373" sap2010:WorkflowViewState.IdRef="Switch`1_2">
-      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" x:Key="&quot;Steam Choice&quot;" Body="Hello,&#xA;&#xA;Here is the data for your most recent Game Getting! Included in the attachments are all of the games you chose to add and install.&#xA;Please make any necessary changes for games that I was not able to install.&#xA;&#xA;Goodbye!" DisplayName="Send SMTP Mail Message" Email="getterofgames@outlook.com" EnableSSL="True" From="getterofgames@outlook.com" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Password="GoGoGadgetGoteem" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com" Subject="Game Getter Report" To="getterofgames@outlook.com">
+      <Switch.Default>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;No email was sent&quot;]" />
+      </Switch.Default>
+      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" x:Key="Steam" Body="Hello,&#xA;&#xA;Here is the data for your most recent Game Getting! Included in the attachments are all of the games you chose to add and install.&#xA;Please make any necessary changes for games that I was not able to install.&#xA;&#xA;Goodbye!" DisplayName="Send SMTP Mail Message" Email="getterofgames@outlook.com" EnableSSL="True" From="getterofgames@outlook.com" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Password="GoGoGadgetGoteem" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com" Subject="Game Getter Report" To="getterofgames@outlook.com">
         <ui:SendMail.Files>
           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
             <InArgument x:TypeArguments="x:String">[in_SteamAddExcel]</InArgument>
@@ -78,15 +85,22 @@
           </scg:List>
         </ui:SendMail.Files>
       </ui:SendMail>
-      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" x:Key="&quot;Epic Choice&quot;" Body="Hello,&#xD;&#xA;&#xD;&#xA;Here is the data for your most recent Game Getting! Included in the attachments are all of the games you chose to add and install.&#xD;&#xA;Please make any necessary changes for games that I was not able to install.&#xD;&#xA;&#xD;&#xA;Goodbye!" DisplayName="Send SMTP Mail Message" Email="getterofgames@outlook.com" EnableSSL="True" From="getterofgames@outlook.com" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="False" Password="GoGoGadgetGoteem" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com" Subject="Game Getter Report" To="getterofgames@outlook.com">
-        <ui:SendMail.Files>
-          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-            <InArgument x:TypeArguments="x:String">[in_EpicAddExcel]</InArgument>
-            <InArgument x:TypeArguments="x:String">[in_EpicInstallExcel]</InArgument>
-          </scg:List>
-        </ui:SendMail.Files>
-      </ui:SendMail>
-      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" x:Key="in_PossibleOptions.Last" Body="Hello,&#xD;&#xA;&#xD;&#xA;Here is the data for your most recent Game Getting! Included in the attachments are all of the games you chose to add and install.&#xD;&#xA;Please make any necessary changes for games that I was not able to install.&#xD;&#xA;&#xD;&#xA;Goodbye!" DisplayName="Send SMTP Mail Message" Email="getterofgames@outlook.com" EnableSSL="True" From="getterofgames@outlook.com" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="GoGoGadgetGoteem" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com" Subject="Game Getter Report" To="getterofgames@outlook.com">
+      <Sequence x:Key="Epic Games" sap:VirtualizedContainerService.HintSize="376,237" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="Hello,&#xA;&#xA;Here is the data for your most recent Game Getting! Included in the attachments are all of the games you chose to add and install.&#xA;Please make any necessary changes for games that I was not able to install.&#xA;&#xA;Goodbye!" DisplayName="Send SMTP Mail Message" Email="getterofgames@outlook.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="False" Password="GoGoGadgetGoteem" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com" Subject="Game Getter Report" To="getterofgames@outlook.com">
+          <ui:SendMail.Files>
+            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+              <InArgument x:TypeArguments="x:String">[in_EpicAddExcel]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_EpicInstallExcel]</InArgument>
+            </scg:List>
+          </ui:SendMail.Files>
+        </ui:SendMail>
+      </Sequence>
+      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" x:Key="All" Body="Hello,&#xA;&#xA;Here is the data for your most recent Game Getting! Included in the attachments are all of the games you chose to add and install.&#xA;Please make any necessary changes for games that I was not able to install.&#xA;&#xA;Goodbye!" DisplayName="Send SMTP Mail Message" Email="getterofgames@outlook.com" EnableSSL="True" From="getterofgames@outlook.com" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="GoGoGadgetGoteem" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com" Subject="Game Getter Report" To="getterofgames@outlook.com">
         <ui:SendMail.Files>
           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
             <InArgument x:TypeArguments="x:String">[in_SteamAddExcel]</InArgument>
