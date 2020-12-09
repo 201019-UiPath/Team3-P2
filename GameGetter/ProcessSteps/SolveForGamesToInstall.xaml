@@ -67,8 +67,8 @@
       <If.Then>
         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke FilterInstallSelectionbyAddSuccess workflow" sap:VirtualizedContainerService.HintSize="367,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Components\FilterInstallSelectionbyAddSuccess.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputPath">[in_Config("EpicGameList").ToString]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputSheet">Sheet1</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputPath">[in_Config("EpicInstallInputPath").ToString]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputSheet">[in_Config("EpicInstallInputSheet").ToString]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_AddOutputPath">[in_Config("EpicAddOutputPath").ToString()]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_AddOutputSheet">[in_Config("EpicAddOutputSheet").ToString()]</InArgument>
             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
