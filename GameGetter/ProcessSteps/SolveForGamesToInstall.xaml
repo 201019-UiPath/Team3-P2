@@ -4,7 +4,7 @@
     <x:Property Name="in_UserChoice" Type="InArgument(x:String)" />
     <x:Property Name="in_PossibleOptions" Type="InArgument(scg:ICollection(x:String))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>568,784</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>574,774</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -29,7 +29,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
@@ -46,9 +46,10 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Here, we show the user which games were successfully added by aggregating the output workbooks from the previous sequence and showing the results to the user. We then ask the user which games they want to install, take their response, and then update an Excel sheet that the next workflows read in order to start installing games." DisplayName="Verify successful additions" sap:VirtualizedContainerService.HintSize="548,684" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence sap2010:Annotation.AnnotationText="Here, we show the user which games were successfully added by aggregating the output workbooks from the previous sequence and showing the results to the user. We then ask the user which games they want to install, take their response, and then update an Excel sheet that the next workflows read in order to start installing games." DisplayName="Verify successful additions" sap:VirtualizedContainerService.HintSize="554,674" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -56,7 +57,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[in_UserChoice = in_Config(&quot;EpicChoice&quot;).ToString() or in_UserChoice = in_PossibleOptions.Last]" DisplayName="If the user chose Epic" sap:VirtualizedContainerService.HintSize="506.4,237.6" sap2010:WorkflowViewState.IdRef="If_18">
+    <If Condition="[in_UserChoice = in_Config(&quot;EpicChoice&quot;).ToString() or in_UserChoice = in_PossibleOptions.Last]" DisplayName="If the user chose Epic" sap:VirtualizedContainerService.HintSize="512,235" sap2010:WorkflowViewState.IdRef="If_18">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -64,7 +65,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke FilterInstallSelectionbyAddSuccess workflow" sap:VirtualizedContainerService.HintSize="362.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Components\FilterInstallSelectionbyAddSuccess.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke FilterInstallSelectionbyAddSuccess workflow" sap:VirtualizedContainerService.HintSize="367,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Components\FilterInstallSelectionbyAddSuccess.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputPath">[in_Config("EpicGameList").ToString]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputSheet">Sheet1</InArgument>
@@ -75,7 +76,7 @@
         </ui:InvokeWorkflowFile>
       </If.Then>
     </If>
-    <If Condition="[in_UserChoice = in_Config(&quot;SteamChoice&quot;).ToString() or in_UserChoice = in_PossibleOptions.Last]" DisplayName="If the user chose Steam" sap:VirtualizedContainerService.HintSize="506.4,237.6" sap2010:WorkflowViewState.IdRef="If_19">
+    <If Condition="[in_UserChoice = in_Config(&quot;SteamChoice&quot;).ToString() or in_UserChoice = in_PossibleOptions.Last]" DisplayName="If the user chose Steam" sap:VirtualizedContainerService.HintSize="512,235" sap2010:WorkflowViewState.IdRef="If_19">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -83,10 +84,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke FilterInstallSelectionbyAddSuccess workflow" sap:VirtualizedContainerService.HintSize="362.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Components\FilterInstallSelectionbyAddSuccess.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke FilterInstallSelectionbyAddSuccess workflow" sap:VirtualizedContainerService.HintSize="367,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Components\FilterInstallSelectionbyAddSuccess.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputPath">[in_Config("SteamGameList").ToString]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputSheet">Sheet1</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputPath">[in_Config("SteamInstallInputPath").ToString]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputSheet">[in_Config("SteamInstallInputSheet").ToString]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_AddOutputPath">[in_Config("SteamAddOutputPath").ToString()]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_AddOutputSheet">[in_Config("SteamAddOutputSheet").ToString()]</InArgument>
             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
