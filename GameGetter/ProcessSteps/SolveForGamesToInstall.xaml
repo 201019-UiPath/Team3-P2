@@ -1,10 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SolveForGamesToInstall" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SolveForGamesToInstall" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_UserChoice" Type="InArgument(x:String)" />
     <x:Property Name="in_PossibleOptions" Type="InArgument(scg:ICollection(x:String))" />
+    <x:Property Name="out_DoSteamInstall" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_DoEpicInstall" Type="OutArgument(x:Boolean)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>574,774</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>646.4,1640.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -46,10 +48,9 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Here, we show the user which games were successfully added by aggregating the output workbooks from the previous sequence and showing the results to the user. We then ask the user which games they want to install, take their response, and then update an Excel sheet that the next workflows read in order to start installing games." DisplayName="Verify successful additions" sap:VirtualizedContainerService.HintSize="554,674" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence sap2010:Annotation.AnnotationText="Here, we show the user which games were successfully added by aggregating the output workbooks from the previous sequence and showing the results to the user. We then ask the user which games they want to install, take their response, and then update an Excel sheet that the next workflows read in order to start installing games." DisplayName="Verify successful additions" sap:VirtualizedContainerService.HintSize="626.4,1540.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -57,7 +58,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[in_UserChoice = in_Config(&quot;EpicChoice&quot;).ToString() or in_UserChoice = in_PossibleOptions.Last]" DisplayName="If the user chose Epic" sap:VirtualizedContainerService.HintSize="512,235" sap2010:WorkflowViewState.IdRef="If_18">
+    <If Condition="[in_UserChoice = in_Config(&quot;EpicChoice&quot;).ToString() or in_UserChoice = in_PossibleOptions.Last]" DisplayName="If the user chose Epic" sap:VirtualizedContainerService.HintSize="584.8,670.4" sap2010:WorkflowViewState.IdRef="If_18">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -65,18 +66,68 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke FilterInstallSelectionbyAddSuccess workflow" sap:VirtualizedContainerService.HintSize="367,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Components\FilterInstallSelectionbyAddSuccess.xaml">
-          <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputPath">[in_Config("EpicInstallInputPath").ToString]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputSheet">[in_Config("EpicInstallInputSheet").ToString]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_AddOutputPath">[in_Config("EpicAddOutputPath").ToString()]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_AddOutputSheet">[in_Config("EpicAddOutputSheet").ToString()]</InArgument>
-            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-          </ui:InvokeWorkflowFile.Arguments>
-        </ui:InvokeWorkflowFile>
+        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,520.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch.Try>
+            <Sequence sap:VirtualizedContainerService.HintSize="404,280.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke FilterInstallSelectionbyAddSuccess workflow" sap:VirtualizedContainerService.HintSize="362.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Components\FilterInstallSelectionbyAddSuccess.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputPath">[in_Config("EpicInstallInputPath").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputSheet">[in_Config("EpicInstallInputSheet").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_AddOutputPath">[in_Config("EpicAddOutputPath").ToString()]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_AddOutputSheet">[in_Config("EpicAddOutputSheet").ToString()]</InArgument>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <Assign sap:VirtualizedContainerService.HintSize="362.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_DoEpicInstall]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="sd:NoNullAllowedException" sap:VirtualizedContainerService.HintSize="400,356" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="sd:NoNullAllowedException">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:NoNullAllowedException" Name="exception" />
+                </ActivityAction.Argument>
+                <Sequence sap:VirtualizedContainerService.HintSize="375.2,285.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Set flag to not execute Epic installer.&quot;]" />
+                  <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[out_DoEpicInstall]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
       </If.Then>
     </If>
-    <If Condition="[in_UserChoice = in_Config(&quot;SteamChoice&quot;).ToString() or in_UserChoice = in_PossibleOptions.Last]" DisplayName="If the user chose Steam" sap:VirtualizedContainerService.HintSize="512,235" sap2010:WorkflowViewState.IdRef="If_19">
+    <If Condition="[in_UserChoice = in_Config(&quot;SteamChoice&quot;).ToString() or in_UserChoice = in_PossibleOptions.Last]" DisplayName="If the user chose Steam" sap:VirtualizedContainerService.HintSize="584.8,661.6" sap2010:WorkflowViewState.IdRef="If_19">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -84,15 +135,65 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke FilterInstallSelectionbyAddSuccess workflow" sap:VirtualizedContainerService.HintSize="367,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Components\FilterInstallSelectionbyAddSuccess.xaml">
-          <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputPath">[in_Config("SteamInstallInputPath").ToString]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputSheet">[in_Config("SteamInstallInputSheet").ToString]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_AddOutputPath">[in_Config("SteamAddOutputPath").ToString()]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_AddOutputSheet">[in_Config("SteamAddOutputSheet").ToString()]</InArgument>
-            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-          </ui:InvokeWorkflowFile.Arguments>
-        </ui:InvokeWorkflowFile>
+        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="440.8,512" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch.Try>
+            <Sequence sap:VirtualizedContainerService.HintSize="404,280.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke FilterInstallSelectionbyAddSuccess workflow" sap:VirtualizedContainerService.HintSize="362.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Components\FilterInstallSelectionbyAddSuccess.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputPath">[in_Config("SteamInstallInputPath").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_InstallInputSheet">[in_Config("SteamInstallInputSheet").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_AddOutputPath">[in_Config("SteamAddOutputPath").ToString()]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_AddOutputSheet">[in_Config("SteamAddOutputSheet").ToString()]</InArgument>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <Assign sap:VirtualizedContainerService.HintSize="362.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_DoSteamInstall]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="sd:NoNullAllowedException" sap:VirtualizedContainerService.HintSize="407.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="sd:NoNullAllowedException">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:NoNullAllowedException" Name="exception" />
+                </ActivityAction.Argument>
+                <Sequence sap:VirtualizedContainerService.HintSize="375.2,285.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Set flag to not execute Steam installer.&quot;]" />
+                  <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[out_DoSteamInstall]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
       </If.Then>
     </If>
   </Sequence>
