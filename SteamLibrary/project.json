@@ -32,7 +32,7 @@
       "privateWorkflows": [
         "Web/test.xaml",
         "Native/test.xaml",
-        "Web/ExtractFreeGames.xaml",
+        "ExtractFreeGamesTest.xaml",
         "InstallGameSteamTest.xaml"
       ]
     },
