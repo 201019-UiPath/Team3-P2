@@ -3,7 +3,7 @@
   "description": "An Automation for fetching and adding free games to one's game accounts.",
   "main": "Main.xaml",
   "dependencies": {
-    "EpicGamesLibrary": "[0.7.9]",
+    "EpicGamesLibrary": "[0.7.10]",
     "FindFileLocation.Activities": "[1.0.0]",
     "SteamLibrary": "[0.6.5]",
     "UiPath.Credentials.Activities": "[1.1.6479.13204]",
@@ -36,6 +36,17 @@
       "privateWorkflows": []
     },
     "fileInfos": []
+  },
+  "arguments": {
+    "input": [
+      {
+        "name": "in_OrchestratorQueueName",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": false,
+        "hasDefault": false
+      }
+    ],
+    "output": []
   },
   "expressionLanguage": "VisualBasic"
 }
