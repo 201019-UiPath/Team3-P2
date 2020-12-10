@@ -92,7 +92,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[loggedIn]" sap:VirtualizedContainerService.HintSize="519.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8a24cb0cbaee6d01fb2b4aa765960d93" Selector="&lt;webctrl aaname='Edit Profile' tag='SPAN' /&gt;" TimeoutMS="4000" WaitForReady="INTERACTIVE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8a24cb0cbaee6d01fb2b4aa765960d93" Selector="&lt;webctrl aaname='Edit Profile' tag='SPAN' /&gt;" TimeoutMS="7000" WaitForReady="INTERACTIVE" />
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
               <If Condition="[loggedIn]" sap:VirtualizedContainerService.HintSize="519.2,458.4" sap2010:WorkflowViewState.IdRef="If_1">
@@ -164,7 +164,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[loggedOut]" sap:VirtualizedContainerService.HintSize="577.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7c15339414078695f336441499019285" Selector="&lt;webctrl aaname='Sign In' parentid='mainBody' tag='DIV' /&gt;" TimeoutMS="4000" WaitForReady="INTERACTIVE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7c15339414078695f336441499019285" Selector="&lt;webctrl aaname='Sign In' parentid='mainBody' tag='DIV' /&gt;" TimeoutMS="7000" WaitForReady="INTERACTIVE" />
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
               <If Condition="[loggedOut]" sap:VirtualizedContainerService.HintSize="577.6,242.4" sap2010:WorkflowViewState.IdRef="If_2">
