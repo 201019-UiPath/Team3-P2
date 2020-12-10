@@ -56,6 +56,7 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Extracts a list of all transactions one has already bought on the Epic Store by navigating to their transactions list in their account, getting all transactions, and returning as an out argument a list of those transactions by name of the associated products. This allows an easy way to filter through unadded games by comparing them to the games that are already added." DisplayName="Find Games in Library" sap:VirtualizedContainerService.HintSize="852,2342.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
@@ -250,7 +251,7 @@
                     <InArgument x:TypeArguments="scg:ICollection(x:String)">[new List(of String)]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <TerminateWorkflow DisplayName="Terminate Workflow" sap:VirtualizedContainerService.HintSize="262.4,22.4" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="[String.Format(&quot;Exception caught when filtering through found transactions:  {0}&quot;, exception.Message)]" />
+                <Throw Exception="[new Exception(String.Format(&quot;Exception caught when filtering through found transactions:  {0}&quot;, exception.Message))]" sap:VirtualizedContainerService.HintSize="262.4,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
               </Sequence>
             </ActivityAction>
           </Catch>
