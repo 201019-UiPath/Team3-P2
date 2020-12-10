@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>972.8,1873.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>972.8,2214.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddGamesSteam_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -62,7 +62,7 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddGamesSteam" sap:VirtualizedContainerService.HintSize="952.8,1773.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddGamesSteam" sap:VirtualizedContainerService.HintSize="952.8,2114.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="FreeGames" />
       <Variable x:TypeArguments="sd:DataTable" Name="GamesToAdd" />
@@ -74,7 +74,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Add Game to Library" sap:VirtualizedContainerService.HintSize="911.2,1680.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Add Game to Library" sap:VirtualizedContainerService.HintSize="911.2,2021.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="AlreadyInLibrary" />
         <Variable x:TypeArguments="x:Boolean" Name="AgeVerificationReq" />
@@ -92,18 +92,19 @@
           <InArgument x:TypeArguments="x:String">[in_GameName]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="869.6,1488" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="e0aac96c7bb63a604b3d631bfa0fc7a2" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;">
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="869.6,1828.8" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="e0aac96c7bb63a604b3d631bfa0fc7a2" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;">
         <ui:WindowScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="836,1340.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="836,1681.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
+              <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="794.4,22.4" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
               <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Game Name Into Searchbar" EmptyField="True" sap:VirtualizedContainerService.HintSize="794.4,52.8" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[GameName]">
                 <ui:TypeInto.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4b5ef0b23f9202b2c66d816e4a6b281a" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='*' role='document' /&gt;&lt;ctrl name='search the store' role='editable text' /&gt;">
@@ -150,10 +151,10 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:Click>
-              <Sequence DisplayName="Handle Age Verification Popup" sap:VirtualizedContainerService.HintSize="794.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence DisplayName="Handle Age Verification Popup" sap:VirtualizedContainerService.HintSize="794.4,238.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -180,14 +181,14 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="376,737" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,741.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Age Verification Required&quot;]" />
-                      <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Day" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="1">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Age Verification Required&quot;]" />
+                      <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Day" sap:VirtualizedContainerService.HintSize="334.4,96.8" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="1">
                         <ui:TypeInto.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
                             <ui:Target.TimeoutMS>
@@ -199,7 +200,7 @@
                           </ui:Target>
                         </ui:TypeInto.Target>
                       </ui:TypeInto>
-                      <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Month" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="Jan">
+                      <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Month" sap:VirtualizedContainerService.HintSize="334.4,96.8" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="Jan">
                         <ui:TypeInto.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
                             <ui:Target.TimeoutMS>
@@ -211,7 +212,7 @@
                           </ui:Target>
                         </ui:TypeInto.Target>
                       </ui:TypeInto>
-                      <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Year" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="1990">
+                      <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Year" sap:VirtualizedContainerService.HintSize="334.4,96.8" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="1990">
                         <ui:TypeInto.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
                             <ui:Target.TimeoutMS>
@@ -248,11 +249,11 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;No Age Verification Required&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;No Age Verification Required&quot;]" />
                   </If.Else>
                 </If>
               </Sequence>
-              <ui:UiElementExists DisplayName="Check if Game already in Library" Exists="[AlreadyInLibrary]" sap:VirtualizedContainerService.HintSize="794.4,52.8" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists DisplayName="Check if Game already in Library" Exists="[AlreadyInLibrary]" sap:VirtualizedContainerService.HintSize="794.4,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                 <ui:UiElementExists.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="281b7ad4efa8d9130a687b0e1858b7d2" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='* on Steam' role='document' /&gt;&lt;ctrl name='Play Now' role='link' /&gt;" TimeoutMS="5000">
                     <ui:Target.WaitForReady>
@@ -262,12 +263,12 @@
                 </ui:UiElementExists.Target>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:UiElementExists>
-              <If Condition="[AlreadyInLibrary = False]" DisplayName="If Game is already in Library or not" sap:VirtualizedContainerService.HintSize="794.4,760.8" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[AlreadyInLibrary = False]" DisplayName="If Game is already in Library or not" sap:VirtualizedContainerService.HintSize="794.4,815.2" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -275,14 +276,14 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,611.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,665.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Game is not in your library and will be added&quot;]" />
-                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Play Game to Add to library" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click Play Game to Add to library" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -294,13 +295,10 @@
                         </ui:CursorPosition>
                       </ui:Click.CursorPosition>
                       <ui:Click.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="cee342e6429a44b06cc4fc4b3cb95325" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='Play Game' role='link' /&gt;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="cee342e6429a44b06cc4fc4b3cb95325" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='Play Game' role='link' /&gt;" WaitForReady="COMPLETE">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
                         </ui:Target>
                       </ui:Click.Target>
                       <sap:WorkflowViewStateService.ViewState>
@@ -310,10 +308,10 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:Click>
-                    <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Installation Window" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="bbfe06c9574852e52fc91c319bcfa1cc" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Install*' /&gt;" WaitForReady="INTERACTIVE">
+                    <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" ContinueOnError="True" DisplayName="Close Installation Window" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="bbfe06c9574852e52fc91c319bcfa1cc" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Install*' /&gt;" WaitForReady="INTERACTIVE">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
