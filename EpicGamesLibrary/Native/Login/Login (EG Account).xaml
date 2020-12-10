@@ -41,6 +41,7 @@
       <x:String>UiPath.CV</x:String>
       <x:String>UiPath.Vision.OCR</x:String>
       <x:String>System.Security</x:String>
+      <x:String>System.Security.Authentication</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -166,7 +167,7 @@
               <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True" Expression="[libraryElementExists]" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
               <If Condition="[libraryElementExists]" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Else>
-                  <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[New Authentication.AuthenticationException(&quot;Login failed&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" />
+                  <Throw Exception="[New Authentication.AuthenticationException(&quot;Login failed&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
                 </If.Else>
               </If>
             </Sequence>

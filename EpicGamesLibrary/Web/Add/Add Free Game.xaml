@@ -6,7 +6,7 @@
   <this:Add_Free_Game.in_GameURL>
     <InArgument x:TypeArguments="x:String" />
   </this:Add_Free_Game.in_GameURL>
-  <sap:VirtualizedContainerService.HintSize>1177.6,3528</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1177.6,3775.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="17">
@@ -48,20 +48,20 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow takes in an opened browser and the url for a game to be added to one's Epic Games account, and performs the necessary actions to add it, or throw an exception (SelectorNotFound) if unsuccessful." DisplayName="Add Game" sap:VirtualizedContainerService.HintSize="1157.6,3468" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow takes in an opened browser and the url for a game to be added to one's Epic Games account, and performs the necessary actions to add it, or throw an exception (SelectorNotFound) if unsuccessful." DisplayName="Add Game" sap:VirtualizedContainerService.HintSize="1157.6,3675.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="1116,3344" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="1116,3551.2" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="This is the meat of the workflow, where the game is added." DisplayName="Handle free game" sap:VirtualizedContainerService.HintSize="1082.4,3204" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence sap2010:Annotation.AnnotationText="This is the meat of the workflow, where the game is added." DisplayName="Handle free game" sap:VirtualizedContainerService.HintSize="1082.4,3411.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Default="False" Name="isOwned" />
             </Sequence.Variables>
@@ -117,9 +117,9 @@
                 </ui:UiElementExists>
               </Sequence>
             </Sequence>
-            <If Condition="[not isOwned]" DisplayName="If not owned.." sap:VirtualizedContainerService.HintSize="1040.8,2474.4" sap2010:WorkflowViewState.IdRef="If_6">
+            <If Condition="[not isOwned]" DisplayName="If not owned.." sap:VirtualizedContainerService.HintSize="1040.8,2681.6" sap2010:WorkflowViewState.IdRef="If_6">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="896.8,2324.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                <Sequence sap:VirtualizedContainerService.HintSize="896.8,2532" sap2010:WorkflowViewState.IdRef="Sequence_29">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -172,7 +172,7 @@
                       </If.Then>
                     </If>
                   </Sequence>
-                  <TryCatch sap2010:Annotation.AnnotationText="This should find and click the GET button found on most Epic game pages. if it doesn't work, it should stop the workflow and the invoking process should move forward." DisplayName="Try to click the GET button" sap:VirtualizedContainerService.HintSize="855.2,247.2" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                  <TryCatch sap2010:Annotation.AnnotationText="This should find and click the GET button found on most Epic game pages. if it doesn't work, it should stop the workflow and the invoking process should move forward." DisplayName="Try to click the GET button" sap:VirtualizedContainerService.HintSize="855.2,454.4" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -207,10 +207,10 @@
                       </Sequence>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                      <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="400,229.6" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -226,7 +226,7 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[new SelectorNotFoundException(String.Format(&quot;No standard GET button was found on the web interface for the game at the URL {0}, being added by the Add Free Game workflow. \nGame pages without a GET button are not supported.&quot;, in_GameURL), exception)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_3" />
+                            <Throw Exception="[new SelectorNotFoundException(String.Format(&quot;No standard GET button was found on the web interface for the game at the URL {0}, being added by the Add Free Game workflow. \nGame pages without a GET button are not supported.&quot;, in_GameURL), exception)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
                           </Sequence>
                         </ActivityAction>
                       </Catch>

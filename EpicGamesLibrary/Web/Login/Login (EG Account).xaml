@@ -241,7 +241,7 @@
                 <ui:CheckFalse DisplayName="Check False" ErrorMessage="Login failed" Expression="[errorElementExists]" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="CheckFalse_1" />
                 <If Condition="[errorElementExists]" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_1">
                   <If.Then>
-                    <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[New Authentication.AuthenticationException(&quot;Login failed&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" />
+                    <Throw Exception="[New Authentication.AuthenticationException(&quot;Login failed&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
                   </If.Then>
                 </If>
               </Sequence>
@@ -266,7 +266,7 @@
                 </ui:UiElementExists>
                 <If Condition="[captchaExists]" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_2">
                   <If.Then>
-                    <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[New ValidationException(&quot;Captcha appeared&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_2" />
+                    <Throw Exception="[New ValidationException(&quot;Captcha appeared&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
                   </If.Then>
                 </If>
               </Sequence>
