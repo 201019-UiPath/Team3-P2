@@ -16,7 +16,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1035.2,1971.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1360,2146.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Login__EG_Account__1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -68,20 +68,20 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow logs into an Epic account on the website by using the associated email and password directly. This should be used if the user's account is not exclusively accessed through an account integration, such as a Google account. This workflow throws a AuthenticationException if the login failed with the given credentials." DisplayName="Login (Web)" sap:VirtualizedContainerService.HintSize="1015.2,1871.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow logs into an Epic account on the website by using the associated email and password directly. This should be used if the user's account is not exclusively accessed through an account integration, such as a Google account. This workflow throws a AuthenticationException if the login failed with the given credentials." DisplayName="Login (Web)" sap:VirtualizedContainerService.HintSize="1340,2046.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="973.6,1734.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="1298.4,1909.6" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="Takes in an email, a password (SecureString), and a pre-opened browser, and uses them to login to Epic Games on a website." DisplayName="Login with Epic Account" sap:VirtualizedContainerService.HintSize="940,1581.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence sap2010:Annotation.AnnotationText="Takes in an email, a password (SecureString), and a pre-opened browser, and uses them to login to Epic Games on a website." DisplayName="Login with Epic Account" sap:VirtualizedContainerService.HintSize="1264.8,1769.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -89,8 +89,8 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Login page" sap:VirtualizedContainerService.HintSize="898.4,60" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="https://www.epicgames.com/id/login/epic" />
-            <Sequence DisplayName="Do login inputs" sap:VirtualizedContainerService.HintSize="898.4,821.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Login page" sap:VirtualizedContainerService.HintSize="1223.2,60" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="https://www.epicgames.com/id/login/epic" />
+            <Sequence DisplayName="Do login inputs" sap:VirtualizedContainerService.HintSize="1223.2,821.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="ui:UiElement" Name="emailInputElem" />
                 <Variable x:TypeArguments="ui:UiElement" Name="passwordInputElem" />
@@ -165,7 +165,7 @@
                   </ui:TypeSecureText.Target>
                 </ui:TypeSecureText>
               </Sequence>
-              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="This presses enter into the password input to login instead of relying on a click." DisplayName="Send Hotkey To Login" sap:VirtualizedContainerService.HintSize="435.2,161.6" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
+              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="This presses enter into the password input to login instead of relying on a click." DelayMS="4000" DisplayName="Send Hotkey To Login" sap:VirtualizedContainerService.HintSize="435.2,161.6" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
                 <ui:SendHotkey.Target>
                   <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[passwordInputElem]">
                     <ui:Target.TimeoutMS>
@@ -217,14 +217,14 @@
                 </ui:CommentOut.Body>
               </ui:CommentOut>
             </Sequence>
-            <Parallel sap:VirtualizedContainerService.HintSize="898.4,496" sap2010:WorkflowViewState.IdRef="Parallel_1">
-              <Sequence sap2010:Annotation.AnnotationText="This checks if the login failure prompt pops up. If it does, we throw a AuthenticationException to signal to the invoking workflow that it didn't work, and that the input credentials were invalid." DisplayName="Check login failure" sap:VirtualizedContainerService.HintSize="200,449.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Parallel sap:VirtualizedContainerService.HintSize="1223.2,684" sap2010:WorkflowViewState.IdRef="Parallel_1">
+              <Sequence sap2010:Annotation.AnnotationText="This checks if the login failure prompt pops up. If it does, we throw a AuthenticationException to signal to the invoking workflow that it didn't work, and that the input credentials were invalid." DisplayName="Check login failure" sap:VirtualizedContainerService.HintSize="524.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="errorElementExists" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
@@ -245,7 +245,7 @@
                   </If.Then>
                 </If>
               </Sequence>
-              <Sequence DisplayName="Check for CAPTCHA" sap:VirtualizedContainerService.HintSize="524.8,449.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Check for CAPTCHA" sap:VirtualizedContainerService.HintSize="524.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="captchaExists" />
                 </Sequence.Variables>
@@ -255,9 +255,9 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:UiElementExists DisplayName="Element Exists 'HTML '" Exists="[captchaExists]" sap:VirtualizedContainerService.HintSize="483.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                <ui:UiElementExists DisplayName="Element Exists - CAPTCHA frame" Exists="[captchaExists]" sap:VirtualizedContainerService.HintSize="483.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                   <ui:UiElementExists.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="761b82cb4b665574aa7fe80b0727118d" Selector="&lt;webctrl id='CaptchaFrame' /&gt;" TimeoutMS="6500">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="94c089534f5b923fc0f659baeb642ed4" Selector="&lt;webctrl src='https://epic-games-api.arkoselabs.com*' tag='IFRAME' /&gt;&lt;webctrl omit:id='fc-iframe-wrap' tag='IFRAME' /&gt;&lt;webctrl id='CaptchaFrame' tag='IFRAME' /&gt;&lt;webctrl aaname='Captcha Challenge' tag='SPAN' /&gt;" TimeoutMS="6500">
                       <ui:Target.WaitForReady>
                         <InArgument x:TypeArguments="ui:WaitForReady" />
                       </ui:Target.WaitForReady>

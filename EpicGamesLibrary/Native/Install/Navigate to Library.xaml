@@ -83,7 +83,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="d8f32305cdb645ddb27fc5e41d3451de" Selector="&lt;wnd app='epicgameslauncher.exe' cls='UnrealWindow' omit:title='Epic Games Launcher' /&gt;&lt;wnd omit:cls='Chrome_WidgetWin_0' /&gt;&lt;ctrl omit:name='Epic Games Store | Official Site' role='document' /&gt;&lt;ctrl name='Library' role='link' /&gt;" WaitForReady="COMPLETE">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="d8f32305cdb645ddb27fc5e41d3451de" Selector="&lt;wnd app='epicgameslauncher.exe' cls='UnrealWindow' title='Epic Games Launcher' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' /&gt;&lt;ctrl omit:name='Epic Games Store | Official Site' role='document' /&gt;&lt;ctrl name='Library' role='link' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
