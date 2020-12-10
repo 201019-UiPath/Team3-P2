@@ -101,7 +101,7 @@
             </ActivityAction.Argument>
             <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="836,2275.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <Sequence.Variables>
-                <Variable x:TypeArguments="ui:GenericValue" Name="tempGameName" />
+                <Variable x:TypeArguments="x:String" Name="tempGameName" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -180,10 +180,10 @@
               </ui:TypeInto>
               <Assign sap:VirtualizedContainerService.HintSize="794.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="ui:GenericValue">[tempGameName]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[tempGameName]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="ui:GenericValue">[GameName.Replace(" ", "*")]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[GameName.Replace(" ", "*").Replace(":", "*").Replace("_", "*")]</InArgument>
                 </Assign.Value>
               </Assign>
               <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Search Result" sap:VirtualizedContainerService.HintSize="794.4,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
@@ -198,7 +198,7 @@
                   </ui:CursorPosition>
                 </ui:Click.CursorPosition>
                 <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a6c81efb3a1c2290e1e827bbc316211e" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='*' role='document' /&gt;&lt;ctrl name='{{tempGameName}}*' role='link' /&gt;">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a6c81efb3a1c2290e1e827bbc316211e" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='*' role='document' /&gt;&lt;ctrl name='*{{tempGameName}}*' role='link' /&gt;">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
