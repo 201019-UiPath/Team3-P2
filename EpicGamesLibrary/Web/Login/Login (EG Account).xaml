@@ -16,7 +16,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1360,2115.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1360,1987.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Login__EG_Account__1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -68,20 +68,20 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow logs into an Epic account on the website by using the associated email and password directly. This should be used if the user's account is not exclusively accessed through an account integration, such as a Google account. This workflow throws a AuthenticationException if the login failed with the given credentials." DisplayName="Login (Web)" sap:VirtualizedContainerService.HintSize="1340,2015.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow logs into an Epic account on the website by using the associated email and password directly. This should be used if the user's account is not exclusively accessed through an account integration, such as a Google account. This workflow throws a AuthenticationException if the login failed with the given credentials." DisplayName="Login (Web)" sap:VirtualizedContainerService.HintSize="1340,1887.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="1298.4,1878.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="1298.4,1750.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="Takes in an email, a password (SecureString), and a pre-opened browser, and uses them to login to Epic Games on a website." DisplayName="Login with Epic Account" sap:VirtualizedContainerService.HintSize="1264.8,1738.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence sap2010:Annotation.AnnotationText="Takes in an email, a password (SecureString), and a pre-opened browser, and uses them to login to Epic Games on a website." DisplayName="Login with Epic Account" sap:VirtualizedContainerService.HintSize="1264.8,1610.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -216,8 +216,8 @@
                 </ui:Click.Target>
               </ui:Click>
             </Sequence>
-            <Parallel sap:VirtualizedContainerService.HintSize="1223.2,684" sap2010:WorkflowViewState.IdRef="Parallel_1">
-              <Sequence sap2010:Annotation.AnnotationText="This checks if the login failure prompt pops up. If it does, we throw a AuthenticationException to signal to the invoking workflow that it didn't work, and that the input credentials were invalid." DisplayName="Check login failure" sap:VirtualizedContainerService.HintSize="524.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Parallel sap:VirtualizedContainerService.HintSize="1223.2,556" sap2010:WorkflowViewState.IdRef="Parallel_1">
+              <Sequence sap2010:Annotation.AnnotationText="This checks if the login failure prompt pops up. If it does, we throw a AuthenticationException to signal to the invoking workflow that it didn't work, and that the input credentials were invalid." DisplayName="Check login failure" sap:VirtualizedContainerService.HintSize="524.8,509.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="errorElementExists" />
                 </Sequence.Variables>
@@ -237,14 +237,13 @@
                     </ui:Target>
                   </ui:UiElementExists.Target>
                 </ui:UiElementExists>
-                <ui:CheckFalse DisplayName="Check False" ErrorMessage="Login failed" Expression="[errorElementExists]" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="CheckFalse_1" />
                 <If Condition="[errorElementExists]" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_1">
                   <If.Then>
                     <Throw Exception="[New Authentication.AuthenticationException(&quot;Login failed&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
                   </If.Then>
                 </If>
               </Sequence>
-              <Sequence DisplayName="Check for CAPTCHA" sap:VirtualizedContainerService.HintSize="524.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Check for CAPTCHA" sap:VirtualizedContainerService.HintSize="524.8,509.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="captchaExists" />
                 </Sequence.Variables>
