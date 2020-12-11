@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Logout" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Logout" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Browser" Type="InArgument(ui:Browser)" />
   </x:Members>
@@ -8,10 +8,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>756,1934.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1019.2,2217.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Logout_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="21">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -33,10 +33,10 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -56,22 +56,22 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow log out of a Steam account on the website." DisplayName="Logout (Web)" sap:VirtualizedContainerService.HintSize="736,1834.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow log out of a Steam account on the website." DisplayName="Logout (Web)" sap:VirtualizedContainerService.HintSize="999.2,2117.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="694.4,1710.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="957.6,1993.6" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="Takes in a username, a password (SecureString), and a pre-opened browser, and uses them to login to Steam on a website." DisplayName="Logout at page" sap:VirtualizedContainerService.HintSize="660.8,1557.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence sap2010:Annotation.AnnotationText="Takes in a username, a password (SecureString), and a pre-opened browser, and uses them to login to Steam on a website." DisplayName="Logout at page" sap:VirtualizedContainerService.HintSize="924,1840.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -79,8 +79,8 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Login page" sap:VirtualizedContainerService.HintSize="619.2,60" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="https://steamcommunity.com/login/home/" />
-            <Sequence DisplayName="Handle username inputs" sap:VirtualizedContainerService.HintSize="619.2,698.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Login page" sap:VirtualizedContainerService.HintSize="882.4,60" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="https://steamcommunity.com/login/home/" />
+            <Sequence DisplayName="Handle username inputs" sap:VirtualizedContainerService.HintSize="882.4,698.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="loggedIn" />
               </Sequence.Variables>
@@ -151,10 +151,12 @@
                 </If.Then>
               </If>
             </Sequence>
-            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Login page" sap:VirtualizedContainerService.HintSize="619.2,60" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="https://steamcommunity.com/login/home/" />
-            <Sequence DisplayName="Handle username inputs" sap:VirtualizedContainerService.HintSize="619.2,482.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Login page" sap:VirtualizedContainerService.HintSize="882.4,60" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="https://steamcommunity.com/login/home/" />
+            <Sequence DisplayName="Handle username inputs" sap:VirtualizedContainerService.HintSize="882.4,778.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="loggedOut" />
+                <Variable x:TypeArguments="x:Boolean" Name="SignInTextExists" />
+                <Variable x:TypeArguments="x:Boolean" Name="SignInButtonExists" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -162,12 +164,41 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[loggedOut]" sap:VirtualizedContainerService.HintSize="577.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
-                <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7c15339414078695f336441499019285" Selector="&lt;webctrl aaname='Sign In' parentid='mainBody' tag='DIV' /&gt;" TimeoutMS="7000" WaitForReady="INTERACTIVE" />
-                </ui:UiElementExists.Target>
-              </ui:UiElementExists>
-              <If Condition="[loggedOut]" sap:VirtualizedContainerService.HintSize="577.6,242.4" sap2010:WorkflowViewState.IdRef="If_2">
+              <Parallel sap:VirtualizedContainerService.HintSize="840.8,153.6" sap2010:WorkflowViewState.IdRef="Parallel_1">
+                <ui:UiElementExists DisplayName="Element Exists 'SignInText'" Exists="[SignInTextExists]" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7c15339414078695f336441499019285" Selector="&lt;webctrl aaname='Sign In' parentid='mainBody' tag='DIV' /&gt;" TimeoutMS="7000" WaitForReady="INTERACTIVE" />
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+                <ui:UiElementExists DisplayName="Element Exists 'SignInButton'" Exists="[SignInButtonExists]" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8c1026070518a23038f07c500e26e695" Selector="&lt;webctrl parentid='ModalContentContainer' tag='DIV' class='community_activity_signin_buttons' /&gt;" TimeoutMS="7000" WaitForReady="INTERACTIVE" />
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+              </Parallel>
+              <If Condition="[SignInTextExists orelse SignInButtonExists]" sap:VirtualizedContainerService.HintSize="840.8,209.6" sap2010:WorkflowViewState.IdRef="If_3">
+                <If.Then>
+                  <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[loggedOut]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </If.Then>
+                <If.Else>
+                  <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[loggedOut]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </If.Else>
+              </If>
+              <If Condition="[loggedOut]" sap:VirtualizedContainerService.HintSize="840.8,242.4" sap2010:WorkflowViewState.IdRef="If_2">
                 <If.Then>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Successful logout.&quot;]" />
                 </If.Then>

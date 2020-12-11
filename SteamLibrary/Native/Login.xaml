@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1432,3475</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1425.6,3512</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -59,7 +59,7 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Handles logging in the user into the Steam Client.&#xA;&#xA;Preconditions: Steam already open&#xA;Post action: Opens the Steam client " DisplayName="Open Steam Login" sap:VirtualizedContainerService.HintSize="1412,3375" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Handles logging in the user into the Steam Client.&#xA;&#xA;Preconditions: Steam already open&#xA;Post action: Opens the Steam client " DisplayName="Open Steam Login" sap:VirtualizedContainerService.HintSize="1405.6,3412" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="uc:CvString" Name="Password" />
       <Variable x:TypeArguments="uc:CvString" Name="Username" />
@@ -71,19 +71,19 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1370,3211" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="7e5b6f29e3f773b4f3c047d27ec58401" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam*' /&gt;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1364,3243.2" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="7e5b6f29e3f773b4f3c047d27ec58401" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam*' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1336,3065" sap2010:WorkflowViewState.IdRef="Sequence_22">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1330.4,3096" sap2010:WorkflowViewState.IdRef="Sequence_22">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Private: Assign" sap:VirtualizedContainerService.HintSize="1294,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign DisplayName="Private: Assign" sap:VirtualizedContainerService.HintSize="1288.8,60" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="uc:CvString">[Password]</OutArgument>
               </Assign.To>
@@ -91,39 +91,39 @@
                 <InArgument x:TypeArguments="uc:CvString">[new System.Net.NetworkCredential(string.Empty, in_Password).Password]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:UiElementExists DisplayName="Element Exists 'H2 FEATURED'" Exists="[IsLoggedIn]" sap:VirtualizedContainerService.HintSize="1294,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+            <ui:UiElementExists DisplayName="Element Exists 'H2 FEATURED'" Exists="[IsLoggedIn]" sap:VirtualizedContainerService.HintSize="1288.8,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a2ebd66f3aa9dc7cbe647cbef5a19fc5" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='1' /&gt;&lt;ctrl name='Welcome to Steam' role='document' /&gt;&lt;ctrl name='FEATURED &amp;amp; RECOMMENDED' role='H2' /&gt;" TimeoutMS="1000">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a2ebd66f3aa9dc7cbe647cbef5a19fc5" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='Welcome to Steam' role='document' /&gt;&lt;ctrl name='FEATURED &amp;amp; RECOMMENDED' role='H2' /&gt;" TimeoutMS="1000">
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If sap2010:Annotation.AnnotationText="Checks if the user is logged in already&#xA;" Condition="[IsLoggedIn]" DisplayName="If logged in" sap:VirtualizedContainerService.HintSize="1294,2045" sap2010:WorkflowViewState.IdRef="If_1">
+            <If sap2010:Annotation.AnnotationText="Checks if the user is logged in already&#xA;" Condition="[IsLoggedIn]" DisplayName="If logged in" sap:VirtualizedContainerService.HintSize="1288.8,2067.2" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence sap:VirtualizedContainerService.HintSize="375.2,185.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;User is already logged in&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;User is already logged in&quot;]" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="873,1856" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="869.6,1873.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="z3/oS5VBOns8fNleMTxYfrU+MUQjYRZx4LD5nQIEib0H4zbjRvFsnkQHPA2VBbi3TxuXc6PzZLuB9YYiKKh/Sw==" DisplayName="CV Screen Scope 'steam.exe  Steam Login'" sap:VirtualizedContainerService.HintSize="831,1764" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V1">
+                  <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="z3/oS5VBOns8fNleMTxYfrU+MUQjYRZx4LD5nQIEib0H4zbjRvFsnkQHPA2VBbi3TxuXc6PzZLuB9YYiKKh/Sw==" DisplayName="CV Screen Scope 'steam.exe  Steam Login'" sap:VirtualizedContainerService.HintSize="828,1780.8" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V1">
                     <p:CVScope.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
@@ -139,8 +139,8 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="797,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_2" Text="[in_Username]" />
-                          <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" Descriptor="[&quot;Target: InputBox (118,88,329,23)&quot; +&#xA;&quot;Anchor: Text 'name' (79,97,27,6)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Click - InputBox" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_3" InformativeScreenshot="968570fdaa3679c73bd7754874633235" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
+                          <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="794.4,60" sap2010:WorkflowViewState.IdRef="SetToClipboard_2" Text="[in_Username]" />
+                          <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" Descriptor="[&quot;Target: InputBox (118,88,329,23)&quot; +&#xA;&quot;Anchor: Text 'name' (79,97,27,6)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Click - InputBox" sap:VirtualizedContainerService.HintSize="794.4,107.2" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_3" InformativeScreenshot="968570fdaa3679c73bd7754874633235" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
                             <p:CvClickWithDescriptor.CursorPosition>
                               <ui:CursorPosition Position="Center">
                                 <ui:CursorPosition.OffsetX>
@@ -174,7 +174,7 @@
                               </ui:Target>
                             </p:CvClickWithDescriptor.Target>
                           </p:CvClickWithDescriptor>
-                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="797,116" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="v" KeyModifiers="Ctrl">
+                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="794.4,117.6" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="v" KeyModifiers="Ctrl">
                             <ui:SendHotkey.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
                                 <ui:Target.TimeoutMS>
@@ -186,8 +186,8 @@
                               </ui:Target>
                             </ui:SendHotkey.Target>
                           </ui:SendHotkey>
-                          <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="797,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[Password]" />
-                          <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: InputBox (116,122,330,23)&quot; +&#xA;&quot;Anchor: Text 'STEAM' (117,51,67,13)&quot; +&#xA;&quot;Anchor: Image (46,123,67,22)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Click - InputBox" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="a5c60c144cb22ad8da47f664a925d868" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
+                          <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="794.4,60" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[Password]" />
+                          <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: InputBox (116,122,330,23)&quot; +&#xA;&quot;Anchor: Text 'STEAM' (117,51,67,13)&quot; +&#xA;&quot;Anchor: Image (46,123,67,22)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Click - InputBox" sap:VirtualizedContainerService.HintSize="794.4,107.2" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="a5c60c144cb22ad8da47f664a925d868" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
                             <p:CvClickWithDescriptor.CursorPosition>
                               <ui:CursorPosition Position="Center">
                                 <ui:CursorPosition.OffsetX>
@@ -222,7 +222,7 @@
                               </ui:Target>
                             </p:CvClickWithDescriptor.Target>
                           </p:CvClickWithDescriptor>
-                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="797,116" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="v" KeyModifiers="Ctrl">
+                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="794.4,117.6" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="v" KeyModifiers="Ctrl">
                             <ui:SendHotkey.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
                                 <ui:Target.TimeoutMS>
@@ -234,7 +234,7 @@
                               </ui:Target>
                             </ui:SendHotkey.Target>
                           </ui:SendHotkey>
-                          <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'LOGIN' (122,192,29,7)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="ac3045c8bdb3519a4bd6de95cb8476a1" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
+                          <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'LOGIN' (122,192,29,7)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="794.4,107.2" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="ac3045c8bdb3519a4bd6de95cb8476a1" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
                             <p:CvClickWithDescriptor.CursorPosition>
                               <ui:CursorPosition Position="Center">
                                 <ui:CursorPosition.OffsetX>
@@ -263,7 +263,7 @@
                               </ui:Target>
                             </p:CvClickWithDescriptor.Target>
                           </p:CvClickWithDescriptor>
-                          <p:CvElementExistsWithDescriptor DelayBefore="2500" Descriptor="[&quot;Target: Text 'You have entered your' (38,234,111,10)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_3" InformativeScreenshot="0381dbccd7a98f8d034fac8420d4bd90" Result="[FailedLogIn]" TimeoutMS="1000" Version="V1">
+                          <p:CvElementExistsWithDescriptor DelayBefore="2500" Descriptor="[&quot;Target: Text 'You have entered your' (38,234,111,10)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="794.4,107.2" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_3" InformativeScreenshot="0381dbccd7a98f8d034fac8420d4bd90" Result="[FailedLogIn]" TimeoutMS="1000" Version="V1">
                             <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                               <uc:CvDescriptor>
                                 <uc:CvDescriptor.Target>
@@ -272,26 +272,26 @@
                               </uc:CvDescriptor>
                             </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                           </p:CvElementExistsWithDescriptor>
-                          <If Condition="[FailedLogIn]" sap:VirtualizedContainerService.HintSize="797,392" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If Condition="[FailedLogIn]" sap:VirtualizedContainerService.HintSize="794.4,397.6" sap2010:WorkflowViewState.IdRef="If_2">
                             <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                              <Sequence sap:VirtualizedContainerService.HintSize="375.2,248" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Fatal" Message="[&quot;Unable to sign into Steam&quot;]" />
-                                <Throw Exception="[New Exception(&quot;Unable to sign in to Steam Client&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Fatal" Message="[&quot;Unable to sign into Steam&quot;]" />
+                                <Throw Exception="[New Exception(&quot;Unable to sign in to Steam Client&quot;)]" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                              <Sequence sap:VirtualizedContainerService.HintSize="375.2,185.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Signed User in&quot;]" />
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Signed User in&quot;]" />
                               </Sequence>
                             </If.Else>
                           </If>
@@ -353,7 +353,7 @@
                         <ActivityFunc.Argument>
                           <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
                         </ActivityFunc.Argument>
-                        <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_1" Image="[Image]" Profile="Screen" />
+                        <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_1" Image="[Image]" Profile="Screen" />
                       </ActivityFunc>
                     </p:CVScope.OCREngine>
                     <p:CVScope.Target>
@@ -367,21 +367,21 @@
                 </Sequence>
               </If.Else>
             </If>
-            <TryCatch sap2010:Annotation.AnnotationText="Try closing the steam popup" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1294,642" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch sap2010:Annotation.AnnotationText="Try closing the steam popup" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1288.8,648.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="z3/oS5VBOns8fNleMTxYfrU+MUQjYRZx4LD5nQIEib0H4zbjRvFsnkQHPA2VBbi3TxuXc6PzZLuB9YYiKKh/Sw==" DisplayName="CV Screen Scope 'steam.exe Steam'" sap:VirtualizedContainerService.HintSize="434,384" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V1">
+                <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="z3/oS5VBOns8fNleMTxYfrU+MUQjYRZx4LD5nQIEib0H4zbjRvFsnkQHPA2VBbi3TxuXc6PzZLuB9YYiKKh/Sw==" DisplayName="CV Screen Scope 'steam.exe Steam'" sap:VirtualizedContainerService.HintSize="433.6,386.4" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V1">
                   <p:CVScope.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                       </ActivityAction.Argument>
                       <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                        <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'CLOSE' (614,794,34,7)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,106" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_4" InformativeScreenshot="d782d08534c58f04e41a112f6f41c097" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
+                        <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'CLOSE' (614,794,34,7)&quot;]" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,107.2" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_4" InformativeScreenshot="d782d08534c58f04e41a112f6f41c097" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
                           <p:CvClickWithDescriptor.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -469,16 +469,16 @@
                       <ActivityFunc.Argument>
                         <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
                       </ActivityFunc.Argument>
-                      <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_1" Image="[Image]" Profile="Screen" />
+                      <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_1" Image="[Image]" Profile="Screen" />
                     </ActivityFunc>
                   </p:CVScope.OCREngine>
                   <p:CVScope.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4a1056432fccee3cf4eabc615ad1576b" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam - News*' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4a1056432fccee3cf4eabc615ad1576b" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='*News*' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
                   </p:CVScope.Target>
                 </p:CVScope>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="436.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -489,7 +489,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[&quot;No news popup happened&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[&quot;No news popup happened&quot;]" />
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
