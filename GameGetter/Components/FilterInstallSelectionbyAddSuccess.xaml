@@ -21,7 +21,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1112,2271</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1280,1896</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FilterTableWithTable_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -76,7 +76,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FilterTableWithTable" sap:VirtualizedContainerService.HintSize="1092,2171" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FilterTableWithTable" sap:VirtualizedContainerService.HintSize="1260,1796" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="FilteredDT" />
       <Variable x:TypeArguments="sd:DataTable" Name="InstallInputDT" />
@@ -87,9 +87,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1050,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[String.Format(&quot;Filtering games user wants to install against games successfully added, reading from {0} and {1}.&quot;, in_InstallInputPath, in_AddOutputPath)]" />
-    <Parallel DisplayName="Parallel - Read workbooks" sap:VirtualizedContainerService.HintSize="1050,360" sap2010:WorkflowViewState.IdRef="Parallel_1">
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,314" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1218,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[String.Format(&quot;Filtering games user wants to install against games successfully added, reading from {0} and {1}.&quot;, in_InstallInputPath, in_AddOutputPath)]" />
+    <Parallel DisplayName="Parallel - Read workbooks" sap:VirtualizedContainerService.HintSize="1218,481" sap2010:WorkflowViewState.IdRef="Parallel_1">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="522,435" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
           <ui:ReadRange AddHeaders="True" DataTable="[InstallInputDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[in_InstallInputSheet]" WorkbookPath="[in_InstallInputPath]">
             <ui:ReadRange.Range>
@@ -100,7 +100,7 @@
           </ui:ReadRange>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="488,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -122,8 +122,15 @@
             </ActivityAction>
           </Catch>
         </TryCatch.Catches>
+        <TryCatch.Finally>
+          <If Condition="[InstallInputDT is nothing]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_3">
+            <If.Then>
+              <Throw Exception="[new NoNullAllowedException(&quot;No data for user's desired installed games was found.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </If.Then>
+          </If>
+        </TryCatch.Finally>
       </TryCatch>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,314" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="522,435" sap2010:WorkflowViewState.IdRef="TryCatch_2">
         <TryCatch.Try>
           <ui:ReadRange AddHeaders="True" DataTable="[AddOutputDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="[in_AddOutputSheet]" WorkbookPath="[in_AddOutputPath]">
             <ui:ReadRange.Range>
@@ -134,7 +141,7 @@
           </ui:ReadRange>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="488,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -156,24 +163,21 @@
             </ActivityAction>
           </Catch>
         </TryCatch.Catches>
+        <TryCatch.Finally>
+          <If Condition="[AddOutputDT is nothing]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_4">
+            <If.Then>
+              <Throw Exception="[new NoNullAllowedException(&quot;No data for successfully added games was found.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+            </If.Then>
+          </If>
+        </TryCatch.Finally>
       </TryCatch>
     </Parallel>
-    <If Condition="[InstallInputDT is nothing]" sap:VirtualizedContainerService.HintSize="1050,208" sap2010:WorkflowViewState.IdRef="If_3">
-      <If.Then>
-        <Throw Exception="[new NoNullAllowedException(&quot;No data for user's desired installed games was found.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
-      </If.Then>
-    </If>
-    <If Condition="[AddOutputDT is nothing]" sap:VirtualizedContainerService.HintSize="1050,208" sap2010:WorkflowViewState.IdRef="If_4">
-      <If.Then>
-        <Throw Exception="[new NoNullAllowedException(&quot;No data for successfully added games was found.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
-      </If.Then>
-    </If>
-    <If Condition="[not InstallInputDT.Columns.Contains(&quot;Status&quot;)]" sap:VirtualizedContainerService.HintSize="1050,208" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[not InstallInputDT.Columns.Contains(&quot;Status&quot;)]" sap:VirtualizedContainerService.HintSize="1218,208" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
         <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Status" DataTable="[InstallInputDT]" DefaultValue="[in_Config(&quot;StatusSuccess&quot;).ToString()]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
       </If.Then>
     </If>
-    <ui:JoinDataTables DataTable1="[AddOutputDT]" DataTable2="[InstallInputDT]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="1050,59" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Inner" OutputDataTable="[FilteredDT]">
+    <ui:JoinDataTables DataTable1="[AddOutputDT]" DataTable2="[InstallInputDT]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="1218,59" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Inner" OutputDataTable="[FilteredDT]">
       <ui:JoinDataTables.Arguments>
         <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
           <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -187,7 +191,7 @@
         </scg:List>
       </ui:JoinDataTables.Arguments>
     </ui:JoinDataTables>
-    <ui:FilterDataTable DataTable="[FilteredDT]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="1050,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[FilteredDT]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DataTable="[FilteredDT]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="1218,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[FilteredDT]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -207,7 +211,7 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FilteredDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1050,479" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FilteredDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1218,479" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -228,7 +232,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WriteToOutputSheet workflow" sap:VirtualizedContainerService.HintSize="1050,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\WriteToOutputSheet.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke WriteToOutputSheet workflow" sap:VirtualizedContainerService.HintSize="1218,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\WriteToOutputSheet.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[in_InstallInputPath]</InArgument>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="in_TableToWrite">[FilteredDT]</InArgument>
