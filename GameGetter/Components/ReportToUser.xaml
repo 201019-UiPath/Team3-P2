@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>576.8,997.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>559,846</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReportToUser_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -61,10 +61,9 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReportToUser" sap:VirtualizedContainerService.HintSize="556.8,937.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReportToUser" sap:VirtualizedContainerService.HintSize="539,746" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="EpicChoice" />
       <Variable x:TypeArguments="x:String" Name="SteamChoice" />
@@ -77,65 +76,45 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;EmailCredential&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="515.2,22.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[GetterPwd]" Username="[GetterEmail]" />
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_UserChoice]" sap:VirtualizedContainerService.HintSize="515.2,782.4" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;EmailCredential&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="497,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[GetterPwd]" Username="[GetterEmail]" />
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_UserChoice]" sap:VirtualizedContainerService.HintSize="497,592" sap2010:WorkflowViewState.IdRef="Switch`1_2">
       <Switch.Default>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;No email was sent&quot;]" />
       </Switch.Default>
-      <Sequence x:Key="Steam" sap:VirtualizedContainerService.HintSize="475.2,548.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence x:Key="Steam" sap:VirtualizedContainerService.HintSize="376,364" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get User Email workflow" sap:VirtualizedContainerService.HintSize="433.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Get User Email.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get User Email workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Get User Email.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <OutArgument x:TypeArguments="x:String" x:Key="out_UserEmail">[UserEmail]</OutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
-        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,328" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-          <TryCatch.Try>
-            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="Hello,&#xA;&#xA;Here is the data for your most recent Game Getting! Included in the attachments are all of the games you chose to add and install.&#xA;Please make any necessary changes for games that I was not able to install.&#xA;&#xA;Goodbye!" DisplayName="Send SMTP Mail Message" Email="[GetterEmail]" EnableSSL="True" From="[GetterEmail]" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Password="[GetterPwd.ToString]" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com" Subject="Game Getter Report" To="[UserEmail]">
-              <ui:SendMail.Files>
-                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                  <InArgument x:TypeArguments="x:String">[in_SteamAddExcel]</InArgument>
-                  <InArgument x:TypeArguments="x:String">[in_SteamInstallExcel]</InArgument>
-                </scg:List>
-              </ui:SendMail.Files>
-            </ui:SendMail>
-          </TryCatch.Try>
-          <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,163.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ActivityAction x:TypeArguments="s:Exception">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                </ActivityAction.Argument>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[String.Format(&quot;Error sending email to {0}. User chose the [{1}] route.&quot;, UserEmail, in_UserChoice)]" />
-              </ActivityAction>
-            </Catch>
-          </TryCatch.Catches>
-        </TryCatch>
+        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="Hello,&#xA;&#xA;Here is the data for your most recent Game Getting! Included in the attachments are all of the games you chose to add and install.&#xA;Please make any necessary changes for games that I was not able to install.&#xA;&#xA;Goodbye!" DisplayName="Send SMTP Mail Message" Email="[GetterEmail]" EnableSSL="True" From="[GetterEmail]" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Password="[GetterPwd.ToString]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Game Getter Report" To="[UserEmail]">
+          <ui:SendMail.Files>
+            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+              <InArgument x:TypeArguments="x:String">[in_SteamAddExcel]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_SteamInstallExcel]</InArgument>
+            </scg:List>
+          </ui:SendMail.Files>
+        </ui:SendMail>
       </Sequence>
-      <Sequence x:Key="Epic Games" sap:VirtualizedContainerService.HintSize="475.2,548.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence x:Key="Epic Games" sap:VirtualizedContainerService.HintSize="480,554" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get User Email workflow" sap:VirtualizedContainerService.HintSize="433.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Get User Email.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get User Email workflow" sap:VirtualizedContainerService.HintSize="438,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Get User Email.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <OutArgument x:TypeArguments="x:String" x:Key="out_UserEmail">[UserEmail]</OutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
-        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,328" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,373" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <TryCatch.Try>
-            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="Hello,&#xA;&#xA;Here is the data for your most recent Game Getting! Included in the attachments are all of the games you chose to add and install.&#xA;Please make any necessary changes for games that I was not able to install.&#xA;&#xA;Goodbye!" DisplayName="Send SMTP Mail Message" Email="[GetterEmail]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="False" Password="[GetterPwd.ToString]" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com" Subject="Game Getter Report" To="[UserEmail]">
+            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="Hello,&#xA;&#xA;Here is the data for your most recent Game Getting! Included in the attachments are all of the games you chose to add and install.&#xA;Please make any necessary changes for games that I was not able to install.&#xA;&#xA;Goodbye!" DisplayName="Send SMTP Mail Message" Email="[GetterEmail]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,146" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="False" Password="[GetterPwd.ToString]" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com" Subject="Game Getter Report" To="[UserEmail]">
               <ui:SendMail.Files>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                   <InArgument x:TypeArguments="x:String">[in_EpicAddExcel]</InArgument>
@@ -145,10 +124,10 @@
             </ui:SendMail>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,163.2" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -156,26 +135,26 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                 </ActivityAction.Argument>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[String.Format(&quot;Error sending email to {0}. User chose the [{1}] route.&quot;, UserEmail, in_UserChoice)]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[String.Format(&quot;Error sending email to {0}. User chose the [{1}] route.&quot;, UserEmail, in_UserChoice)]" />
               </ActivityAction>
             </Catch>
           </TryCatch.Catches>
         </TryCatch>
       </Sequence>
-      <Sequence x:Key="All" sap:VirtualizedContainerService.HintSize="475.2,548.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence x:Key="All" sap:VirtualizedContainerService.HintSize="480,554" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get User Email workflow" sap:VirtualizedContainerService.HintSize="433.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Get User Email.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Get User Email workflow" sap:VirtualizedContainerService.HintSize="438,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Get User Email.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <OutArgument x:TypeArguments="x:String" x:Key="out_UserEmail">[UserEmail]</OutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
-        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,328" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,373" sap2010:WorkflowViewState.IdRef="TryCatch_3">
           <TryCatch.Try>
-            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="Hello,&#xA;&#xA;Here is the data for your most recent Game Getting! Included in the attachments are all of the games you chose to add and install.&#xA;Please make any necessary changes for games that I was not able to install.&#xA;&#xA;Goodbye!" DisplayName="Send SMTP Mail Message" Email="[GetterEmail]" EnableSSL="True" From="getterofgames@outlook.com" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[GetterPwd.ToString]" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com" Subject="Game Getter Report" To="[UserEmail]">
+            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="Hello,&#xA;&#xA;Here is the data for your most recent Game Getting! Included in the attachments are all of the games you chose to add and install.&#xA;Please make any necessary changes for games that I was not able to install.&#xA;&#xA;Goodbye!" DisplayName="Send SMTP Mail Message" Email="[GetterEmail]" EnableSSL="True" From="getterofgames@outlook.com" sap:VirtualizedContainerService.HintSize="334,146" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[GetterPwd.ToString]" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com" Subject="Game Getter Report" To="[UserEmail]">
               <ui:SendMail.Files>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                   <InArgument x:TypeArguments="x:String">[in_SteamAddExcel]</InArgument>
@@ -187,10 +166,10 @@
             </ui:SendMail>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,163.2" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -198,7 +177,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                 </ActivityAction.Argument>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[String.Format(&quot;Error sending email to {0}. User chose the [{1}] route.&quot;, UserEmail, in_UserChoice)]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[String.Format(&quot;Error sending email to {0}. User chose the [{1}] route.&quot;, UserEmail, in_UserChoice)]" />
               </ActivityAction>
             </Catch>
           </TryCatch.Catches>
