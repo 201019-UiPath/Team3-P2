@@ -1,13 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="AddGamesSteam" this:AddGamesSteam.in_WorkbookPath="TestExcel.xlsx" this:AddGamesSteam.in_WorkbookSheetName="AddGames" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="AddGamesSteam" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_GameName" Type="InArgument(x:String)" />
-    <x:Property Name="in_WorkbookPath" Type="InArgument(x:String)" />
-    <x:Property Name="in_WorkbookSheetName" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1579.2,3123.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1680.8,3141.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddGamesSteam_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -62,19 +60,18 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddGamesSteam" sap:VirtualizedContainerService.HintSize="1559.2,3023.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddGamesSteam" sap:VirtualizedContainerService.HintSize="1660.8,3081.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="FreeGames" />
       <Variable x:TypeArguments="sd:DataTable" Name="GamesToAdd" />
       <Variable x:TypeArguments="x:String" Name="GameName" />
-      <Variable x:TypeArguments="x:Int32" Default="2" Name="Count" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Add Game to Library" sap:VirtualizedContainerService.HintSize="1517.6,2930.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Add Game to Library" sap:VirtualizedContainerService.HintSize="1619.2,2988.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="AlreadyInLibrary" />
         <Variable x:TypeArguments="x:Boolean" Name="AgeVerificationReq" />
@@ -85,7 +82,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Assign Game Name" sap:VirtualizedContainerService.HintSize="1476,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign DisplayName="Assign Game Name" sap:VirtualizedContainerService.HintSize="1577.6,60" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[GameName]</OutArgument>
         </Assign.To>
@@ -93,13 +90,13 @@
           <InArgument x:TypeArguments="x:String">[in_GameName]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:WindowScope SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" ApplicationWindow="[steamWindow]" DisplayName="Attach Window 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1476,2737.6" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="e0aac96c7bb63a604b3d631bfa0fc7a2" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;">
+      <ui:WindowScope SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" ApplicationWindow="[steamWindow]" DisplayName="Attach Window 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1577.6,2796" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="e0aac96c7bb63a604b3d631bfa0fc7a2" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;">
         <ui:WindowScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1442.4,2590.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1544,2648.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="tempGameName" />
               </Sequence.Variables>
@@ -108,9 +105,8 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ShowWindow DisplayName="Show Window" sap:VirtualizedContainerService.HintSize="1400.8,22.4" sap2010:WorkflowViewState.IdRef="ShowWindow_1" Window="[steamWindow]" />
-              <ui:MaximizeWindow DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="1400.8,22.4" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" Window="[steamWindow]" />
-              <ui:ClickImage ContinueOnError="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DelayMS="500" DisplayName="Click Image 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1400.8,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:ShowWindow DisplayName="Show Window" sap:VirtualizedContainerService.HintSize="1502.4,22.4" sap2010:WorkflowViewState.IdRef="ShowWindow_1" Window="[steamWindow]" />
+              <ui:ClickImage ContinueOnError="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DelayMS="500" DisplayName="Click Image 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1502.4,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
                 <ui:ClickImage.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -135,7 +131,7 @@
                   </ui:Target>
                 </ui:ClickImage.Target>
               </ui:ClickImage>
-              <ui:ClickImage ContinueOnError="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Click Image 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1400.8,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:ClickImage ContinueOnError="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Click Image 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1502.4,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT">
                 <ui:ClickImage.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -160,7 +156,7 @@
                   </ui:Target>
                 </ui:ClickImage.Target>
               </ui:ClickImage>
-              <ui:TypeInto DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2000" DisplayName="Type Game Name Into Searchbar" EmptyField="True" sap:VirtualizedContainerService.HintSize="1400.8,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[GameName]">
+              <ui:TypeInto DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2000" DisplayName="Type Game Name Into Searchbar" EmptyField="True" sap:VirtualizedContainerService.HintSize="1502.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[GameName]">
                 <ui:TypeInto.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4b5ef0b23f9202b2c66d816e4a6b281a" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='*' role='document' /&gt;&lt;ctrl name='search the store' role='editable text' /&gt;">
                     <ui:Target.TimeoutMS>
@@ -178,7 +174,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:TypeInto>
-              <Assign sap:VirtualizedContainerService.HintSize="1400.8,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign sap:VirtualizedContainerService.HintSize="1502.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[tempGameName]</OutArgument>
                 </Assign.To>
@@ -186,7 +182,7 @@
                   <InArgument x:TypeArguments="x:String">[GameName.Replace(" ", "*").Replace(":", "*").Replace("_", "*")]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Search Result" sap:VirtualizedContainerService.HintSize="1400.8,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Search Result" sap:VirtualizedContainerService.HintSize="1502.4,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -214,109 +210,146 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:Click>
-              <Sequence DisplayName="Handle Age Verification Popup" sap:VirtualizedContainerService.HintSize="1400.8,238.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:UiElementExists DisplayName="Check if Age Verification Required" Exists="[AgeVerificationReq]" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
-                  <ui:UiElementExists.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ab747bec55d339dbfc7f72e2a4e2b3db" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='* on Steam' role='document' /&gt;&lt;ctrl name='THIS GAME MAY CONTAIN CONTENT NOT APPROPRIATE FOR ALL AGES, OR M*' role='H2' /&gt;" TimeoutMS="5000">
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:UiElementExists.Target>
+              <ui:MaximizeWindow DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="1502.4,22.4" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" Window="[steamWindow]" />
+              <Pick DisplayName="Deal with Age Verification if it shows up" sap:VirtualizedContainerService.HintSize="1502.4,99.2" sap2010:WorkflowViewState.IdRef="Pick_2">
+                <PickBranch DisplayName="PickBranch - Age Verification popup" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="PickBranch_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </ui:UiElementExists>
-                <If Condition="[AgeVerificationReq = True]" DisplayName="If Age Verification is required or not" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="If_2">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="376,741.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <PickBranch.Trigger>
+                    <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Age Verification Popup" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
+                      <ui:WaitUiElementAppear.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&#xD;&#xA;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&#xD;&#xA;&lt;ctrl name='* on Steam' role='document' /&gt;&#xD;&#xA;&lt;ctrl name='THIS GAME MAY CONTAIN CONTENT NOT APPROPRIATE FOR ALL AGES, OR M*' role='H2' /&gt;&#xD;&#xA;&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&#xD;&#xA;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&#xD;&#xA;&lt;ctrl name='* on Steam' role='document' /&gt;&#xD;&#xA;&lt;ctrl name='THIS GAME MAY CONTAIN CONTENT NOT APPROPRIATE FOR ALL AGES, OR M*' role='H2' /&gt;" TimeoutMS="10000">
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:WaitUiElementAppear.Target>
+                    </ui:WaitUiElementAppear>
+                  </PickBranch.Trigger>
+                  <Sequence DisplayName="Handle Age Verification Popup" sap:VirtualizedContainerService.HintSize="794.4,1078.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:UiElementExists DisplayName="Check if Age Verification Required" Exists="[AgeVerificationReq]" sap:VirtualizedContainerService.HintSize="752.8,52.8" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ab747bec55d339dbfc7f72e2a4e2b3db" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='* on Steam' role='document' /&gt;&lt;ctrl name='THIS GAME MAY CONTAIN CONTENT NOT APPROPRIATE FOR ALL AGES, OR M*' role='H2' /&gt;" TimeoutMS="5000">
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:UiElementExists.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:UiElementExists>
+                    <If Condition="[AgeVerificationReq = True]" DisplayName="If Age Verification is required or not" sap:VirtualizedContainerService.HintSize="752.8,892.8" sap2010:WorkflowViewState.IdRef="If_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Age Verification Required&quot;]" />
-                      <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Day" sap:VirtualizedContainerService.HintSize="334.4,96.8" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="1">
-                        <ui:TypeInto.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:TypeInto.Target>
-                      </ui:TypeInto>
-                      <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Month" sap:VirtualizedContainerService.HintSize="334.4,96.8" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="Jan">
-                        <ui:TypeInto.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:TypeInto.Target>
-                      </ui:TypeInto>
-                      <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Year" sap:VirtualizedContainerService.HintSize="334.4,96.8" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="1990">
-                        <ui:TypeInto.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:TypeInto.Target>
-                      </ui:TypeInto>
-                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click View Page" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
-                        <ui:Click.CursorPosition>
-                          <ui:CursorPosition Position="Center">
-                            <ui:CursorPosition.OffsetX>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetX>
-                            <ui:CursorPosition.OffsetY>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetY>
-                          </ui:CursorPosition>
-                        </ui:Click.CursorPosition>
-                        <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="d7a3c9f7e613b08305ad784b4bd1d224" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='*on Steam' role='document' /&gt;&lt;ctrl name='View Page' role='link' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:Click.Target>
-                      </ui:Click>
-                    </Sequence>
-                  </If.Then>
-                  <If.Else>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;No Age Verification Required&quot;]" />
-                  </If.Else>
-                </If>
-              </Sequence>
-              <ui:UiElementExists DisplayName="Check if Game already in Library" Exists="[AlreadyInLibrary]" sap:VirtualizedContainerService.HintSize="1400.8,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="375.2,743.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Age Verification Required&quot;]" />
+                          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Day" sap:VirtualizedContainerService.HintSize="333.6,96.8" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="1">
+                            <ui:TypeInto.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:TypeInto.Target>
+                          </ui:TypeInto>
+                          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Month" sap:VirtualizedContainerService.HintSize="333.6,96.8" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="Jan">
+                            <ui:TypeInto.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:TypeInto.Target>
+                          </ui:TypeInto>
+                          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Year" sap:VirtualizedContainerService.HintSize="333.6,96.8" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="1990">
+                            <ui:TypeInto.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:TypeInto.Target>
+                          </ui:TypeInto>
+                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click View Page" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click.CursorPosition>
+                              <ui:CursorPosition Position="Center">
+                                <ui:CursorPosition.OffsetX>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetX>
+                                <ui:CursorPosition.OffsetY>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetY>
+                              </ui:CursorPosition>
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="d7a3c9f7e613b08305ad784b4bd1d224" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='*on Steam' role='document' /&gt;&lt;ctrl name='View Page' role='link' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:Click.Target>
+                          </ui:Click>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;No Age Verification Required&quot;]" />
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </PickBranch>
+                <PickBranch DisplayName="PickBranch - No Verification Popup" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="PickBranch_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <PickBranch.Trigger>
+                    <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Play Game button" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4">
+                      <ui:WaitUiElementAppear.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&#xD;&#xA;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&#xD;&#xA;&lt;ctrl name='Play Game' role='link' /&gt;&#xD;&#xA;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
+                      </ui:WaitUiElementAppear.Target>
+                    </ui:WaitUiElementAppear>
+                  </PickBranch.Trigger>
+                </PickBranch>
+              </Pick>
+              <ui:UiElementExists DisplayName="Check if Game already in Library" Exists="[AlreadyInLibrary]" sap:VirtualizedContainerService.HintSize="1502.4,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                 <ui:UiElementExists.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="281b7ad4efa8d9130a687b0e1858b7d2" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='* on Steam' role='document' /&gt;&lt;ctrl name='Play Now' role='link' /&gt;" TimeoutMS="5000">
                     <ui:Target.WaitForReady>
@@ -331,7 +364,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:UiElementExists>
-              <If Condition="[AlreadyInLibrary = False]" DisplayName="If Game is already in Library or not" sap:VirtualizedContainerService.HintSize="1400.8,1130.4" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[AlreadyInLibrary = False]" DisplayName="If Game is already in Library or not" sap:VirtualizedContainerService.HintSize="1502.4,1428" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -339,7 +372,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="981.6,980.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence sap:VirtualizedContainerService.HintSize="981.6,1278.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -414,59 +447,73 @@
                         <Throw Exception="[new ApplicationException(&quot;Error adding the game with Steam. Try again later or handle manually.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
                       </PickBranch>
                     </Pick>
-                    <ui:WriteCell Cell="[&quot;A&quot;+ Count.ToString]" DisplayName="Update Excel with Game Name" sap:VirtualizedContainerService.HintSize="940,52.8" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="[in_WorkbookSheetName]" Text="[GameName]" WorkbookPath="[in_WorkbookPath]">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:WriteCell>
-                    <ui:WriteCell Cell="[&quot;B&quot;+ Count.ToString]" DisplayName="Update Excel with Status 'Added to Library'" sap:VirtualizedContainerService.HintSize="940,52.8" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="[in_WorkbookSheetName]" Text="Added to Library" WorkbookPath="[in_WorkbookPath]">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:WriteCell>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="940,443.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,364.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:WriteCell Cell="[&quot;A&quot;+ Count.ToString]" DisplayName="Update Excel with Game Name" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="[in_WorkbookSheetName]" Text="[GameName]" WorkbookPath="[in_WorkbookPath]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:WriteCell>
+                          <ui:WriteCell Cell="[&quot;B&quot;+ Count.ToString]" DisplayName="Update Excel with Status 'Added to Library'" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="[in_WorkbookSheetName]" Text="Added to Library" WorkbookPath="[in_WorkbookPath]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:WriteCell>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                    </ui:CommentOut>
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,371.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence sap:VirtualizedContainerService.HintSize="476.8,542.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Game is already in your library&quot;]" />
-                    <ui:WriteCell Cell="[&quot;A&quot;+ Count.ToString]" DisplayName="Update Excel with Game Name" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="[in_WorkbookSheetName]" Text="[GameName]" WorkbookPath="[in_WorkbookPath]">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:WriteCell>
-                    <ui:WriteCell Cell="[&quot;B&quot;+ Count.ToString]" DisplayName="Update Excel with Status 'Already in Library'" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="[in_WorkbookSheetName]" Text="Already In Library" WorkbookPath="[in_WorkbookPath]">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:WriteCell>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="435.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Game is already in your library&quot;]" />
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,316.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="241.6,238.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:WriteCell Cell="[&quot;A&quot;+ Count.ToString]" DisplayName="Update Excel with Game Name" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="[in_WorkbookSheetName]" Text="[GameName]" WorkbookPath="[in_WorkbookPath]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:WriteCell>
+                          <ui:WriteCell Cell="[&quot;B&quot;+ Count.ToString]" DisplayName="Update Excel with Status 'Already in Library'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="[in_WorkbookSheetName]" Text="Already In Library" WorkbookPath="[in_WorkbookPath]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:WriteCell>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                    </ui:CommentOut>
                   </Sequence>
                 </If.Else>
               </If>
-              <Assign DisplayName="Increment Count" sap:VirtualizedContainerService.HintSize="1400.8,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:Int32">[Count]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:Int32">[Count + 1]</InArgument>
-                </Assign.Value>
-              </Assign>
             </Sequence>
           </ActivityAction>
         </ui:WindowScope.Body>
