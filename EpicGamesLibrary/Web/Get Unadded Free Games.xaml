@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874.4,1314.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1151.2,1476</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Get_Unadded_Free_Games_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -60,26 +60,26 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get Unadded Free Games" sap:VirtualizedContainerService.HintSize="854.4,1214.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+  <Sequence DisplayName="Get Unadded Free Games" sap:VirtualizedContainerService.HintSize="1131.2,1376" sap2010:WorkflowViewState.IdRef="Sequence_11">
     <sap:WorkflowViewStateService.ViewState>
       <scg1:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg1:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="812.8,1121.6" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="1089.6,1283.2" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="In Browser" sap:VirtualizedContainerService.HintSize="779.2,1012.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="In Browser" sap:VirtualizedContainerService.HintSize="1056,1174.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg1:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg1:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Get Games To Process" sap:VirtualizedContainerService.HintSize="737.6,920" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence DisplayName="Get Games To Process" sap:VirtualizedContainerService.HintSize="1014.4,1081.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <Sequence.Variables>
                 <Variable x:TypeArguments="scg1:ICollection(x:String)" Default="[new List(Of String)]" Name="libraryGameList" />
                 <Variable x:TypeArguments="scg1:Dictionary(x:String, x:String)" Default="[new Dictionary(Of String, String)]" Name="freeGamesDict" />
@@ -90,7 +90,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg1:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Parallel DisplayName="Get Library and all Free games in Parallel" sap:VirtualizedContainerService.HintSize="696,52.8" sap2010:WorkflowViewState.IdRef="Parallel_1">
+              <Parallel DisplayName="Get Library and all Free games in Parallel" sap:VirtualizedContainerService.HintSize="972.8,52.8" sap2010:WorkflowViewState.IdRef="Parallel_1">
                 <Parallel.Variables>
                   <Variable x:TypeArguments="ui:Browser" Name="secondBrowser" />
                 </Parallel.Variables>
@@ -131,7 +131,7 @@
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Parallel>
-              <Assign sap:VirtualizedContainerService.HintSize="696,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign sap:VirtualizedContainerService.HintSize="972.8,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>
                   <OutArgument x:TypeArguments="scg:Queue(scg1:KeyValuePair(x:String, x:String))">[out_UnaddedFreeGames]</OutArgument>
                 </Assign.To>
@@ -139,29 +139,40 @@
                   <InArgument x:TypeArguments="scg:Queue(scg1:KeyValuePair(x:String, x:String))">[new Queue(of KeyValuePair(Of String, String))]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:ForEach x:TypeArguments="scg1:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each Free Game" sap:VirtualizedContainerService.HintSize="696,634.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[freeGamesDict]">
+              <ui:ForEach x:TypeArguments="scg1:KeyValuePair(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each Free Game" sap:VirtualizedContainerService.HintSize="972.8,796" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[freeGamesDict]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="scg1:KeyValuePair(x:String, x:String)">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="scg1:KeyValuePair(x:String, x:String)" Name="freeGame" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Process each found free game" sap:VirtualizedContainerService.HintSize="660.8,500" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <Sequence DisplayName="Process each found free game" sap:VirtualizedContainerService.HintSize="937.6,661.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg1:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg1:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[libraryGameList.Contains(freeGame.Key)]" sap:VirtualizedContainerService.HintSize="619.2,407.2" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If Condition="[libraryGameList.Contains(freeGame.Key)]" sap:VirtualizedContainerService.HintSize="896,568.8" sap2010:WorkflowViewState.IdRef="If_3">
                         <If.Then>
-                          <Sequence DisplayName="Prevent the matching game from being processed" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <Sequence DisplayName="Prevent the matching game from being processed" sap:VirtualizedContainerService.HintSize="476.8,419.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg1:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg1:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;This game is in both lists: &quot; + freeGame.Key]" />
-                            <ui:Continue sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,264" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,185.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg1:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;This game is in both lists: &quot; + freeGame.Key]" />
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                            </ui:CommentOut>
+                            <ui:Continue sap:VirtualizedContainerService.HintSize="435.2,22.4" sap2010:WorkflowViewState.IdRef="Continue_1" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
