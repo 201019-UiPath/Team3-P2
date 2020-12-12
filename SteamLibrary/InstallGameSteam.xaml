@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1700,2438.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1849.6,2580</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InstallGamesSteam_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -61,7 +61,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InstallGamesSteam" sap:VirtualizedContainerService.HintSize="1680,2338.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="InstallGamesSteam" sap:VirtualizedContainerService.HintSize="1829.6,2480" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="GameName" />
     </Sequence.Variables>
@@ -70,19 +70,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1638.4,2245.6" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="83d9b727a451605530c33f58d41b899d" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1788,2387.2" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="83d9b727a451605530c33f58d41b899d" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1604.8,2098.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1754.4,2240" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Library" sap:VirtualizedContainerService.HintSize="1563.2,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Library" sap:VirtualizedContainerService.HintSize="1712.8,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:ClickImage.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -113,7 +113,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ClickImage>
-            <Sequence DisplayName="Install the Game" sap:VirtualizedContainerService.HintSize="1563.2,1858.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Install the Game" sap:VirtualizedContainerService.HintSize="1712.8,2000" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <Sequence.Variables>
                 <Variable x:TypeArguments="ui:GenericValue" Name="tempGameName" />
               </Sequence.Variables>
@@ -122,7 +122,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Assign Game Name" sap:VirtualizedContainerService.HintSize="1521.6,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign DisplayName="Assign Game Name" sap:VirtualizedContainerService.HintSize="1671.2,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[GameName]</OutArgument>
                 </Assign.To>
@@ -130,7 +130,7 @@
                   <InArgument x:TypeArguments="x:String">[in_GameName]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="1500" DisplayName="Type Into 'editable text'" EmptyField="True" sap:VirtualizedContainerService.HintSize="1521.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[GameName]">
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="1500" DisplayName="Type Into 'editable text'" EmptyField="True" sap:VirtualizedContainerService.HintSize="1671.2,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[GameName]">
                 <ui:TypeInto.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="dd90253ede3956355ac6dcf91cbfccab" Selector="&lt;wnd omit:cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='Steam' role='document' /&gt;&lt;ctrl omit:name='*' role='DIV' /&gt;&lt;ctrl omit:name='PLAYERS Single player Multiplayer Cooperative PLAY STATE Ready t*' role='DIV' /&gt;&lt;ctrl omit:name='Search by Name' role='editable text' /&gt;">
                     <ui:Target.TimeoutMS>
@@ -142,7 +142,7 @@
                   </ui:Target>
                 </ui:TypeInto.Target>
               </ui:TypeInto>
-              <Assign sap:VirtualizedContainerService.HintSize="1521.6,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign sap:VirtualizedContainerService.HintSize="1671.2,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                 <Assign.To>
                   <OutArgument x:TypeArguments="ui:GenericValue">[tempGameName]</OutArgument>
                 </Assign.To>
@@ -150,7 +150,7 @@
                   <InArgument x:TypeArguments="ui:GenericValue">[GameName.Replace(" ", "*").Replace(":", "*").Replace("_", "*")]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Game In Library" sap:VirtualizedContainerService.HintSize="1521.6,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Game In Library" sap:VirtualizedContainerService.HintSize="1671.2,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -178,7 +178,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:Click>
-              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Install" sap:VirtualizedContainerService.HintSize="1521.6,52.8" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Install" sap:VirtualizedContainerService.HintSize="1671.2,52.8" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -206,13 +206,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:Click>
-              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window Installer Popup" sap:VirtualizedContainerService.HintSize="1521.6,1150.4" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="a8aa00d378f7a75ca3fc171629726bb8" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Install*' /&gt;">
+              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window Installer Popup" sap:VirtualizedContainerService.HintSize="1671.2,1292" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="a8aa00d378f7a75ca3fc171629726bb8" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Install*' /&gt;">
                 <ui:WindowScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1488,1003.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1637.6,1144.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Boolean" Name="EnoughStorage" />
                       </Sequence.Variables>
@@ -221,7 +221,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Next' in Installer" sap:VirtualizedContainerService.HintSize="1446.4,52.8" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Next' in Installer" sap:VirtualizedContainerService.HintSize="1596,52.8" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT">
                         <ui:ClickImage.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -252,12 +252,12 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ClickImage>
-                      <Pick sap:VirtualizedContainerService.HintSize="1446.4,817.6" sap2010:WorkflowViewState.IdRef="Pick_1">
-                        <PickBranch sap:VirtualizedContainerService.HintSize="424.8,771.2" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+                      <Pick sap:VirtualizedContainerService.HintSize="1596,959.2" sap2010:WorkflowViewState.IdRef="Pick_1">
+                        <PickBranch sap:VirtualizedContainerService.HintSize="424.8,912.8" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                           <PickBranch.Trigger>
                             <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'steam.exe  Steam - Error'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
                               <ui:WaitUiElementAppear.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c4fda94b2e5c4b10262731014906f59e" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='*Error' /&gt;&#xD;&#xA;">
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c4fda94b2e5c4b10262731014906f59e" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='*Error' /&gt;&#xA;">
                                   <ui:Target.TimeoutMS>
                                     <InArgument x:TypeArguments="x:Int32" />
                                   </ui:Target.TimeoutMS>
@@ -372,9 +372,12 @@
                             </ui:CommentOut>
                           </Sequence>
                         </PickBranch>
-                        <PickBranch sap:VirtualizedContainerService.HintSize="424.8,771.2" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+                        <PickBranch sap:VirtualizedContainerService.HintSize="574.4,912.8" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+                          <PickBranch.Variables>
+                            <Variable x:TypeArguments="ui:UiElement" Name="AgreeButton" />
+                          </PickBranch.Variables>
                           <PickBranch.Trigger>
-                            <ui:WaitImageAppear FoundElement="{x:Null}" DisplayName="Find Image - ToS agree prompt" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitImageAppear_1">
+                            <ui:WaitImageAppear DisplayName="Find Image - ToS agree prompt" FoundElement="[AgreeButton]" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitImageAppear_1">
                               <ui:WaitImageAppear.Image>
                                 <ui:ImageTarget Image="{x:Null}" Accuracy="0.7" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAANCAYAAAAXBhYDAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAeVJREFUSEvlkt1KAkEUx+fFIvrUzBSRSiIiIqJQKwORirrIlMq7ihBSyq4rNbIXsGBfQNJX8CX+nTM7486uXe7dXvzY/5zPObNHJFLbCAoivrqFoCBiy5sICiKa3EA0WcWH1UJWag+VH/T+8x218D0YoqcxYspfhl3xUbF92Zf+mK/3VSXfOeqWx07oPD8QkcQ6Iokq2lYTGalNzugCfbQ7RMWw55roDr5RNmIzDRqiU5W6TPH1nCde1ec4V60R3Mtd02/EQnwNC/EHOWxaaoNDumTnwfkqe6kzRPvGE2tQ4mEPDRvnq/ppHvbf3FM5bGnM7h8iFEshFFPDSu1wyUNda/2L+gHrE7qU1sQB/2W1dqoG57nX0YlPN349Pt2D67rtvUEXl9zDJ8R8dAXz0Xu0rHfsSa0hm6vxEN3GsfTxMK1rM1bFqxr8MLV9275Hw+k8fR7PZY5Rs2i4Mbt/iNlIErORO7roG3alttl9pks+F0ZnGUMvXWSdfaO/qbTmqkt/1q5R5GGzjq/Ij3Nla66rtZuCHNZV02fEdDiB6fAtmtYrdqRm8nikVX3M6LPNzhM9wFPePmdenfVljPyLT28u1adVZhvXMLfFyeWeHjsx6ucDYioUR1AQk3NLCApiYmYRwWARf09Mbn8REJH3AAAAAElFTkSuQmCC" />
                               </ui:WaitImageAppear.Image>
@@ -390,14 +393,17 @@
                               </ui:WaitImageAppear.Target>
                             </ui:WaitImageAppear>
                           </PickBranch.Trigger>
-                          <Sequence sap:VirtualizedContainerService.HintSize="375.2,347.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <Sequence sap:VirtualizedContainerService.HintSize="524.8,605.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Boolean" Name="FinishButtonExists" />
+                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'steam.exe Install'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_6" KeyModifiers="None" MouseButton="BTN_LEFT">
-                              <ui:ClickImage.CursorPosition>
+                            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" sap:VirtualizedContainerService.HintSize="483.2,68.8" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
                                     <InArgument x:TypeArguments="x:Int32" />
@@ -406,12 +412,9 @@
                                     <InArgument x:TypeArguments="x:Int32" />
                                   </ui:CursorPosition.OffsetY>
                                 </ui:CursorPosition>
-                              </ui:ClickImage.CursorPosition>
-                              <ui:ClickImage.Image>
-                                <ui:ImageTarget Image="{x:Null}" Accuracy="0.7" InitialScalingFactor="1.25" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG4AAAAbCAYAAACdtLqJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAWjSURBVGhD7Zd5VxNXGMbnQ3VRD1ogFEhCQlYISUB2ZBF7PC543AFRdpVFwYWCGKEH9bi1dTtiRVEsIIhbtdraVnv8Ek/f901mMkn6AWLO/PGc985vnrlz730yMzdKYUk9WAWiBqkGS36mFBTXQVNQ1zZYUjPFE9wAQ5+fFHegBqpc/mqtbbDkZoqzqAosl6haqsGSnymOwkqwnFx9kWqwpGeKvbAcooIyUqQaLOmZYvOWIaxSAqVSDZb8TLF5SsDK86wnhSsfe/xVOPvDz5i6NJ2godNT4tu6s4081+ljWS3XjoWuYWhkKqE/9o2evUof1iphHb0nMfz9hRhf055OhKZuSP/cZ8PmPXJOHd/YxI/Y1dIbw7i9bVe7XFdUWhfTX7wv1ZhidRVDlUXX9garMbfwDtdvz2N84qcYHRkcF09r+zHxeIM1cu39R7/h2atPaD40ENMf+2YevoSbgmM2du4abk0/0e7VdzyE+eX3mLx4G+OTP2Hq8l0s0HFL+wDy3GHP7OM36B04o12j6mD3CcwvvUdxRaPG9PNIVaZYHAGwzM4g1WCkBuSJ41DauoY1Fu9rpYWdW3grTxwzDu7Jyt9UX8nOR+/j4JxFlcL4ybw1vaj193D+LZp2d8Ci3ofq4YFxPF78A/7SBmESXP+ZhLHw+Di4YNlGjennkapMMdv9UJWra7tp98LBHegc0pgq1ddKT5YER4Ew4+CODp7BnZmnmDx/C5Z8ulnEJ8HRB5Z9anBqfw9//R1dvadg5UFFWEnFJnQS89APgI9n596gp29MO6+Kx8fBBShglennkapMybH7oCpX13b5yjG3+A7dfSPyKtTL6gyIp+VQvwTnLKqQa/lJ6+w9gdpNO7H8/CN2N/doPg4uv7BMfOHgFrR7HTs5iacv/qUA32BweAJBeu05yaueZ80+fo0BOhc/Fh4fB1dUWq959fNIVaZk2wohyiuIio4dtHD8xD1Z+YcW5k/6BpEitaJ2i/iaI8Gxl485uI6eEzA7/LQZuYK795/DnO8XHwdn964X31joKm5ScOp9+TXQsHkv+ofOYYb6WHn5SZ5e/qbxINk3O/eaxvIhYSxLz8Lj862v/d95pCpTsqwesL61epFl4TZVOs6nRebgeIOgsnjf/rY+PKLg8mmLyoyDa+8ZFp/Z5sPtX5Ywcf4G2jqO4R4Fxzsj9o2GrlBwiwn9qfdw0L1Hxi9h6fkHVNVvFcbBdR0ZifHxtTw+Dq6wpEZj8f2lIlNMFjdMFhdMZjfBcGVm9xRjjjYNLe39Gov37W87KsHZJRBXOLjuIc23ZUcrll98RIj+VnBwea6g+Php5CeOfdz/xSt3E+6RY/PKDrVx6z5hDyS40wk+vp6DK6BdsMr080hVpmTmOJFBysxlOcKVjnmRObjmQ30ai/ftO3BYgrO5g8I4uIPdxzWfyezCydEL9P36iHuzL+jb6Bff6NnLuHlnQXx++v81v/yXBG6m16J67Z7mXnoNfkB5zWZhHFzn4VNyTj8WHh8H5/VXakw/j1RlSnqOA5oIqm2rKyDfr/20MDEeVsS3tzUcHHuZSXBdx2N8ufk+TM+sSHDm/CJho+OXcYOCU32t7YO0+O9lQ8MbIv6u8v+4geGQ5nlAm5MOCk49VsXj4+A8/ooo180jVZmSnm1DVHatbTI7aHfYRFv9ct35WJ/bV4baxibyOoXVbNwOT4AWMMZnR6Csns5tg4lvSsfB8npU1m2J8Xlp4Wsbd9AmZRfqvtsJX3GN7rwNGxq30+uwKoaxeHx1m3Yg2+rW8eg8UpUp67LyYOjzk5JmsoC1NpMqSarBkp4paRlmaMrMjbYNltRMWZOeg6hydW2DJTNTVn+TDdYq1rpwNVjyM+XrtVlQtSot2jZYcjPlqzQTwsrUyWDJzpQv16RDtDoDX0SqwZKdZeA/9UQoXL9OI4AAAAAASUVORK5CYII=" />
-                              </ui:ClickImage.Image>
-                              <ui:ClickImage.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[AgreeButton]">
                                   <ui:Target.TimeoutMS>
                                     <InArgument x:TypeArguments="x:Int32" />
                                   </ui:Target.TimeoutMS>
@@ -419,42 +422,52 @@
                                     <InArgument x:TypeArguments="ui:WaitForReady" />
                                   </ui:Target.WaitForReady>
                                 </ui:Target>
-                              </ui:ClickImage.Target>
-                            </ui:ClickImage>
-                            <ui:ClickImage DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click Agree to Terms" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_3" KeyModifiers="None" MouseButton="BTN_LEFT">
-                              <ui:ClickImage.CursorPosition>
-                                <ui:CursorPosition Position="Center">
-                                  <ui:CursorPosition.OffsetX>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:CursorPosition.OffsetX>
-                                  <ui:CursorPosition.OffsetY>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:CursorPosition.OffsetY>
-                                </ui:CursorPosition>
-                              </ui:ClickImage.CursorPosition>
-                              <ui:ClickImage.Image>
-                                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAAPCAYAAACm25zCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG1SURBVEhL3ZI7csIwEIZ1qgQwNg8DeSc3AIYBKpK0oYIugQ4aaGHGnWtc0nqoOAB32exqJVu2mYGUcfHBr93Van9Lotp6gzwgKs1XyAP5MeI0XiAPCNt9Btudg7ffQlfqFNMAwnO54RaC4wlCjVEz9o24wptyrrs+ZHKhP8fcJyz3qTii911C2PUnsOszNLKBrtQmH9j8AJ6PTIz4YIMmAhgbtXJAfyb1GOuXg1S96k91iV4RdFay518Q5dojlGvKiNQGNAAOF/2rOH1xb5KqNWAjRkwbQc1GjFyEMpKJX4ewag9gKSMdqWN4YK0PsBiQfocF3hJrRN6OegqqR/ZpxfWdM0+Lz6C+yXh43KExdc4FhFW9B6v6w0ak1mAs0fQEwXokc2zQrFX1qoc03ec4Da736XV2LzFCIzh4Jn4dolS5g1JFDSE1owfQa1lDX4h0n25Bac1kxzeCmo3EOTbOmo3EuRhlJBO/DlF0WlB0vqWRttQENcVhenrNtFdobjXidc94UoSx/4uMJPZif3peGKMe5i3He+nMVByJzruAKDhNyAOiYDcgD4jbsgt5QNzgz//HhV/HXtyOgS/ergAAAABJRU5ErkJggg==" />
-                              </ui:ClickImage.Image>
-                              <ui:ClickImage.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
+                              </ui:Click.Target>
+                            </ui:Click>
+                            <ui:ImageFound DisplayName="Image Exists" Found="[FinishButtonExists]" sap:VirtualizedContainerService.HintSize="483.2,107.2" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+                              <ui:ImageFound.Image>
+                                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG4AAAAbCAYAAACdtLqJAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAASdAAAEnQB3mYfeAAABaNJREFUaEPtl3lXE1cYxudDdVEPWiAUSEJCVghJQHZkEXs8LnjcAVF2lUXBhYIYoQf1uLV1O2JFUSwgiFu12tpWe/wST9/3TWYySfoBYs788Zz3zm+euXPvfTIzN0phST1YBaIGqQZLfqYUFNdBU1DXNlhSM8UT3ABDn58Ud6AGqlz+aq1tsORmirOoCiyXqFqqwZKfKY7CSrCcXH2RarCkZ4q9sByigjJSpBos6Zli85YhrFICpVINlvxMsXlKwMrzrCeFKx97/FU4+8PPmLo0naCh01Pi27qzjTzX6WNZLdeOha5haGQqoT/2jZ69Sh/WKmEdvScx/P2FGF/Tnk6Epm5I/9xnw+Y9ck4d39jEj9jV0hvDuL1tV7tcV1RaF9NfvC/VmGJ1FUOVRdf2Bqsxt/AO12/PY3zipxgdGRwXT2v7MfF4gzVy7f1Hv+HZq09oPjQQ0x/7Zh6+hJuCYzZ27hpuTT/R7tV3PIT55feYvHgb45M/YeryXSzQcUv7APLcYc/s4zfoHTijXaPqYPcJzC+9R3FFo8b080hVplgcAbDMziDVYKQG5InjUNq6hjUW72ulhZ1beCtPHDMO7snK31Rfyc5H7+PgnEWVwvjJvDW9qPX3cP4tmnZ3wKLeh+rhgXE8XvwD/tIGYRJc/5mEsfD4OLhg2UaN6eeRqkwx2/1Qlatru2n3wsEd6BzSmCrV10pPlgRHgTDj4I4OnsGdmaeYPH8Llny6WcQnwdEHln1qcGp/D3/9HV29p2DlQUVYScUmdBLz0A+Aj2fn3qCnb0w7r4rHx8EFKGCV6eeRqkzJsfugKlfXdvnKMbf4Dt19I/Iq1MvqDIin5VC/BOcsqpBr+Unr7D2B2k07sfz8I3Y392g+Di6/sEx84eAWtHsdOzmJpy/+pQDfYHB4AkF67TnJq55nzT5+jQE6Fz8WHh8HV1Rar3n180hVpmTbCiHKK4iKjh20cPzEPVn5hxbmT/oGkSK1onaL+JojwbGXjzm4jp4TMDv8tBm5grv3n8Oc7xcfB2f3rhffWOgqblJw6n35NdCweS/6h85hhvpYeflJnl7+pvEg2Tc795rG8iFhLEvPwuPzra/933mkKlOyrB6wvrV6kWXhNlU6zqdF5uB4g6CyeN/+tj48ouDyaYvKjINr7xkWn9nmw+1fljBx/gbaOo7hHgXHOyP2jYauUHCLCf2p93DQvUfGL2Hp+QdU1W8VxsF1HRmJ8fG1PD4OrrCkRmPx/aUiU0wWN0wWF0xmN8FwZWb3FGOONg0t7f0ai/ftbzsqwdklEFc4uO4hzbdlRyuWX3xEiP5WcHB5rqD4+GnkJ4593P/FK3cT7pFj88oOtXHrPmEPJLjTCT6+noMroF2wyvTzSFWmZOY4kUHKzGU5wpWOeZE5uOZDfRqL9+07cFiCs7mDwji4g93HNZ/J7MLJ0Qv0/fqIe7Mv6NvoF9/o2cu4eWdBfH76/zW//JcEbqbXonrtnuZeeg1+QHnNZmEcXOfhU3JOPxYeHwfn9VdqTD+PVGVKeo4DmgiqbasrIN+v/bQwMR5WxLe3NRwce5lJcF3HY3y5+T5Mz6xIcOb8ImGj45dxg4JTfa3tg7T472VDwxsi/q7y/7iB4ZDmeUCbkw4KTj1WxePj4Dz+iijXzSNVmZKebUNUdq1tMjtod9hEW/1y3flYn9tXhtrGJvI6hdVs3A5PgBYwxmdHoKyezm2DiW9Kx8HyelTWbYnxeWnhaxt30CZlF+q+2wlfcY3uvA0bGrfT67AqhrF4fHWbdiDb6tbx6DxSlSnrsvJg6POTkmaygLU2kypJqsGSnilpGWZoysyNtg2W1ExZk56DqHJ1bYMlM1NWf5MN1irWunA1WPIz5eu1WVC1Ki3aNlhyM+WrNBPCytTJYMnOlC/XpEO0OgNfRKrBkp1l4D/1RChcv04jgAAAAABJRU5ErkJggg==" />
+                              </ui:ImageFound.Image>
+                              <ui:ImageFound.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="10000">
                                   <ui:Target.WaitForReady>
                                     <InArgument x:TypeArguments="ui:WaitForReady" />
                                   </ui:Target.WaitForReady>
                                 </ui:Target>
-                              </ui:ClickImage.Target>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:ClickImage>
+                              </ui:ImageFound.Target>
+                            </ui:ImageFound>
+                            <If Condition="[FinishButtonExists]" sap:VirtualizedContainerService.HintSize="483.2,256.8" sap2010:WorkflowViewState.IdRef="If_1">
+                              <If.Then>
+                                <ui:ClickImage DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click Image 'steam.exe Install'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:ClickImage.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:ClickImage.CursorPosition>
+                                  <ui:ClickImage.Image>
+                                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.7" InitialScalingFactor="1.25" Profile="Basic" TargetImageBase64="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" />
+                                  </ui:ClickImage.Image>
+                                  <ui:ClickImage.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:ClickImage.Target>
+                                </ui:ClickImage>
+                              </If.Then>
+                            </If>
                           </Sequence>
                         </PickBranch>
-                        <PickBranch sap:VirtualizedContainerService.HintSize="383.2,771.2" sap2010:WorkflowViewState.IdRef="PickBranch_3">
+                        <PickBranch sap:VirtualizedContainerService.HintSize="383.2,912.8" sap2010:WorkflowViewState.IdRef="PickBranch_3">
                           <PickBranch.Variables>
                             <Variable x:TypeArguments="ui:UiElement" Name="imageElem" />
                           </PickBranch.Variables>

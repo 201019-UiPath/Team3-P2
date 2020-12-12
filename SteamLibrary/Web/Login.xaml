@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1683.2,3712</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2480.8,4280</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -62,20 +62,20 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow logs into a Steam account on the website by using the associated email and password directly. This workflow throws a AuthenticationException if the login failed with the given credentials. This does not work if you have a new Steam profile and no profile page." DisplayName="Login (Web)" sap:VirtualizedContainerService.HintSize="1663.2,3612" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow logs into a Steam account on the website by using the associated email and password directly. This workflow throws a AuthenticationException if the login failed with the given credentials. This does not work if you have a new Steam profile and no profile page." DisplayName="Login (Web)" sap:VirtualizedContainerService.HintSize="2460.8,4180" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="1621.6,3488" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="2419.2,4056" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="Takes in a username, a password (SecureString), and a pre-opened browser, and uses them to login to Steam on a website." DisplayName="Login with Steam Account" sap:VirtualizedContainerService.HintSize="1172.8,988.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence sap2010:Annotation.AnnotationText="Takes in a username, a password (SecureString), and a pre-opened browser, and uses them to login to Steam on a website." DisplayName="Login with Steam Account" sap:VirtualizedContainerService.HintSize="2385.6,3916" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="emailInputElem" />
             </Sequence.Variables>
@@ -86,9 +86,9 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Login page" sap:VirtualizedContainerService.HintSize="1131.2,60" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="https://steamcommunity.com/login/home/" />
-            <Pick sap:VirtualizedContainerService.HintSize="1131.2,764.8" sap2010:WorkflowViewState.IdRef="Pick_1">
-              <PickBranch DisplayName="Branch - Already logged in" sap:VirtualizedContainerService.HintSize="574.4,718.4" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Login page" sap:VirtualizedContainerService.HintSize="2344,60" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="https://steamcommunity.com/login/home/" />
+            <Pick sap:VirtualizedContainerService.HintSize="2344,3692" sap2010:WorkflowViewState.IdRef="Pick_1">
+              <PickBranch DisplayName="Branch - Already logged in" sap:VirtualizedContainerService.HintSize="574.4,3645.6" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                 <PickBranch.Trigger>
                   <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Edit Profile" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
                     <ui:WaitUiElementAppear.Target>
@@ -124,7 +124,7 @@
                   </If>
                 </Sequence>
               </PickBranch>
-              <PickBranch sap:VirtualizedContainerService.HintSize="383.2,718.4" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+              <PickBranch sap:VirtualizedContainerService.HintSize="1596,3645.6" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                 <PickBranch.Trigger>
                   <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'INPUT  email'" FoundElement="[emailInputElem]" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
                     <ui:WaitUiElementAppear.Target>
@@ -139,131 +139,137 @@
                     </ui:WaitUiElementAppear.Target>
                   </ui:WaitUiElementAppear>
                 </PickBranch.Trigger>
-                <Sequence DisplayName="Do login inputs" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Do login inputs" sap:VirtualizedContainerService.HintSize="1588,2642.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="ui:UiElement" Name="passwordInputElem" />
+                    <Variable x:TypeArguments="x:Boolean" Name="captchaExists" />
+                    <Variable x:TypeArguments="x:String" Name="captchaSelector" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Handle username inputs" sap:VirtualizedContainerService.HintSize="1504.8,228" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:Boolean" Name="loggedIn" />
-                    </Sequence.Variables>
+                  <Parallel sap:VirtualizedContainerService.HintSize="1546.4,383.2" sap2010:WorkflowViewState.IdRef="Parallel_1">
+                    <Sequence DisplayName="Handle inputs" sap:VirtualizedContainerService.HintSize="375.2,336.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:Boolean" Name="loggedIn" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  email'" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[in_Username]">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[emailInputElem]" InformativeScreenshot="04167c206a694a1223cf5e9907542b68">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:TypeInto.Target>
+                      </ui:TypeInto>
+                      <Sequence DisplayName="Handle Password Inputs" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'INPUT  password'" FoundElement="[passwordInputElem]" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
+                          <ui:WaitUiElementAppear.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f799ca2d94db24f2c8f09145ab86419d" Selector="&lt;webctrl id='input_password' tag='INPUT' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:WaitUiElementAppear.Target>
+                        </ui:WaitUiElementAppear>
+                        <ui:TypeSecureText ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Secure Text 'INPUT  password'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[in_Password]" SimulateType="True">
+                          <ui:TypeSecureText.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[passwordInputElem]" InformativeScreenshot="37d8d0a26313e787378446cb30f337a3">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:TypeSecureText.Target>
+                        </ui:TypeSecureText>
+                      </Sequence>
+                    </Sequence>
+                    <Sequence DisplayName="Check for CAPTCHA" sap:VirtualizedContainerService.HintSize="200,336.8" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[captchaSelector]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">&lt;webctrl id='captcha_entry' tag='DIV' /&gt;</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:UiElementExists DisplayName="Element Exists - CAPTCHA DIV" Exists="[captchaExists]" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+                        <ui:UiElementExists.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="94c089534f5b923fc0f659baeb642ed4" Selector="[captchaSelector]" TimeoutMS="6500" WaitForReady="COMPLETE" />
+                        </ui:UiElementExists.Target>
+                      </ui:UiElementExists>
+                    </Sequence>
+                  </Parallel>
+                  <If Condition="[captchaExists]" sap:VirtualizedContainerService.HintSize="1546.4,588.8" sap2010:WorkflowViewState.IdRef="If_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  email'" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[in_Username]">
-                      <ui:TypeInto.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[emailInputElem]" InformativeScreenshot="04167c206a694a1223cf5e9907542b68">
-                          <ui:Target.TimeoutMS>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:Target.TimeoutMS>
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
-                        </ui:Target>
-                      </ui:TypeInto.Target>
-                    </ui:TypeInto>
-                  </Sequence>
-                  <Sequence DisplayName="Handle Password Inputs" sap:VirtualizedContainerService.HintSize="1504.8,68.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'INPUT  password'" FoundElement="[passwordInputElem]" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
-                      <ui:WaitUiElementAppear.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f799ca2d94db24f2c8f09145ab86419d" Selector="&lt;webctrl id='input_password' tag='INPUT' /&gt;">
-                          <ui:Target.TimeoutMS>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:Target.TimeoutMS>
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
-                        </ui:Target>
-                      </ui:WaitUiElementAppear.Target>
-                    </ui:WaitUiElementAppear>
-                    <ui:TypeSecureText ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Secure Text 'INPUT  password'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[in_Password]" SimulateType="True">
-                      <ui:TypeSecureText.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[passwordInputElem]" InformativeScreenshot="37d8d0a26313e787378446cb30f337a3">
-                          <ui:Target.TimeoutMS>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:Target.TimeoutMS>
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
-                        </ui:Target>
-                      </ui:TypeSecureText.Target>
-                    </ui:TypeSecureText>
-                  </Sequence>
-                  <Sequence DisplayName="Check for CAPTCHA" sap:VirtualizedContainerService.HintSize="1504.8,928.8" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:Boolean" Name="captchaExists" />
-                      <Variable x:TypeArguments="x:String" Name="captchaSelector" />
-                    </Sequence.Variables>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="668.8,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[captchaSelector]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">&lt;webctrl id='captcha_entry' tag='DIV' /&gt;</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <ui:UiElementExists DisplayName="Element Exists - CAPTCHA DIV" Exists="[captchaExists]" sap:VirtualizedContainerService.HintSize="668.8,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
-                      <ui:UiElementExists.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="94c089534f5b923fc0f659baeb642ed4" Selector="[captchaSelector]" TimeoutMS="6500" WaitForReady="COMPLETE" />
-                      </ui:UiElementExists.Target>
-                    </ui:UiElementExists>
-                    <If Condition="[captchaExists]" sap:VirtualizedContainerService.HintSize="668.8,588.8" sap2010:WorkflowViewState.IdRef="If_6">
-                      <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="524.8,439.2" sap2010:WorkflowViewState.IdRef="Sequence_17">
-                          <Sequence.Variables>
-                            <Variable x:TypeArguments="x:String" Name="captchaStyle" />
-                          </Sequence.Variables>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="style" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="483.2,96.8" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
-                            <ui:GetAttribute.Result>
-                              <OutArgument x:TypeArguments="x:String">[captchaStyle]</OutArgument>
-                            </ui:GetAttribute.Result>
-                            <ui:GetAttribute.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[captchaSelector]">
-                                <ui:Target.TimeoutMS>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
-                            </ui:GetAttribute.Target>
-                          </ui:GetAttribute>
-                          <If Condition="[captchaStyle.Contains(&quot;display: none&quot;)]" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_7">
-                            <If.Else>
-                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;CAPTCHA has appeared. Solve it, and when you have successfully completed it, immediately close this message box and continue.&quot;]" />
-                            </If.Else>
-                          </If>
-                        </Sequence>
-                      </If.Then>
-                    </If>
-                  </Sequence>
-                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Sign in'" sap:VirtualizedContainerService.HintSize="1504.8,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="524.8,439.2" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="captchaStyle" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="style" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="483.2,96.8" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
+                          <ui:GetAttribute.Result>
+                            <OutArgument x:TypeArguments="x:String">[captchaStyle]</OutArgument>
+                          </ui:GetAttribute.Result>
+                          <ui:GetAttribute.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[captchaSelector]">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:GetAttribute.Target>
+                        </ui:GetAttribute>
+                        <If Condition="[captchaStyle.Contains(&quot;display: none&quot;)]" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_7">
+                          <If.Else>
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;CAPTCHA has appeared. Solve it, and when you have successfully completed it, immediately close this message box and let your computer click the button to sign in for you.&quot;]" />
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Sign in'" sap:VirtualizedContainerService.HintSize="1546.4,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -285,7 +291,7 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1504.8,332.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1546.4,332.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                     <ui:CommentOut.Body>
                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,254.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
                         <sap:WorkflowViewStateService.ViewState>
@@ -315,7 +321,7 @@
                       </Sequence>
                     </ui:CommentOut.Body>
                   </ui:CommentOut>
-                  <Sequence DisplayName="Check successful login" sap:VirtualizedContainerService.HintSize="1504.8,1380" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <Sequence DisplayName="Check successful login" sap:VirtualizedContainerService.HintSize="1546.4,977.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="loggedIn" />
                     </Sequence.Variables>
@@ -325,86 +331,61 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[loggedIn]" sap:VirtualizedContainerService.HintSize="1463.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
-                      <ui:UiElementExists.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8a24cb0cbaee6d01fb2b4aa765960d93" Selector="&lt;webctrl aaname='Edit Profile' tag='SPAN' /&gt;" TimeoutMS="4000" WaitForReady="INTERACTIVE" />
-                      </ui:UiElementExists.Target>
-                    </ui:UiElementExists>
-                    <If Condition="[loggedIn]" sap:VirtualizedContainerService.HintSize="1463.2,1140" sap2010:WorkflowViewState.IdRef="If_3">
-                      <If.Then>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Successful Steam web login.&quot;]" />
-                      </If.Then>
-                      <If.Else>
-                        <Sequence sap2010:Annotation.AnnotationText="This checks if the login failure prompt pops up. If it does, we throw a AuthenticationException to signal to the invoking workflow that it didn't work, and that the input credentials were invalid." DisplayName="Check login failure" sap:VirtualizedContainerService.HintSize="1085.6,990.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                          <Sequence.Variables>
-                            <Variable x:TypeArguments="x:Boolean" Name="errorElementExists" />
-                            <Variable x:TypeArguments="x:Boolean" Name="steamGuardPopupExists" />
-                          </Sequence.Variables>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:UiElementExists DisplayName="Element Exists 'Steam Guard popup'" Exists="[steamGuardPopupExists]" sap:VirtualizedContainerService.HintSize="1044,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
-                            <ui:UiElementExists.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="6a96189aaa18bec42ee888463da187af" Selector="&lt;webctrl aaname='Steam Guard' tag='DIV' /&gt;" TimeoutMS="8000">
+                    <Pick sap:VirtualizedContainerService.HintSize="1504.8,884.8" sap2010:WorkflowViewState.IdRef="Pick_2">
+                      <PickBranch sap:VirtualizedContainerService.HintSize="383.2,838.4" sap2010:WorkflowViewState.IdRef="PickBranch_3">
+                        <PickBranch.Trigger>
+                          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Edit Profile" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4">
+                            <ui:WaitUiElementAppear.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;webctrl aaname='Edit Profile' tag='SPAN' /&gt;" TimeoutMS="12000">
                                 <ui:Target.WaitForReady>
                                   <InArgument x:TypeArguments="ui:WaitForReady" />
                                 </ui:Target.WaitForReady>
                               </ui:Target>
-                            </ui:UiElementExists.Target>
-                          </ui:UiElementExists>
-                          <If Condition="[steamGuardPopupExists]" sap:VirtualizedContainerService.HintSize="1044,719.2" sap2010:WorkflowViewState.IdRef="If_1">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="475.2,569.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            </ui:WaitUiElementAppear.Target>
+                          </ui:WaitUiElementAppear>
+                        </PickBranch.Trigger>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Successful Steam web login.&quot;]" />
+                      </PickBranch>
+                      <PickBranch sap:VirtualizedContainerService.HintSize="524.8,838.4" sap2010:WorkflowViewState.IdRef="PickBranch_4">
+                        <PickBranch.Trigger>
+                          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Steam GUARD Element" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5">
+                            <ui:WaitUiElementAppear.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;webctrl aaname='Steam Guard' tag='DIV' /&gt;" TimeoutMS="12000">
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:WaitUiElementAppear.Target>
+                          </ui:WaitUiElementAppear>
+                        </PickBranch.Trigger>
+                        <Sequence sap:VirtualizedContainerService.HintSize="475.2,569.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Steam Guard popup has appeared. Check your email and enter your code. Close this box only when the Success page appears.&quot;]" />
+                          <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear 'DIV'" sap:VirtualizedContainerService.HintSize="433.6,376.8" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_1" RepeatForever="True">
+                            <ui:OnUiElementAppear.Body>
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,200" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Steam Guard popup has appeared. Check your email and enter your code. Close this box only when the Success page appears.&quot;]" />
-                                <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear 'DIV'" sap:VirtualizedContainerService.HintSize="433.6,376.8" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_1" RepeatForever="True">
-                                  <ui:OnUiElementAppear.Body>
-                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,200" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <ui:Click DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="3000" DisplayName="Click 'A  success_continue_btn'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-                                        <ui:Click.CursorPosition>
-                                          <ui:CursorPosition Position="Center">
-                                            <ui:CursorPosition.OffsetX>
-                                              <InArgument x:TypeArguments="x:Int32" />
-                                            </ui:CursorPosition.OffsetX>
-                                            <ui:CursorPosition.OffsetY>
-                                              <InArgument x:TypeArguments="x:Int32" />
-                                            </ui:CursorPosition.OffsetY>
-                                          </ui:CursorPosition>
-                                        </ui:Click.CursorPosition>
-                                        <ui:Click.Target>
-                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="17d9821a2bda1c3ecd553140cb29dba6" Selector="&lt;webctrl id='success_continue_btn' tag='A' /&gt;">
-                                            <ui:Target.TimeoutMS>
-                                              <InArgument x:TypeArguments="x:Int32" />
-                                            </ui:Target.TimeoutMS>
-                                            <ui:Target.WaitForReady>
-                                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                                            </ui:Target.WaitForReady>
-                                          </ui:Target>
-                                        </ui:Click.Target>
-                                      </ui:Click>
-                                    </Sequence>
-                                  </ui:OnUiElementAppear.Body>
-                                  <ui:OnUiElementAppear.Target>
-                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f9974b74e38d5e45adf54a689aa2ce42" Selector="&lt;webctrl id='auth_message_success' tag='DIV' /&gt;">
+                                <ui:Click DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="3000" DisplayName="Click 'A  success_continue_btn'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="17d9821a2bda1c3ecd553140cb29dba6" Selector="&lt;webctrl id='success_continue_btn' tag='A' /&gt;">
                                       <ui:Target.TimeoutMS>
                                         <InArgument x:TypeArguments="x:Int32" />
                                       </ui:Target.TimeoutMS>
@@ -412,33 +393,43 @@
                                         <InArgument x:TypeArguments="ui:WaitForReady" />
                                       </ui:Target.WaitForReady>
                                     </ui:Target>
-                                  </ui:OnUiElementAppear.Target>
-                                </ui:OnUiElementAppear>
+                                  </ui:Click.Target>
+                                </ui:Click>
                               </Sequence>
-                            </If.Then>
-                            <If.Else>
-                              <Sequence sap:VirtualizedContainerService.HintSize="524.8,449.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:UiElementExists DisplayName="Error Element Exists" Exists="[errorElementExists]" sap:VirtualizedContainerService.HintSize="483.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
-                                  <ui:UiElementExists.Target>
-                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8e31516c46c6e4e5750f563801928120" Selector="&lt;webctrl id='error_display' tag='DIV' /&gt;" TimeoutMS="7000" WaitForReady="COMPLETE" />
-                                  </ui:UiElementExists.Target>
-                                </ui:UiElementExists>
-                                <If Condition="[errorElementExists]" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_4">
-                                  <If.Then>
-                                    <Throw Exception="[new Authentication.InvalidCredentialException(&quot;Invalid Credentials inputted.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
-                                  </If.Then>
-                                </If>
-                              </Sequence>
-                            </If.Else>
-                          </If>
+                            </ui:OnUiElementAppear.Body>
+                            <ui:OnUiElementAppear.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f9974b74e38d5e45adf54a689aa2ce42" Selector="&lt;webctrl id='auth_message_success' tag='DIV' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:OnUiElementAppear.Target>
+                          </ui:OnUiElementAppear>
                         </Sequence>
-                      </If.Else>
-                    </If>
+                      </PickBranch>
+                      <PickBranch sap2010:Annotation.AnnotationText="This checks if the login failure prompt pops up. If it does, we throw a AuthenticationException to signal to the invoking workflow that it didn't work, and that the input credentials were invalid." sap:VirtualizedContainerService.HintSize="383.2,838.4" sap2010:WorkflowViewState.IdRef="PickBranch_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <PickBranch.Trigger>
+                          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Error popup" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6">
+                            <ui:WaitUiElementAppear.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;webctrl id='error_display' tag='DIV' /&gt;" TimeoutMS="12000">
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:WaitUiElementAppear.Target>
+                          </ui:WaitUiElementAppear>
+                        </PickBranch.Trigger>
+                        <Throw Exception="[new Authentication.InvalidCredentialException(&quot;Invalid Credentials inputted.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                      </PickBranch>
+                    </Pick>
                   </Sequence>
                 </Sequence>
               </PickBranch>
