@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1192,3937.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1291.2,3402.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -188,7 +188,7 @@
                             </ui:SendHotkey.Target>
                           </ui:SendHotkey>
                           <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="519.2,60" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[Password]" />
-                          <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: InputBox (106,122,342,23)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Password' (53,130,51,8)&quot;]" DesignTimeScaleFactor="1.25" DisplayName="CV Click - InputBox" sap:VirtualizedContainerService.HintSize="519.2,107.2" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="f8c41eb6c7b2702b29cd9c36968750b1" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
+                          <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: InputBox (108,122,337,23)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Password' (53,130,51,8)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Remember my password' (140,159,132,11)&quot;]" DesignTimeScaleFactor="1.25" DisplayName="CV Click - InputBox" sap:VirtualizedContainerService.HintSize="519.2,107.2" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="cddeb2476d4c667fdab229e078a226d9" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
                             <p:CvClickWithDescriptor.CursorPosition>
                               <ui:CursorPosition Position="Center">
                                 <ui:CursorPosition.OffsetX>
@@ -204,10 +204,11 @@
                                 <uc:CvDescriptor.Anchors>
                                   <x:Array Type="uc:CvElementDescriptor">
                                     <uc:CvElementDescriptor DesignTimeArea="53, 130, 51, 8" ElementType="Text" Text="Password" />
+                                    <uc:CvElementDescriptor DesignTimeArea="140, 159, 132, 11" ElementType="Text" Text="Remember my password" />
                                   </x:Array>
                                 </uc:CvDescriptor.Anchors>
                                 <uc:CvDescriptor.Target>
-                                  <uc:CvElementDescriptor DesignTimeArea="106, 122, 342, 23" ElementType="InputBox" />
+                                  <uc:CvElementDescriptor DesignTimeArea="108, 122, 337, 23" ElementType="InputBox" />
                                 </uc:CvDescriptor.Target>
                               </uc:CvDescriptor>
                             </p:CvClickWithDescriptor.DesignTimeDescriptor>
@@ -272,16 +273,16 @@
                       </ActivityAction>
                     </p:CVScope.Body>
                     <p:CVScope.DesignTimeCache>
-                      <uc:CVCache InformativeScreenshot="f06d3bfe633ff802568b54293ba2d368" LogicalPosition="437, 274" OcrText="Steam Login&#xD;&#xA;Account name&#xD;&#xA;Password STEAM&#xD;&#xA;vrobweis&#xD;&#xA;Remember my password&#xD;&#xA;COGIN&#xD;&#xA;Need help with sign in?&#xD;&#xA;Dont have a Steam account? CANCEL&#xD;&#xA;I CANT SIGN&#xD;&#xA;CREATE A NEW ACCOUNT..." Position="437, 274" ScaleFactor="1.25" ScreenshotGuid="0f80c6b5-5e47-4c86-b1dc-946925ef88d6" ServerVersion="1">
+                      <uc:CVCache InformativeScreenshot="b17dcd14a8e7abf35a0f85fd6e7e3bac" LogicalPosition="660, 309" OcrText="Steam Login&#xD;&#xA;Account name&#xD;&#xA;Password STEAM&#xD;&#xA;Remember my password&#xD;&#xA;COGIN&#xD;&#xA;Need help with sign in?&#xD;&#xA;Dont have a Steam account? CANCEL&#xD;&#xA;I CANT SIGN&#xD;&#xA;CREATE A NEW ACCOUNT..." Position="660, 309" ScaleFactor="1.25" ScreenshotGuid="f874c979-2ada-494a-8ae3-a7452cb9fdac" ServerVersion="1">
                         <uc:CVCache.CvUiElements>
                           <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="16">
-                            <uc:CvElementInfo Category="InputBox" Confidence="DesignTime" Region="106, 122, 342, 23" Score="1" />
-                            <uc:CvElementInfo Category="InputBox" Confidence="DesignTime" Region="120, 88, 328, 22" Score="1" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="DesignTime" Region="108, 122, 337, 23" Score="1" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="DesignTime" Region="119, 88, 326, 22" Score="1" />
                             <uc:CvElementInfo Category="InputBox" Confidence="DesignTime" Region="208, 238, 240, 26" Score="1" />
                             <uc:CvElementInfo Category="InputBox" Confidence="DesignTime" Region="204, 270, 243, 27" Score="1" />
                             <uc:CvElementInfo Category="MinimizeButton" Confidence="DesignTime" Region="440, 9, 15, 13" Score="1" />
-                            <uc:CvElementInfo Category="CloseButton" Confidence="DesignTime" Region="456, 6, 16, 16" Score="1" />
                             <uc:CvElementInfo Category="CheckBox" Confidence="DesignTime" Region="115, 155, 16, 16" Score="1" />
+                            <uc:CvElementInfo Category="CloseButton" Confidence="DesignTime" Region="456, 6, 16, 16" Score="1" />
                             <uc:CvElementInfo Category="InputBox" Confidence="DesignTime" Region="284, 182, 164, 25" Score="1" />
                             <uc:CvElementInfo Category="InputBox" Confidence="DesignTime" Region="120, 183, 153, 24" Score="1" />
                             <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="110, 181, 162, 27" Score="1" />
@@ -296,7 +297,6 @@
                             <uc:OcrTextInfo Region="76, 98, 29, 6" Text="name" />
                             <uc:OcrTextInfo Region="53, 130, 51, 8" Text="Password" />
                             <uc:OcrTextInfo Region="151, 45, 53, 9" Text="STEAM" />
-                            <uc:OcrTextInfo Region="123, 96, 46, 8" Text="vrobweis" />
                             <uc:OcrTextInfo Region="140, 159, 58, 8" Text="Remember" />
                             <uc:OcrTextInfo Region="203, 160, 15, 9" Text="my" />
                             <uc:OcrTextInfo Region="222, 159, 50, 11" Text="password" />
@@ -332,7 +332,7 @@
                       </ActivityFunc>
                     </p:CVScope.OCREngine>
                     <p:CVScope.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="49a841815932cf0a88e9f83266488172" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam Login' /&gt;" WaitForReady="INTERACTIVE">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1c7c7ae72671bf38b8c007436210d803" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam Login' /&gt;" WaitForReady="INTERACTIVE">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
