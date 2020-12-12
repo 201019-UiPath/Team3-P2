@@ -6,7 +6,7 @@
   <this:Add_Free_Game.in_GameURL>
     <InArgument x:TypeArguments="x:String" />
   </this:Add_Free_Game.in_GameURL>
-  <sap:VirtualizedContainerService.HintSize>2063.2,3964</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2063.2,4302.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="17">
@@ -46,23 +46,22 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow takes in an opened browser and the url for a game to be added to one's Epic Games account, and performs the necessary actions to add it, or throw an exception (SelectorNotFound) if unsuccessful." DisplayName="Add Game" sap:VirtualizedContainerService.HintSize="2043.2,3864" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow takes in an opened browser and the url for a game to be added to one's Epic Games account, and performs the necessary actions to add it, or throw an exception (SelectorNotFound) if unsuccessful." DisplayName="Add Game" sap:VirtualizedContainerService.HintSize="2043.2,4202.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="2001.6,3740" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="2001.6,4078.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="This is the meat of the workflow, where the game is added." DisplayName="Handle free game" sap:VirtualizedContainerService.HintSize="1968,3600" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence sap2010:Annotation.AnnotationText="This is the meat of the workflow, where the game is added." DisplayName="Handle free game" sap:VirtualizedContainerService.HintSize="1968,3938.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Default="False" Name="isOwned" />
             </Sequence.Variables>
@@ -91,12 +90,12 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:NavigateTo>
             </Sequence>
-            <Pick sap:VirtualizedContainerService.HintSize="1926.4,2640" sap2010:WorkflowViewState.IdRef="Pick_1">
-              <PickBranch sap:VirtualizedContainerService.HintSize="946.4,2593.6" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+            <Pick sap:VirtualizedContainerService.HintSize="1926.4,2978.4" sap2010:WorkflowViewState.IdRef="Pick_1">
+              <PickBranch sap:VirtualizedContainerService.HintSize="946.4,2932" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                 <PickBranch.Trigger>
                   <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - GET button" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
                     <ui:WaitUiElementAppear.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;webctrl aaname='Get' tag='BUTTON' /&gt;" TimeoutMS="10000">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;webctrl aaname='Get' tag='BUTTON' /&gt;" TimeoutMS="15000">
                         <ui:Target.WaitForReady>
                           <InArgument x:TypeArguments="ui:WaitForReady" />
                         </ui:Target.WaitForReady>
@@ -104,7 +103,7 @@
                     </ui:WaitUiElementAppear.Target>
                   </ui:WaitUiElementAppear>
                 </PickBranch.Trigger>
-                <Sequence sap:VirtualizedContainerService.HintSize="896.8,2324.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                <Sequence sap:VirtualizedContainerService.HintSize="896.8,2663.2" sap2010:WorkflowViewState.IdRef="Sequence_36">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -157,7 +156,7 @@
                       </If.Then>
                     </If>
                   </Sequence>
-                  <TryCatch sap2010:Annotation.AnnotationText="This should find and click the GET button found on most Epic game pages. if it doesn't work, it should stop the workflow and the invoking process should move forward." DisplayName="Try to click the GET button" sap:VirtualizedContainerService.HintSize="855.2,247.2" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                  <TryCatch sap2010:Annotation.AnnotationText="This should find and click the GET button found on most Epic game pages. if it doesn't work, it should stop the workflow and the invoking process should move forward." DisplayName="Try to click the GET button" sap:VirtualizedContainerService.HintSize="855.2,585.6" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -420,11 +419,11 @@
                   </Sequence>
                 </Sequence>
               </PickBranch>
-              <PickBranch sap:VirtualizedContainerService.HintSize="383.2,2593.6" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+              <PickBranch sap:VirtualizedContainerService.HintSize="383.2,2932" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                 <PickBranch.Trigger>
                   <ui:UiElementExists DisplayName="Element Exists 'Owned' button" Exists="[isOwned]" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_10">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ea6b8f2f14f98df974f8531f3ca42982" Selector="&lt;webctrl aaname='Owned' tag='BUTTON' /&gt;" TimeoutMS="10000">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ea6b8f2f14f98df974f8531f3ca42982" Selector="&lt;webctrl aaname='Owned' tag='BUTTON' /&gt;" TimeoutMS="15000">
                         <ui:Target.WaitForReady>
                           <InArgument x:TypeArguments="ui:WaitForReady" />
                         </ui:Target.WaitForReady>
@@ -434,14 +433,11 @@
                 </PickBranch.Trigger>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Warn" Message="[&quot;Owned button found. Epic Game is likely already added to user's account.&quot;]" />
               </PickBranch>
-              <PickBranch sap:VirtualizedContainerService.HintSize="383.2,2593.6" sap2010:WorkflowViewState.IdRef="PickBranch_3">
+              <PickBranch sap:VirtualizedContainerService.HintSize="383.2,2932" sap2010:WorkflowViewState.IdRef="PickBranch_3">
                 <PickBranch.Trigger>
                   <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'A '" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
                     <ui:WaitUiElementAppear.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="632b45a9a6eb187b4925fc7aeb980b7b" Selector="&lt;webctrl aaname='Submit a mod' parentid='dieselReactWrapper' tag='A' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="632b45a9a6eb187b4925fc7aeb980b7b" Selector="&lt;webctrl aaname='*Submit a mod*' tag='A' /&gt;" TimeoutMS="15000">
                         <ui:Target.WaitForReady>
                           <InArgument x:TypeArguments="ui:WaitForReady" />
                         </ui:Target.WaitForReady>
