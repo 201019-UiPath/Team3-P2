@@ -33,7 +33,8 @@
         "test.xaml",
         "Native/Install/Install Game in Library.xaml",
         "Native/Login/testLogin.xaml",
-        "Web/Add/Add Free Games.xaml"
+        "Web/Add/Add Free Games.xaml",
+        "Web/Get Unadded Free Games.xaml"
       ]
     },
     "fileInfos": []
