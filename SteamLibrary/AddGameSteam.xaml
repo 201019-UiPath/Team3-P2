@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1680.8,3141.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1680.8,3181.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddGamesSteam_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -106,7 +106,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:ShowWindow DisplayName="Show Window" sap:VirtualizedContainerService.HintSize="1502.4,22.4" sap2010:WorkflowViewState.IdRef="ShowWindow_1" Window="[steamWindow]" />
-              <ui:ClickImage ContinueOnError="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DelayMS="500" DisplayName="Click Image 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1502.4,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:ClickImage ContinueOnError="{x:Null}" ClickType="CLICK_DOUBLE" DelayBefore="1000" DelayMS="500" DisplayName="Click Image 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1502.4,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
                 <ui:ClickImage.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -131,7 +131,7 @@
                   </ui:Target>
                 </ui:ClickImage.Target>
               </ui:ClickImage>
-              <ui:ClickImage ContinueOnError="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Click Image 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1502.4,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:ClickImage ContinueOnError="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Click Image 'steam.exe  Steam'" sap:VirtualizedContainerService.HintSize="1502.4,107.2" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
                 <ui:ClickImage.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -156,7 +156,7 @@
                   </ui:Target>
                 </ui:ClickImage.Target>
               </ui:ClickImage>
-              <ui:TypeInto DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2000" DisplayName="Type Game Name Into Searchbar" EmptyField="True" sap:VirtualizedContainerService.HintSize="1502.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[GameName]">
+              <ui:TypeInto DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="2000" DisplayName="Type Game Name Into Searchbar" EmptyField="True" sap:VirtualizedContainerService.HintSize="1502.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="True" SimulateType="False" Text="[GameName]">
                 <ui:TypeInto.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4b5ef0b23f9202b2c66d816e4a6b281a" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&lt;ctrl name='*' role='document' /&gt;&lt;ctrl name='search the store' role='editable text' /&gt;">
                     <ui:Target.TimeoutMS>
@@ -222,7 +222,7 @@
                   <PickBranch.Trigger>
                     <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Age Verification Popup" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
                       <ui:WaitUiElementAppear.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&#xD;&#xA;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&#xD;&#xA;&lt;ctrl name='* on Steam' role='document' /&gt;&#xD;&#xA;&lt;ctrl name='THIS GAME MAY CONTAIN CONTENT NOT APPROPRIATE FOR ALL AGES, OR M*' role='H2' /&gt;&#xD;&#xA;&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&#xD;&#xA;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&#xD;&#xA;&lt;ctrl name='* on Steam' role='document' /&gt;&#xD;&#xA;&lt;ctrl name='THIS GAME MAY CONTAIN CONTENT NOT APPROPRIATE FOR ALL AGES, OR M*' role='H2' /&gt;" TimeoutMS="10000">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&#xA;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&#xA;&lt;ctrl name='* on Steam' role='document' /&gt;&#xA;&lt;ctrl name='THIS GAME MAY CONTAIN CONTENT NOT APPROPRIATE FOR ALL AGES, OR M*' role='H2' /&gt;&#xA;&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&#xA;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&#xA;&lt;ctrl name='* on Steam' role='document' /&gt;&#xA;&lt;ctrl name='THIS GAME MAY CONTAIN CONTENT NOT APPROPRIATE FOR ALL AGES, OR M*' role='H2' /&gt;" TimeoutMS="10000">
                           <ui:Target.WaitForReady>
                             <InArgument x:TypeArguments="ui:WaitForReady" />
                           </ui:Target.WaitForReady>
@@ -343,7 +343,7 @@
                   <PickBranch.Trigger>
                     <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Play Game button" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4">
                       <ui:WaitUiElementAppear.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&#xD;&#xA;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&#xD;&#xA;&lt;ctrl name='Play Game' role='link' /&gt;&#xD;&#xA;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='steam.exe' cls='vguiPopupWindow' title='Steam' /&gt;&#xA;&lt;wnd cls='Chrome_WidgetWin_0' idx='*' /&gt;&#xA;&lt;ctrl name='Play Game' role='link' /&gt;&#xA;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
                       </ui:WaitUiElementAppear.Target>
                     </ui:WaitUiElementAppear>
                   </PickBranch.Trigger>

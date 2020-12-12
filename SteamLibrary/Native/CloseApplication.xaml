@@ -52,10 +52,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:CloseApplication DisplayName="Close Application" sap:VirtualizedContainerService.HintSize="435.2,68.8" sap2010:WorkflowViewState.IdRef="CloseApplication_2">
       <ui:CloseApplication.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='steam.exe' omit:cls='vguiPopupWindow' title='*Steam*' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='steam.exe' omit:cls='vguiPopupWindow' title='*Steam*' /&gt;" TimeoutMS="14000">
           <ui:Target.WaitForReady>
             <InArgument x:TypeArguments="ui:WaitForReady" />
           </ui:Target.WaitForReady>
