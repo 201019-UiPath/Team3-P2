@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2480.8,4280</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2522.4,3584</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -62,20 +62,20 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow logs into a Steam account on the website by using the associated email and password directly. This workflow throws a AuthenticationException if the login failed with the given credentials. This does not work if you have a new Steam profile and no profile page." DisplayName="Login (Web)" sap:VirtualizedContainerService.HintSize="2460.8,4180" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow logs into a Steam account on the website by using the associated email and password directly. This workflow throws a AuthenticationException if the login failed with the given credentials. This does not work if you have a new Steam profile and no profile page." DisplayName="Login (Web)" sap:VirtualizedContainerService.HintSize="2502.4,3484" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="2419.2,4056" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+    <ui:BrowserScope BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="By taking in a browser as an argument, this workflow should work in any UiPath supported browser, meaning whichever browser is used in the invoking process. (Tested with Edge)" Browser="[in_Browser]" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="2460.8,3360" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="Takes in a username, a password (SecureString), and a pre-opened browser, and uses them to login to Steam on a website." DisplayName="Login with Steam Account" sap:VirtualizedContainerService.HintSize="2385.6,3916" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence sap2010:Annotation.AnnotationText="Takes in a username, a password (SecureString), and a pre-opened browser, and uses them to login to Steam on a website." DisplayName="Login with Steam Account" sap:VirtualizedContainerService.HintSize="2427.2,3220" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="emailInputElem" />
             </Sequence.Variables>
@@ -86,9 +86,9 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Login page" sap:VirtualizedContainerService.HintSize="2344,60" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="https://steamcommunity.com/login/home/" />
-            <Pick sap:VirtualizedContainerService.HintSize="2344,3692" sap2010:WorkflowViewState.IdRef="Pick_1">
-              <PickBranch DisplayName="Branch - Already logged in" sap:VirtualizedContainerService.HintSize="574.4,3645.6" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Login page" sap:VirtualizedContainerService.HintSize="2385.6,60" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="https://steamcommunity.com/login/home/" />
+            <Pick sap:VirtualizedContainerService.HintSize="2385.6,2996" sap2010:WorkflowViewState.IdRef="Pick_1">
+              <PickBranch DisplayName="Branch - Already logged in" sap:VirtualizedContainerService.HintSize="574.4,2949.6" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                 <PickBranch.Trigger>
                   <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Edit Profile" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
                     <ui:WaitUiElementAppear.Target>
@@ -124,7 +124,7 @@
                   </If>
                 </Sequence>
               </PickBranch>
-              <PickBranch sap:VirtualizedContainerService.HintSize="1596,3645.6" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+              <PickBranch sap:VirtualizedContainerService.HintSize="1637.6,2949.6" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                 <PickBranch.Trigger>
                   <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'INPUT  email'" FoundElement="[emailInputElem]" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
                     <ui:WaitUiElementAppear.Target>
@@ -417,13 +417,9 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <PickBranch.Trigger>
-                          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Error popup" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6">
+                          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="Find Element - Error popup" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6" WaitVisible="True">
                             <ui:WaitUiElementAppear.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;webctrl id='error_display' tag='DIV' /&gt;" TimeoutMS="12000">
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;webctrl id='error_display' tag='DIV' /&gt;" TimeoutMS="12000" WaitForReady="COMPLETE" />
                             </ui:WaitUiElementAppear.Target>
                           </ui:WaitUiElementAppear>
                         </PickBranch.Trigger>
