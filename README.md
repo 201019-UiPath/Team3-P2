@@ -2,7 +2,7 @@
 
 ## Project Description
 
-Automation project made with UiPath Studio 2019.10.5, by Jacob Jennings, Lindsey Weber, and Vincent Weis.
+Automation project for adding free games to a user's associated game account, and installing them to a specific machine after addition. Made with UiPath Studio 2019.10.5, by Jacob Jennings, Lindsey Weber, and Vincent Weis.
 
 ## Technologies Used
 
