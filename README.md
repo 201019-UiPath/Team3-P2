@@ -2,7 +2,7 @@
 
 ## Project Description
 
-Automation project made with UiPath Studio 2019.10.5, by Jacob Jennings, Lindsey Weber, and Vincent Weis.
+Automation project for adding free games to a user's associated game account, and installing them to a specific machine after addition. This automation uses Steam and Epic Games launchers, as well as the Steam and Epic Games websites to scrape for data on currently free games and offer those games to the user for adding to their account library, as well as installing the newly added games to their machines. Once adding and installing is completed, an email is sent to the user containing data on each game added and installed from the user's selected launcher along with a status of whether or not the action was successful. Made with UiPath Studio 2019.10.5, by Jacob Jennings, Lindsey Weber, and Vincent Weis.
 
 ## Technologies Used
 
